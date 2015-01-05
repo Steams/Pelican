@@ -4,6 +4,54 @@ $break-medium:991px;
 $break-large: 1200px;
 $dark: #2F343B;
 $myGrey:#C7C7C7 ;
+//Animations____________________________________________________________________
+@keyframes pull-down {
+  20%  {bottom:  Calc(100% - 120px);}
+  100% {bottom:  Calc(100% - 80px);}
+}
+
+.menu-button-default-animation{
+  bottom:Calc(100% - 100px);
+  @media screen and (max-width: $break-medium) {
+    bottom:Calc(100% - 150px);
+  }
+}
+
+.menu-button-default-animation:hover{
+  bottom:Calc(100% - 110px);
+  @media screen and (max-width: $break-medium) {
+    bottom:Calc(100% - 170px);
+  }
+}
+
+.menu-button-close-start-animation{
+  bottom:Calc(100% - 120px);
+  @media screen and (max-width: $break-medium) {
+    bottom:Calc(100% - 180px);
+  }
+}
+
+.menu-button-close-end-animation{
+  bottom:Calc(100% - 70px);
+  @media screen and (max-width: $break-medium) {
+    bottom:Calc(100% - 130px);
+  }
+}
+
+.menu-button-close-hover-animation{
+  bottom:Calc(100% - 70px);
+  @media screen and (max-width: $break-medium) {
+    bottom:Calc(100% - 130px);
+  }
+}
+
+.menu-button-close-hover-animation:hover{
+  bottom:Calc(100% - 80px);
+  @media screen and (max-width: $break-medium) {
+    bottom:Calc(100% - 140px);
+  }
+}
+
 // Mixins_______________________________________________________________________
 @mixin box-shadow($h,$v,$b,$s){
   -webkit-box-shadow: $h $v $b $s rgba(0,0,0,0.55);
@@ -85,7 +133,8 @@ $myGrey:#C7C7C7 ;
   vertical-align:text-top !important;
   font-size:.5em;
   font-weight:400;
-  color:#a8a8a8;
+  // color:#a8a8a8;
+  color:#2A6496 ;
   font-family:'Squada One';
 
 }
@@ -98,28 +147,36 @@ $myGrey:#C7C7C7 ;
   color: #1dc465;
 }
 
-#menu{
+#git-hub,#logout{
+  margin-left:60px;
+}
+
+#menu-button{
   position:absolute;
-  width:60px;
+  width:70px;
   height:100px;
-  bottom:Calc(100% - 100px);
-  left:20px;
+  right:90%;
   text-align:center;
   background-color:#a8a8a8;
   color:#37609c;
   z-index: 1;
-  @include box-shadow(1px,1px,4px,0px);
+  transform:translate(-50%,0);
+  @include box-shadow(1px,2px,5px,0px);
   transition-property:bottom;
   transition-duration:0.2s;
+
+  @media screen and (max-width: $break-medium) {
+    right:0px;
+  }
+
 }
 
-#menu:hover{
-  bottom:Calc(100% - 105px);
+#menu-button:hover{
   cursor: pointer;
 }
 
-#menu h1{
-  font-size:30px;
+#menu-button h1{
+  font-size:40px;
   display: block;
   position:absolute;
   left:50%;
@@ -142,16 +199,22 @@ $myGrey:#C7C7C7 ;
 
   div{
     margin-right:10px;
-
   }
 }
 
+#user-name{
+  font-family:'Squada One';
+  text-transform:uppercase;
+
+}
 #user-icon{
   @extend .toolbar-icon;
 }
+
 #edit-bar{
   @extend .header-box;
 }
+
 #create-note{
   @extend .toolbar-icon;
   float: right;

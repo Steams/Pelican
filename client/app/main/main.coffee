@@ -5,5 +5,5 @@ angular.module 'landerApp'
   $stateProvider
   .state 'main',
     url: '/'
-    templateUrl: 'app/main/index.html'
+    templateUrl: 'app/main/partials/header.html'
     controller: 'MainCtrl'
