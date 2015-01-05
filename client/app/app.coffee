@@ -6,6 +6,7 @@ angular.module 'landerApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap'
+  'lander.directives.header'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider) ->
   $urlRouterProvider
