@@ -1,12 +1,12 @@
-angular.module 'lander.directives.header', []
-.directive 'myHeader', () ->
+angular.module 'lander.directives.list', []
+.directive 'list', () ->
   return {
     restrict : 'E'
     scope : {
       data : '='
     }
     replace : true
-    templateUrl: 'app/main/partials/header.html'
+    templateUrl: 'app/main/partials/list.html'
     controller : "@"
     name : "controllerName"
   }

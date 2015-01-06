@@ -1,5 +1,5 @@
 #header-holder
-  #header(class='row ' username="raddi")
+  #header(class='row ')
 
     #logo(class='col-md-4')
       #logo-pix Pix- 
@@ -14,9 +14,12 @@
       #user-bar(class='col-md-4')
         #user-greeting Welcome Back
         #user-name {{name}}
-        #user-icon(class="fa fa-user")
+        #user-icon-holder
+          img#user-icon(src='assets/images/radcliffe.jpg')
+        
       #edit-bar(class='col-md-4')
         #create-note(class="fa fa-pencil")
 
   #menu-button(class='menu-button-default-animation' on='false')
-    h1(class='fa fa-book')
+    h1
+      span(class='fa fa-book')

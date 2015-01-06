@@ -27,8 +27,11 @@ body{
 
 // Component styles are injected through grunt
 // injector
-@import 'main/header.scss';
-@import 'main/index.scss';
+@import 'main/a_variables.scss';
 @import 'main/main.scss';
+@import 'main/mixins.scss';
+@import 'main/partials/header.scss';
+@import 'main/partials/list.scss';
+@import 'main/partials/menu.scss';
 @import 'modal/modal.scss';
 // endinjector

@@ -7,6 +7,8 @@ angular.module 'landerApp', [
   'ui.router',
   'ui.bootstrap'
   'lander.directives.header'
+  'lander.directives.menu'
+  'lander.directives.list'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider) ->
   $urlRouterProvider

@@ -1,0 +1,217 @@
+//Animations____________________________________________________________________
+@keyframes pull-down {
+  20%  {bottom:  Calc(100% - 120px);}
+  100% {bottom:  Calc(100% - 80px);}
+}
+
+.menu-button-default-animation{
+  bottom:Calc(100% - 100px);
+  @media screen and (max-width: $break-medium) {
+    bottom:Calc(100% - 150px);
+  }
+}
+
+.menu-button-default-animation:hover{
+  bottom:Calc(100% - 110px);
+  @media screen and (max-width: $break-medium) {
+    bottom:Calc(100% - 170px);
+  }
+}
+
+.menu-button-default-noHover-animation{
+  bottom:Calc(100% - 100px);
+  @media screen and (max-width: $break-medium) {
+    bottom:Calc(100% - 150px);
+  }
+}
+
+.menu-button-close-start-animation{
+  bottom:Calc(100% - 120px);
+  @media screen and (max-width: $break-medium) {
+    bottom:Calc(100% - 180px);
+  }
+}
+
+.menu-button-close-end-animation{
+  bottom:Calc(100% - 70px);
+  @media screen and (max-width: $break-medium) {
+    bottom:Calc(100% - 130px);
+  }
+}
+
+.menu-button-close-hover-animation{
+  bottom:Calc(100% - 70px);
+  @media screen and (max-width: $break-medium) {
+    bottom:Calc(100% - 130px);
+  }
+}
+
+.menu-button-close-hover-animation:hover{
+  bottom:Calc(100% - 80px);
+  @media screen and (max-width: $break-medium) {
+    bottom:Calc(100% - 140px);
+  }
+}
+
+// Extendables__________________________________________________________________
+.header-box{
+  display:flex;
+  align-items:center;
+  font-family:'Oswald';
+  // font-family:'Squada One';
+  font-weight:300;
+
+  div{
+    display: inline-block !important;
+  }
+}
+
+.toolbar-icon{
+  position:relative;
+  padding: 5px;
+}
+.toolbar-icon:hover{
+  position:relative;
+  font-size:1.3em;
+  // background-color:#d9d9d9;
+  @include border-radius(5px,5px,5px,5px,1px,$myGrey);
+  padding: 5px;
+  cursor: pointer;
+  // border:1px solid #979797;
+}
+
+.toolbar-icon:active{
+  position:relative;
+  font-size:1.3em;
+  background-color:#d9d9d9;
+  @include border-radius(5px,5px,5px,5px,1px,$myGrey);
+  padding: 5px;
+  cursor: pointer;
+  // border:1px solid #979797;
+  @media screen and (max-width: $break-medium) {
+    background-color:#232323;
+  }
+}
+
+
+//Main Header Styles____________________________________________________________
+#header{
+  position:absolute;
+  top:0px;
+  left:0px;
+  height:50px;
+  width:100%;
+  display: block;
+  background-color:#fff;
+  margin:0px;
+  z-index: 2;
+  @include box-shadow(0px,1px,10px,0px);
+}
+
+
+#logo{
+  @extend .header-box;
+  font-size:2em;
+  height:100%;
+
+}
+
+#logo-lander{
+  vertical-align:text-top !important;
+  font-size:.5em;
+  font-weight:400;
+  // color:#a8a8a8;
+  color:#2A6496 ;
+  font-family:'Squada One';
+
+}
+
+#logo-pix{
+
+}
+
+#logo-e{
+  color: #1dc465;
+}
+
+#git-hub,#logout{
+  margin-left:60px;
+}
+
+#menu-button{
+  position:absolute;
+  width:70px;
+  height:100px;
+  right:Calc(100% - 300px);
+  text-align:center;
+  background-color:#a8a8a8;
+  color:#37609c;
+  z-index: 1;
+  // transform:translate(100%,0);
+  @include box-shadow(1px,2px,5px,0px);
+  transition-property:bottom;
+  transition-duration:0.3s;
+  @include border-radius(5px,5px,5px,5px,1px,$myGrey);
+  @media screen and (max-width: $break-medium) {
+    right:0px;
+  }
+
+}
+
+#menu-button:hover{
+  cursor: pointer;
+}
+
+#menu-button h1{
+  font-size:40px;
+  display: block;
+  position:absolute;
+  left:50%;
+  transform:translate(-50%,0);
+  bottom:0px;
+  margin:0;
+}
+#second-bar{
+  height:100%;
+  @extend .header-box;
+  @media screen and (max-width: $break-medium) {
+    background-color:$dark;
+    color:$myGrey;
+    // z-index: 1;
+  }
+}
+
+#user-bar{
+  @extend .header-box;
+
+  div{
+    margin-right:10px;
+  }
+}
+
+#user-name{
+  font-family:'Squada One';
+  text-transform:uppercase;
+
+}a
+#user-icon-holder{
+
+}
+#user-icon{
+  // @extend .toolbar-icon;
+  height:35px;
+  width:35px;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  @include border-radius(30px,30px,30px,30px,1px,#60325a);
+}
+
+
+#edit-bar{
+  @extend .header-box;
+}
+
+#create-note{
+  @extend .toolbar-icon;
+  float: right;
+}

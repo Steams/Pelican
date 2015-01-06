@@ -1,0 +1,32 @@
+aside#menu
+  #menu-settings(on='false')
+    #settings-title Search Settings
+    .settings-category
+      span.subject-label Subject
+      input.subject-input(type='text' list='subjects')
+    br
+    .settings-category
+      span.subject-label Author
+      input.subject-input(type='text' list='Authors')
+    br
+    .settings-category
+      span.subject-label Contains Text
+      input.subject-input(type='text' )
+    datalist(id="subjects")
+      option Mathematics
+      option English
+      option Engineering
+    datalist(id="Authors")
+      option Radcliffe
+      option Skai
+      option Charles
+  #menu-header(class='row')
+    #menu-icon(class="fa fa-cubes ")
+    p#menu-title(class="") Note Book
+  #menu-toolbar
+    #menu-settings-icons
+      span(class="fa fa-cog" id="menu-settings-button" )
+    #menu-search
+      input#filter(placeholder='filter...')
+      #search-icon(class='fa fa-search')
+  list
