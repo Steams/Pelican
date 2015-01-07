@@ -7,4 +7,6 @@ angular.module 'lander.directives.menu', []
     }
     replace : true
     templateUrl: 'app/main/partials/menu.html'
+    controller : "@"
+  name : "controllerName"
   }

@@ -10,6 +10,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var express = require('express');
 var mongoose = require('mongoose');
 var config = require('./config/environment');
+var bodyParser = require('body-parser')
 
 // Connect to database
 mongoose.connect(config.mongo.uri, config.mongo.options);
@@ -18,6 +19,7 @@ mongoose.connect(config.mongo.uri, config.mongo.options);
 if(config.seedDB) { require('./config/seed'); }
 
 // Setup server
+
 var app = express();
 var server = require('http').createServer(app);
 require('./config/express')(app);

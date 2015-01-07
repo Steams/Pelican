@@ -18,6 +18,7 @@ create = ->
       searchButton.style.right = '200px'
 
   showSearchBar =  ->
+
     searchBar.style.width = '90%'
     searchButton.style.right = '30px'
 
@@ -27,6 +28,7 @@ create = ->
   # Menu settings_______________________________________________________________
   menuSettings = document.querySelector '#menu-settings'
   settingsButton = document.querySelector '#menu-settings-button'
+  settingsClose = document.querySelector '#menu-settings-close'
   subjectInputs = document.querySelectorAll '.subject-input'
   subjectLabels = document.querySelectorAll '.subject-label'
 
@@ -68,13 +70,15 @@ create = ->
       [].forEach.call(subjectInputs, (input) ->
         input.style.opacity = '0'
         setTimeout(()->
-          input.style.display='none'
+          if menuSettings.getAttribute('on') =='false'
+            input.style.display='none'
         ,10)
       )
       [].forEach.call(subjectLabels, (label) ->
         label.style.opacity = '0'
         setTimeout(()->
-          label.style.display='none'
+          if menuSettings.getAttribute('on') =='false'
+            label.style.display='none'
         ,10)
       )
     ,100)
@@ -83,8 +87,9 @@ create = ->
     menuSettings.style.borderBottom ='0'
     # menuSettings.style.borderTop ='0'
     setTimeout(()->
-      menuSettings.style.display='none'
-    ,700)
+      if menuSettings.getAttribute('on') =='false'
+        menuSettings.style.display='none'
+    ,500)
     menuSettings.setAttribute('on',false)
 
     undefined
@@ -96,6 +101,7 @@ create = ->
       hideSettings()
 
   settingsButton.addEventListener 'click',toggleSettings
+  settingsClose.addEventListener 'click',toggleSettings
 
 # Menu Button___________________________________________________________________
   menuButton = document.querySelector '#menu-button'

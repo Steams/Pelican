@@ -1,8 +1,81 @@
 #list-container{
-
-  height:100%;
+  position:absolute;
+  top:100px;
+  height:Calc(100% - 100px);
   width:100%;
   // background-color: #2D3138;
   background-color: #2F343B;
-  padding: 0px 5px 0px 5px;
+}
+#list-container ul {
+  width:100%;
+  overflow: scroll;
+  height:100%;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+#list-container ul li {
+  height:190px;
+  width:85%;
+  margin:0 auto;
+  margin-top:20px;
+  // background-color: #DDD;
+}
+
+.Mathematics{
+  .list-item-content{
+    .list-item-top{
+      background-color: #9365B8;
+    }
+  }
+}
+
+.Engineering{
+
+  .list-item-content{
+    .list-item-top{
+      background-color: #b96773;
+    }
+  }
+}
+
+.English{
+
+  .list-item-content{
+    .list-item-top{
+      background-color: #67b9b7;
+    }
+  }
+}
+.list-item-content{
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-direction:column;
+}
+.list-item-top{
+  order:1;
+  height:65%;
+
+  width:100%;
+  padding:20px;
+  // background-color: #8CC152;
+  p{
+
+    height:40px;
+    overflow: hidden;
+    // this is BAD fix this
+  }
+}
+.list-item-bottom{
+  order:2;
+  height:35%;
+  width:100%;
+  background-color: #ffffff;
+  color:#606060;
+  padding:5px;
+}
+.blank{
+  opacity:0;
 }

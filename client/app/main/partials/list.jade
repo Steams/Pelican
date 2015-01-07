@@ -1,2 +1,13 @@
-ul#list-container
-  li 
+#list-container
+  ul
+    li(ng-repeat="note in notes | filter:$parent.filter" class="{{note.subject}}")
+      .list-item-content 
+        .list-item-top
+          h4 {{note.title}} 
+          br
+          p{{note.desc}}
+        .list-item-bottom 
+          h4 Author : {{note.author}}
+    
+        
+      

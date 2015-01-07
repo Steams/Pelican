@@ -5,14 +5,15 @@
 'use strict';
 
 var errors = require('./components/errors');
+var bodyParser = require('body-parser')
 // var express = require('express');
 module.exports = function(app) {
 
   // Insert routes below
 
-  // app.use(express.static(app.get('appPath')+'/bower_components');
-
-  // app.use("/bower_components", express.static(app.get('appPath')+'/bower_components'));
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }));
 
   app.use('/api/things', require('./api/thing'));
 

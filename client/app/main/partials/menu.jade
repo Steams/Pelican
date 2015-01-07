@@ -1,17 +1,31 @@
-aside#menu
+aside#menu(controller-name='MainCtrl')
+  #menu-header(class='')
+    #menu-icon(class="fa fa-cubes ")
+    p#menu-title(class="") Note Book
+  #menu-toolbar
+    #menu-settings-icons
+      span(class="fa fa-cog" id="menu-settings-button" )
+    #menu-search
+      input#filter(placeholder='filter list...' ng-model="filter.subject")
+    #search-icon(class='fa fa-search')
   #menu-settings(on='false')
-    #settings-title Search Settings
+    #menu-settings-title Search Settings
+    
     .settings-category
       span.subject-label Subject
-      input.subject-input(type='text' list='subjects')
+      input.subject-input(type='text' list='subjects' ng-model="search.subject")
     br
     .settings-category
       span.subject-label Author
-      input.subject-input(type='text' list='Authors')
+      input.subject-input(type='text' list='Authors' ng-model="search.author")
     br
     .settings-category
       span.subject-label Contains Text
-      input.subject-input(type='text' )
+      input.subject-input(type='text' ng-model="search.content" value="uytf")
+    #menu-settings-close
+      //- span(class="glyphicon glyphicon-remove settings-close-icon cancel")
+      span(class="glyphicon glyphicon-circle-arrow-up settings-close-icon ok")
+      
     datalist(id="subjects")
       option Mathematics
       option English
@@ -20,13 +34,5 @@ aside#menu
       option Radcliffe
       option Skai
       option Charles
-  #menu-header(class='row')
-    #menu-icon(class="fa fa-cubes ")
-    p#menu-title(class="") Note Book
-  #menu-toolbar
-    #menu-settings-icons
-      span(class="fa fa-cog" id="menu-settings-button" )
-    #menu-search
-      input#filter(placeholder='filter...')
-      #search-icon(class='fa fa-search')
-  list
+  
+  list(controller-name='MainCtrl')
