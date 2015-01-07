@@ -1,0 +1,51 @@
+
+.form-content{
+  // position:absolute;
+  order:1;
+  background-color: #F9F9F9;
+  // background-color: #c33232;
+  height:100%;
+  font-family:'Alegreya';
+  overflow: scroll;
+  min-width:800px;
+  max-width:1500px;
+  div[ng-model="html"]{
+  // background-color: #98ddeb;
+  // height:100%;
+  max-width:1500px;
+  }
+
+}
+
+.ta-toolbar{
+  order:2;
+  display: flex;
+  width:0px;
+  // width:250px;
+  transition-property:width;
+  transition-duration:0.5s;
+  // display: none;
+  .btn-group{
+    display: flex;
+    flex-direction:column;
+  }
+}
+
+button[title='Insert image']{
+  // color: red;
+  width:40px;
+}
+button[title="Toggle html / Rich Text"]{
+  // color: red;
+  width:40px;
+  word-wrap: break-word;
+  word-break:break-all;
+}
+button[title="Insert / edit link"]{
+  // color: red;
+  width:40px;
+}
+button[title='Insert image']{
+  // color: red;
+  width:40px;
+}

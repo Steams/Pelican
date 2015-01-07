@@ -31,7 +31,28 @@
   flex-direction:column;
   top:50px;
   height:Calc(100% - 50px);
-  width:300px;
+  max-width:340px;
+  width:100%;
+  z-index: 3;
+  @media screen and (min-resolution: 120dppx){
+    /* Retina-specific stuff here */
+    max-width:1000px;
+    display: none;
+  }
+  @media screen and (max-width: $break-medium) {
+    max-width:60%;
+    width:60%;
+  }
+
+  @media screen and (max-width: $break-tablet) {
+    max-width:60%;
+    width:60%;
+  }
+
+  @media screen and (max-width: $break-small) {
+    max-width:70%;
+    width:70%;
+  }
   background-color: #2F343B;
   left:-999px;
   // left:0px;
@@ -58,7 +79,7 @@
   font-family:"Oswald";
   // font-weight:300;
   color: #2D3138;
-  z-index: 2;
+  z-index: 3;
 }
 .settings-category{
   display: flex;
@@ -172,7 +193,7 @@
   width:100%;
   padding-left:10px;
   background-color: #2D3138;
-  z-index: 3;
+  z-index: 4;
 }
 
 

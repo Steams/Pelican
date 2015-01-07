@@ -5,10 +5,12 @@ angular.module 'landerApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ui.bootstrap'
-  'lander.directives.header'
-  'lander.directives.menu'
-  'lander.directives.list'
+  'ui.bootstrap',
+  'lander.directives.header',
+  'lander.directives.menu',
+  'lander.directives.list',
+  'lander.directives.submit',
+  'textAngular'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider) ->
   $urlRouterProvider

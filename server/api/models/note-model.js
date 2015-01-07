@@ -6,8 +6,8 @@ noteSchema = new mongoose.Schema({
   title:String,
   desc: String,
   author: String,
-  subject: String
+  subject: String,
+  content: String
 });
 
 module.exports = mongoose.model('Note', noteSchema);
- 

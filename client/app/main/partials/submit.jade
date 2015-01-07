@@ -1,0 +1,30 @@
+div#submission-holder
+  i(class="fa fa-arrow-circle-right fa-3x" id="openSubmitDrawer")
+  i(class="fa fa-arrow-circle-left fa-3x" id="openToolbar" on="false")
+  aside(on="true" id="submitDrawer")
+    #sub-options-holder
+      .sub-option
+        p Title 
+        input(type="text")
+      .sub-option  
+        p Authors 
+        input(type="text")
+      .sub-option
+        p Description 
+        input(type="text")
+      .sub-option
+        p Tags 
+        input(type="text")
+  div(ta-text-editor-class="form-content"
+  ta-html-editor-class="form-content"
+  ta-focussed-class="focussed"
+  text-angular text-angular-name="editor"
+  id="editor"
+  name="editor"
+  thing="{{name}}"
+
+  )
+    section#document-holder
+
+
+  textarea(  id="from" style="width: 100%;display:none;"){{$parent.notes[0].content}}

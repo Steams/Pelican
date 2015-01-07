@@ -14,7 +14,7 @@ angular.module 'landerApp'
   )
 
   # $scope.awesomeThings = []
-  # $scope.name="Radcliffe Robinson"
+  $scope.name="Radcliffe Robinson"
   # $scope.notes = [
   #   {
   #     subject:'English',

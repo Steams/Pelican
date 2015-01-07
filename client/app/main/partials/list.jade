@@ -1,6 +1,7 @@
 #list-container
   ul
-    li(ng-repeat="note in notes | filter:$parent.filter" class="{{note.subject}}")
+    li(ng-repeat="note in notes | filter:$parent.filter" class="{{note.subject}}"
+    ng-click="openNotes(note.id)")
       .list-item-content 
         .list-item-top
           h4 {{note.title}} 
