@@ -1,5 +1,6 @@
 create = ->
   console.log 'creating...'
+  document.getElementsByClassName('ta-bind')[0].focus()
   # Text editor_________________________________________________________________
 
   # console.log $('.form-content').attributes

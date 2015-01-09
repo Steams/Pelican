@@ -24,8 +24,20 @@ module.exports.show = function(req, res) {
   console.log(req.params.id);
   // var str = req.params.query.toString().slice(0, - 1);
   // var x = JSON.parse(str);
+  console.log(typeof req.params.id);
   return Note.find({_id:req.params.id}, function(err, notesList) {
-    console.log(notesList[0]);
-    return res.json(notesList[0]);
+    console.log('notes list'+notesList);
+    return res.json({list:notesList});
+  });
+};
+
+module.exports.showBySub = function(req, res) {
+  console.log('showBySub');
+  console.log(req.params.id);
+  // var str = req.params.query.toString().slice(0, - 1);
+  // var x = JSON.parse(str);
+  return Note.find({subject:req.params.id}, function(err, notesList) {
+    console.log(notesList);
+    return res.json({list:notesList});
   });
 };

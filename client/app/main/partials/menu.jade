@@ -6,7 +6,7 @@ aside#menu
     #menu-settings-icons
       span(class="fa fa-cog" id="menu-settings-button" )
     #menu-search
-      input#filter(placeholder='filter list...' ng-model="filter.subject")
+      input#filter(placeholder='filter by content...' ng-model="filter")
     #search-icon(class='fa fa-search')
   #menu-settings(on='false')
     #menu-settings-title Search Settings
@@ -22,7 +22,7 @@ aside#menu
     .settings-category
       span.subject-label Contains Text
       input.subject-input(type='text' ng-model="search.content" value="uytf")
-    #menu-settings-close
+    #menu-settings-close(ng-click="loadList(search.subject)")
       //- span(class="glyphicon glyphicon-remove settings-close-icon cancel")
       span(class="glyphicon glyphicon-circle-arrow-up settings-close-icon ok")
       
