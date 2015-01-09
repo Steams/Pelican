@@ -8,7 +8,7 @@ var router = express.Router();
 
 // router.get('/', controller.index);
 router.get('/notes', notesController.index);
-router.get('/notes/:query', notesController.show);
+router.get('/notes/:id', notesController.show);
 router.get('/:id', controller.show);
 // router.get('/:id', controller.show);
 // router.post('/', controller.create);

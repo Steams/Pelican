@@ -1,42 +1,58 @@
 create = ->
-
+  console.log 'creating...'
   # Text editor_________________________________________________________________
 
   # console.log $('.form-content').attributes
 
   # console.log $('.form-content')
   # console.log $('#taTextElement1629901258274912')
-  content = document.getElementsByTagName('section')[0]
-  from = document.getElementById('from')
-  text = document.createElement("div")
+  # content = document.getElementsByTagName('section')[0]
+  # from = document.getElementById('from')
+  # text = document.createElement("div")
   submitDrawerButton = document.getElementById("openSubmitDrawer")
   submitToolbarButton = document.getElementById("openToolbar")
   toolbar = document.getElementsByClassName('ta-toolbar')[0]
 
   # console.log document.getElementsByClassName('ta-toolbar')[0]
   submitDrawer = document.getElementById("submitDrawer")
-
-  submitDrawerButton.addEventListener 'click',()->
+  toggleSubmitDrawer = ->
     if submitDrawer.getAttribute('on') =='true'
       submitDrawer.style.width= '0px'
+      submitDrawerButton.style.transform='rotate(0deg)'
       submitDrawer.setAttribute('on','false')
     else
       submitDrawer.style.width= '300px'
+      submitDrawerButton.style.transform='rotate(180deg)'
       submitDrawer.setAttribute('on','true')
 
-  submitToolbarButton.addEventListener 'click',()->
+  toggleToolbar = ->
     if submitToolbarButton.getAttribute('on') =='true'
-      toolbar.style.width= '0px'
       submitToolbarButton.setAttribute('on','false')
+      toolbar.style.width= '0px'
+      submitToolbarButton.style.transform='rotate(0deg)'
+      setTimeout(()->
+        if submitToolbarButton.getAttribute('on') =='false'
+          toolbar.style.display ='none'
+      ,500)
+
     else
-      toolbar.style.width= '250px'
+      toolbar.style.display="block"
+      setTimeout(()->
+        toolbar.style.width= '250px'
+        submitToolbarButton.style.transform='rotate(180deg)'
+      ,10)
+
       submitToolbarButton.setAttribute('on','true')
 
+  submitDrawerButton.addEventListener 'click',toggleSubmitDrawer
 
-  console.log content
-  console.log from
+  submitToolbarButton.addEventListener 'click',toggleToolbar
+
+
+  # console.log content
+  # console.log from
   # content[0].innerHTML = "<h1>New</h1>"
-  content.innerHTML = from.value
+  # content.innerHTML = from.value
   # Meun________________________________________________________________________
   menu = document.querySelector '#menu'
   showMenu = ->
@@ -215,4 +231,3 @@ create = ->
   menuButton.addEventListener 'click', ClickListener
 
 setTimeout create,1500
-0

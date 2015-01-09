@@ -2,11 +2,8 @@ angular.module 'lander.directives.list', []
 .directive 'list', () ->
   return {
     restrict : 'E'
-    scope : {
-      data : '='
-    }
+    scope :true
     replace : true
     templateUrl: 'app/main/partials/list.html'
-    controller : "@"
-    name : "controllerName"
+    controller : "MainCtrl"
   }

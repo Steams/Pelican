@@ -5,10 +5,15 @@
   background-color: #F9F9F9;
   // background-color: #c33232;
   height:100%;
+  flex-grow:1;
   font-family:'Alegreya';
   overflow: scroll;
+  overflow-x: hidden;
+  @include box-shadow(1px,-2px,10px,0px);
   min-width:800px;
   max-width:1500px;
+
+
   div[ng-model="html"]{
   // background-color: #98ddeb;
   // height:100%;
@@ -20,11 +25,12 @@
 .ta-toolbar{
   order:2;
   display: flex;
-  width:0px;
-  // width:250px;
+  // width:0px;
+  width:250px;
   transition-property:width;
   transition-duration:0.5s;
-  // display: none;
+  background-color:#6c8bb5;
+  display: block;
   .btn-group{
     display: flex;
     flex-direction:column;

@@ -2,11 +2,8 @@ angular.module 'lander.directives.header', []
 .directive 'myHeader', () ->
   return {
     restrict : 'E'
-    scope : {
-      data : '='
-    }
+    # scope : true
     replace : true
     templateUrl: 'app/main/partials/header.html'
-    controller : "@"
-    name : "controllerName"
+    controller : "MainCtrl"
   }
