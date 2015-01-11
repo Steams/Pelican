@@ -10,6 +10,7 @@ angular.module 'landerApp', [
   'lander.directives.menu',
   'lander.directives.list',
   'lander.directives.submit',
+#  'lander.directives.menuButton'
   'textAngular'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider) ->

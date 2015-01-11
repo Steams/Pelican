@@ -1,3 +1,4 @@
+'use strict'
 var Note;
 
 Note = require('../models/note-model.js');

@@ -1,24 +1,20 @@
 #header-holder
   #header(class='row')
-    #logo(class='col-sm-5')
-      #logo-pix Pix- 
-      #logo-e E
-        #logo-lander L A N D E R
-      #git-hub
-        a(href='https://github.com/Steams/lander' class="fa fa-github-alt")
-      #logout
-        a(ui-sref="main.submit" class='fa fa-sign-out' ng-click="thing()")
-
-    #second-bar(class='col-sm-7 row' style="padding:0;margin:0;")
-      #user-bar(class='col-md-8')
-        #user-greeting Welcome Back
+    #logo(class='col-xs-3')
+      //#logo-pix Pix-
+      //#logo-e E
+      img#logo-icon(src='assets/images/pixeIcon.svg')
+      #logo-lander L A N D E R
+    #second-bar(class='col-xs-9 row' style="padding:0;margin:0;")
+      #user-greeting(class='col-sm-4')
+        div Welcome Back
+      #user-bar(class='col-sm-8')
         #user-name {{name}}
-          #user-icon-holder
-            img#user-icon(src='assets/images/radcliffe.jpg')
-        
-      #edit-bar(class='col-md-4')
-        #create-note(class="fa fa-pencil")
+        #user-icon-holder
+          img#user-icon(src='assets/images/radcliffe.jpg')
+        #edit-bar()
+          #create-note(class="fa fa-pencil")
 
-  #menu-button(class='menu-button-default-animation' on='false')
+  #menu-button(class='menu-button-default-animation' on='false' data-menu-Button)
     h1
       span(class='fa fa-book')

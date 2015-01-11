@@ -1,6 +1,6 @@
 create = ->
   console.log 'creating...'
-  document.getElementsByClassName('ta-bind')[0].focus()
+
   # Text editor_________________________________________________________________
 
   # console.log $('.form-content').attributes
@@ -14,7 +14,51 @@ create = ->
   submitToolbarButton = document.getElementById("openToolbar")
   toolbar = document.getElementsByClassName('ta-toolbar')[0]
 
-  # console.log document.getElementsByClassName('ta-toolbar')[0]
+  expandEditor = ()->
+    $('#editor').css('top','0px')
+    $('#editor').css('left','0px')
+    $('#editor').css('height','100%')
+    $('#editor').css('width','100%')
+    $('#editor').attr('on','true')
+
+  compressEditor = ()->
+    $('#editor').attr('on','false')
+    $('#editor').css('top','80px')
+    $('#editor').css('left','30px')
+    $('#editor').css('height','90%')
+    $('#editor').css('width','93%')
+
+
+
+  toggleEditorExpand = ()->
+    if $('#editor').attr('on')== 'true'
+      compressEditor()
+    else
+      if $('#editor').attr('on')== 'false'
+       expandEditor()
+
+  toggleEditorExpandPause= ()->
+    if $('#editor').attr('on')== 'true-paused'
+      compressEditor()
+    else
+      if $('#editor').attr('on')== 'false'
+        expandEditor()
+        $('#editor').attr('on','true-paused')
+
+  pauseCompress = ()->
+    if $('#editor').attr('on') != 'true-paused'
+      compressEditor()
+      $('#editor').attr('on','paused')
+
+  UnPauseCompress = ()->
+    if $('#editor').attr('on') != 'true-paused'
+      $('#editor').attr('on','false')
+
+  $('#expand-icon').click(toggleEditorExpandPause)
+  $('#editor').hover(toggleEditorExpand)
+  document.getElementsByClassName('ta-bind')[0].addEventListener 'focus',pauseCompress
+  document.getElementsByClassName('ta-bind')[0].addEventListener 'blur',UnPauseCompress
+  console.log document.getElementsByClassName('ta-toolbar')[0]
   submitDrawer = document.getElementById("submitDrawer")
   toggleSubmitDrawer = ->
     if submitDrawer.getAttribute('on') =='true'

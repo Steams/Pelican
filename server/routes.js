@@ -5,7 +5,7 @@
 'use strict';
 
 var errors = require('./components/errors');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 // var express = require('express');
 module.exports = function(app) {
 

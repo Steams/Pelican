@@ -17,42 +17,25 @@
 
   div[ng-model="html"]{
   // background-color: #98ddeb;
-  // height:100%;
+  height:100%;
   max-width:1500px;
   }
 
 }
 
-.ta-toolbar{
-  order:2;
-  display: flex;
-  // width:0px;
-  width:250px;
-  transition-property:width;
-  transition-duration:0.5s;
-  background-color:#6c8bb5;
-  display: block;
-  .btn-group{
-    display: flex;
-    flex-direction:column;
-  }
-}
+//.ta-toolbar{
+//  order:2;
+//  display: flex;
+//  // width:0px;
+//  width:250px;
+//  transition-property:width;
+//  transition-duration:0.5s;
+//  background-color:#6c8bb5;
+//  display: block;
+//  .btn-group{
+//    display: flex;
+//    flex-direction:column;
+//  }
+//}
 
-button[title='Insert image']{
-  // color: red;
-  width:40px;
-}
-button[title="Toggle html / Rich Text"]{
-  // color: red;
-  width:40px;
-  word-wrap: break-word;
-  word-break:break-all;
-}
-button[title="Insert / edit link"]{
-  // color: red;
-  width:40px;
-}
-button[title='Insert image']{
-  // color: red;
-  width:40px;
-}
+
