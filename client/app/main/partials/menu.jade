@@ -10,7 +10,7 @@ aside#menu
     #search-icon(class='fa fa-search')
   #menu-settings(on='false')
     #menu-settings-title Search Settings
-    
+
     .settings-category
       span.subject-label Subject
       input.subject-input(type='text' list='subjects' ng-model="search.subject")
@@ -25,14 +25,15 @@ aside#menu
     #menu-settings-close(ng-click="loadList(search.subject)")
       //- span(class="glyphicon glyphicon-remove settings-close-icon cancel")
       span(class="glyphicon glyphicon-circle-arrow-up settings-close-icon ok")
-      
+
     datalist(id="subjects")
       option Mathematics
       option English
       option Engineering
+      option All
     datalist(id="Authors")
       option Radcliffe
       option Skai
       option Charles
-  
+
   list

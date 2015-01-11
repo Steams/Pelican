@@ -9,9 +9,10 @@ angular.module 'landerApp'
   SubjectNotes = $resource('/api/things/notes/subjects/:id')
   $scope.notes =[]
   $scope.name="Radcliffe Robinson"
+  menu = document.querySelector '#menu'
   # $scope.$watch('notes',() -> alert 'hey, myVar has changed!' )
 
-  $scope.openNote = (id)->
+  $scope.getNote = (id)->
 #    console.log $scope
 #    console.log id
     Notes.get({id:id},(data)->
@@ -28,14 +29,27 @@ angular.module 'landerApp'
     )
     # console.log note.content
 
-
-  $scope.openNote('54af38dfdc9ef9da1f58084b')
+  $scope.openNote =(index)->
+    console.log($scope.$parent.$parent.notes)
+    editor.innerHTML = $scope.$parent.$parent.notes[index].content
+    menu.style.left="-999px"
+#    $scope.menuClose()
+#  $scope.openNote('54af38dfdc9ef9da1f58084b')
 
   $scope.loadList = (subject)->
-    SubjectNotes.get({id:subject},(data)->
-        console.log data.list
-        $scope.$parent.notes = data.list
-      )
+   console.log(subject)
+   if subject
+     if subject != "all" && subject != "All"
+        SubjectNotes.get({id:subject},(data)->
+          console.log data.list
+          $scope.$parent.notes = data.list
+        )
+      else
+       Notes.query((result)->
+         $scope.$parent.notes = result
+         console.log result
+         $scope.$parent.notes.push({subject:'blank'})
+       )
 
   $scope.submitNote = ->
     console.log 'submiting note...'
@@ -54,11 +68,20 @@ angular.module 'landerApp'
       console.log(result)
       $scope.$parent.notes.splice(-1,0,result)
 
+
+  $scope.createNote =()->
+    console.log('hhbiyuyg')
+    document.getElementsByClassName('ta-bind')[0].innerHTML = " "
+
+
+
   Notes.query((result)->
     $scope.notes = result
     console.log result
     $scope.notes.push({subject:'blank'})
+    $scope.openNote(3)
   )
+
 
 #
 #  $http.get('/api/things').success (awesomeThings) ->

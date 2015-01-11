@@ -6,51 +6,51 @@
 
 .menu-button-default-animation{
   bottom:Calc(100% - 120px);
-  @media screen and (max-width: $break-tablet) {
-//    bottom:Calc(100% - 150px);
-  }
+//  @media screen and (max-width: $break-tablet) {
+////    bottom:Calc(100% - 150px);
+//  }
 }
 
 .menu-button-default-animation:hover{
   bottom:Calc(100% - 130px);
-  @media screen and (max-width: $break-tablet) {
-    bottom:Calc(100% - 170px);
-  }
+//  @media screen and (max-width: $break-tablet) {
+//    bottom:Calc(100% - 170px);
+//  }
 }
 
 .menu-button-default-noHover-animation{
   bottom:Calc(100% - 120px);
-  @media screen and (max-width: $break-tablet) {
-    bottom:Calc(100% - 150px);
-  }
+//  @media screen and (max-width: $break-tablet) {
+//    bottom:Calc(100% - 150px);
+//  }
 }
 
 .menu-button-close-start-animation{
   bottom:Calc(100% - 140px);
-  @media screen and (max-width: $break-tablet) {
-    bottom:Calc(100% - 180px);
-  }
+//  @media screen and (max-width: $break-tablet) {
+//    bottom:Calc(100% - 180px);
+//  }
 }
 
 .menu-button-close-end-animation{
   bottom:Calc(100% - 90px);
-  @media screen and (max-width: $break-tablet) {
-    bottom:Calc(100% - 130px);
-  }
+//  @media screen and (max-width: $break-tablet) {
+//    bottom:Calc(100% - 130px);
+//  }
 }
 
 .menu-button-close-hover-animation{
   bottom:Calc(100% - 90px);
-  @media screen and (max-width: $break-tablet) {
-    bottom:Calc(100% - 130px);
-  }
+//  @media screen and (max-width: $break-tablet) {
+//    bottom:Calc(100% - 130px);
+//  }
 }
 
 .menu-button-close-hover-animation:hover{
   bottom:Calc(100% - 100px);
-  @media screen and (max-width: $break-tablet) {
-    bottom:Calc(100% - 140px);
-  }
+//  @media screen and (max-width: $break-tablet) {
+//    bottom:Calc(100% - 140px);
+//  }
 }
 
 // Extendables__________________________________________________________________
@@ -243,5 +243,7 @@
 
 #create-note{
   @extend .toolbar-icon;
+  font-size: 1.5em;
+  color: $my-dark-orange;
   // background-color: #DDD;
 }

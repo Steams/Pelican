@@ -388,7 +388,15 @@ module.exports = function (grunt) {
             'package.json',
             'server/**/*'
           ]
-        }]
+        },
+          {
+            expand: true,
+            flatten: true,
+            cwd: '<%= yeoman.app %>',
+            dest: '<%= yeoman.dist %>/fonts',
+            src: ['bower_components/sass-bootstrap/fonts/*.*']
+          }
+        ]
       },
       styles: {
         expand: true,

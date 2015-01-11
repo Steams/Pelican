@@ -119,7 +119,8 @@ angular.module 'lander.directives.menu', []
       # Menu Button___________________________________________________________________
       menuButton = document.querySelector '#menu-button'
       menuButton.addEventListener 'click', ()->
-        if menuButton.getAttribute('on') == 'false'
+        console.log menuButton.getAttribute('on')
+        if menuButton.getAttribute('on') != 'true'
           setTimeout hideMenu, 20
         else
           setTimeout showMenu, 20

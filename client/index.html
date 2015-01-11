@@ -11,14 +11,8 @@
     <meta name="description" content="Social note sharing web application for college students">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <meta name="author" content="Radcliffe Robinson.">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(client) app/vendor.css -->
-      <!-- bower:css -->
-      <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css({.tmp,client}) app/app.css -->
 
-    <link rel="stylesheet" href="app/app.css">
+
     <link href='http://fonts.googleapis.com/css?family=Squada+One' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
@@ -28,11 +22,21 @@
     <!--<script src="bower_components/webcomponentsjs/webcomponents.js"></script>-->
     <!--<script src="bower_components/polymer/polymer.js"></script>-->
 
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+
+      <!-- bower:css -->
+      <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,client}) app/app.css -->
+    <link rel="stylesheet" href="app/app.css">
+
 
 
       <!-- injector:css -->
       <!-- endinjector -->
     <!-- endbuild -->
+
   </head>
 
   <body ng-app="landerApp">
@@ -80,7 +84,6 @@
           <!-- injector:js -->
           <script src="app/main/directives/directives.js"></script>
           <script src="app/main/main.js"></script>
-          <script src="app/main/partials/partials.js"></script>
           <script src="components/modal/modal.js"></script>
           <script src="components/navbar/navbar.js"></script>
           <!-- endinjector -->

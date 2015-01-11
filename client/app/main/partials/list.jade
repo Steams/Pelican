@@ -1,13 +1,13 @@
 #list-container
   ul
-    li(ng-repeat="note in $parent.$parent.notes | filter:$parent.filter" class="{{note.subject}}" ng-click="openNote(note._id)")
-      .list-item-content 
+    li(ng-repeat="note in $parent.$parent.notes | filter:$parent.filter" class="{{note.subject}}" ng-click="openNote($index)")
+      .list-item-content
         .list-item-top
-          h4 {{note.title}} 
+          h4 {{note.title}}
           br
           p{{note.desc}}
-        .list-item-bottom 
+        .list-item-bottom
           h4 Author : {{note.author}}
-    
-        
-      
+
+
+

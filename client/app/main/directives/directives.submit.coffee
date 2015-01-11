@@ -8,8 +8,8 @@ angular.module 'lander.directives.submit', []
     controller : "MainCtrl"
     link:(scope,el,attr)->
       submitDrawerButton = document.getElementById("openSubmitDrawer")
-      submitToolbarButton = document.getElementById("openToolbar")
-      toolbar = document.getElementsByClassName('ta-toolbar')[0]
+#      submitToolbarButton = document.getElementById("openToolbar")
+#      toolbar = document.getElementsByClassName('ta-toolbar')[0]
 
       expandEditor = ()->
         $('#editor').css('top','0px')
@@ -20,7 +20,7 @@ angular.module 'lander.directives.submit', []
 
       compressEditor = ()->
         $('#editor').attr('on','false')
-        $('#editor').css('top','80px')
+        $('#editor').css('top','100px')
         $('#editor').css('left','30px')
         $('#editor').css('height','90%')
         $('#editor').css('width','93%')
@@ -53,6 +53,29 @@ angular.module 'lander.directives.submit', []
 
       $('#expand-icon').click(toggleEditorExpandPause)
       $('#editor').hover(toggleEditorExpand)
+
+      mq = window.matchMedia("(max-width: 649px)")
+      if (matchMedia)
+        WidthChange= (mq)->
+          if (mq.matches)
+            $('#toolbar').css('top','-70px')
+          else
+#            alert('ouhiuh')
+            $('#toolbar').css('top','10px')
+        mq.addListener(WidthChange)
+        WidthChange(mq)
+
+
+      $('#editor').click(()->
+          console.log($('#toolbar'))
+          if (mq.matches)
+           $('#toolbar').css('top','0px')
+        )
+
+      $('#editor').blur(()->
+        if (mq.matches)
+         $('#toolbar').css('top','-70px'))
+
       document.getElementsByClassName('ta-bind')[0].addEventListener 'focus',pauseCompress
       document.getElementsByClassName('ta-bind')[0].addEventListener 'blur',UnPauseCompress
       console.log document.getElementsByClassName('ta-toolbar')[0]
@@ -63,7 +86,7 @@ angular.module 'lander.directives.submit', []
           submitDrawerButton.style.transform='rotate(0deg)'
           submitDrawer.setAttribute('on','false')
         else
-          submitDrawer.style.width= '300px'
+          submitDrawer.style.width= '340px'
           submitDrawerButton.style.transform='rotate(180deg)'
           submitDrawer.setAttribute('on','true')
 
