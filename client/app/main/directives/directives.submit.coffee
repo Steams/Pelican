@@ -8,7 +8,6 @@ angular.module 'lander.directives.submit', []
     controller : "MainCtrl"
     link:(scope,el,attr)->
       submitDrawerButton = document.getElementById("openSubmitDrawer")
-#      submitToolbarButton = document.getElementById("openToolbar")
 #      toolbar = document.getElementsByClassName('ta-toolbar')[0]
 
       expandEditor = ()->
@@ -54,17 +53,54 @@ angular.module 'lander.directives.submit', []
       $('#expand-icon').click(toggleEditorExpandPause)
       $('#editor').hover(toggleEditorExpand)
 
-      mq = window.matchMedia("(max-width: 649px)")
+#      mq = window.matchMedia("(max-width: 649px)")
+      mqm = window.matchMedia("(max-width: 900px)")
+      submitDrawer = document.getElementById("submitDrawer")
       if (matchMedia)
         WidthChange= (mq)->
           if (mq.matches)
-            $('#toolbar').css('top','-70px')
-          else
-#            alert('ouhiuh')
+            console.log('under 900')
+            mqs = window.matchMedia("(max-width: 649px)")
             $('#toolbar').css('top','10px')
-        mq.addListener(WidthChange)
-        WidthChange(mq)
+            if (mqs.matches)
+              console.log('under 900 andunder 649')
+              $('#toolbar').css('top','-70px')
+            else
+              console.log('under 900 and NOT under 649')
+              $('#toolbar').css('top','10px')
+            submitDrawer.style.top= '-500px'
+            submitDrawer.setAttribute('on','false')
+            submitDrawer.style.height= 'auto'
+#            submitDrawer.style.width= $('#logo').width()
 
+
+          else
+            console.log('over 900')
+#            mqs = window.matchMedia("(max-width: 649px)")
+##            if (mqs.matches)
+#           $('#toolbar').css('top','10px')
+            submitDrawer.style.top= '0px'
+            submitDrawer.setAttribute('on','true')
+            submitDrawer.style.height= '100%'
+
+        mqm.addListener(WidthChange)
+        WidthChange(mqm)
+
+      mq = window.matchMedia("(max-width: 649px)")
+      if (matchMedia)
+        WidthChangeSmall= (mq)->
+          if (mq.matches)
+            console.log('under 649')
+            $('#submitDrawer').attr('class','')
+            $('#toolbar').css('top','-70px')
+#            $('#submitDrawer').width($('#submission-holder').width())
+          else
+            console.log('over 649')
+            $('#submitDrawer').attr('class','col-xs-3')
+            $('#toolbar').css('top','0px')
+
+        mq.addListener(WidthChangeSmall)
+        WidthChangeSmall(mq)
 
       $('#editor').click(()->
           console.log($('#toolbar'))
@@ -78,15 +114,23 @@ angular.module 'lander.directives.submit', []
 
       document.getElementsByClassName('ta-bind')[0].addEventListener 'focus',pauseCompress
       document.getElementsByClassName('ta-bind')[0].addEventListener 'blur',UnPauseCompress
-      console.log document.getElementsByClassName('ta-toolbar')[0]
-      submitDrawer = document.getElementById("submitDrawer")
+
+
       toggleSubmitDrawer = ->
         if submitDrawer.getAttribute('on') =='true'
-          submitDrawer.style.width= '0px'
+          if (mqm.matches)
+            submitDrawer.style.top= '-500px'
+          else
+            submitDrawer.style.width= '0px'
+
           submitDrawerButton.style.transform='rotate(0deg)'
           submitDrawer.setAttribute('on','false')
         else
-          submitDrawer.style.width= '340px'
+          if (mqm.matches)
+             submitDrawer.style.top= '0px'
+          else
+            submitDrawer.style.width= '340px'
+
           submitDrawerButton.style.transform='rotate(180deg)'
           submitDrawer.setAttribute('on','true')
 

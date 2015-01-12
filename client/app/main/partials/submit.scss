@@ -11,19 +11,25 @@
   height:100%;
   background-color:#fff;
   color:#ffffff;
-  width: 340px;
+//  width: 340px;
   max-width:340px;
   // width:270px;
   // width:0px;
   // flex-grow:1;
-  transition-property:width;
+  transition-property:top,height,width;
   transition-duration:0.5s;
   padding:0px;
   padding-top:50px;
   @media screen and (max-width: $break-medium) {
+//    width: 25%;
      position: absolute;
-     left:-999px;
-    // z-index: 1;
+    top:0px;
+    z-index: 4;
+  }
+  @media screen and (max-width: $break-small) {
+    width: 300px;
+//    height:Calc(100% - 70px);
+    padding-top:10px;
   }
 }
 
@@ -73,31 +79,20 @@
 }
 #openSubmitDrawer{
   position:fixed;
-  top:75px;
+  top:20px;
   opacity:1;
   left:10px;
   font-size:30px;
-  z-index: 2;
-  transform:rotate(180deg);
+  z-index: 5;
+  transform:rotate(0deg);
   transition-property:transform,top,opacity;
   transition-duration:0.5s;
   @media screen and (max-width: $break-medium) {
-    display: none;
+//    display: none;
   }
 }
-#openToolbar{
-  position:fixed;
-  top:75px;
-  right:10px;
-  font-size:30px;
-  z-index: 2;
-  transform:rotate(180deg);
-  transition-property:transform;
-  transition-duration:0.5s;
-  display: none;
-}
 
-#openToolbar:hover,#openSubmitDrawer:hover{
+#openSubmitDrawer:hover{
   cursor: pointer;
   font-size:2.3em;
 }
@@ -110,8 +105,8 @@
 
 #expand-icon{
   position: absolute;
-  top:20px;
-  left: 20px;
+  top:10px;
+  left: 10px;
   z-index: 2;
   color: $my-dark-orange;
   text-shadow: 1px 1px $dark;
@@ -127,7 +122,9 @@
   height: 160px;
   width: 100%;
 //  background-color:$my-dark-orange;
-  background-image: url('/assets/images/bluredGrid.jpg');
+  background-image: url(../assets/images/creatives-desk.jpg);
+  background-size: cover;
+  background-position-y: 100px;
 }
 #editor-background-fill{
   height:Calc(100% - 160px);
@@ -146,6 +143,7 @@
   }
   @media screen and (max-width: $break-small) {
     overflow-y: scroll;
+    overflow-x: hidden;
     transition-property: top;
     transition-duration: 0.3s;
     position:fixed;

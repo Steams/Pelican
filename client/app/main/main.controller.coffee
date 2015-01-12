@@ -32,7 +32,7 @@ angular.module 'landerApp'
   $scope.openNote =(index)->
     console.log($scope.$parent.$parent.notes)
     editor.innerHTML = $scope.$parent.$parent.notes[index].content
-    menu.style.left="-999px"
+#    menu.style.left="-999px"
 #    $scope.menuClose()
 #  $scope.openNote('54af38dfdc9ef9da1f58084b')
 
@@ -79,7 +79,7 @@ angular.module 'landerApp'
     $scope.notes = result
     console.log result
     $scope.notes.push({subject:'blank'})
-    $scope.openNote(3)
+    $scope.openNote(0)
   )
 
 

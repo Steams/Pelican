@@ -1,6 +1,5 @@
 div#submission-holder(class="row")
   i(class="fa fa-arrow-circle-right fa-3x" id="openSubmitDrawer")
-  i(class="fa fa-arrow-circle-left fa-3x" id="openToolbar" on="true")
   aside#submitDrawer(on="true"  class="col-xs-3")
     #sub-options-holder
       .sub-option
@@ -17,7 +16,7 @@ div#submission-holder(class="row")
         input(type="text" ng-model="submitSubject" placeholder="Subject")
       .sub-option
         //- p Tags
-        input(type="text" placeholder="Tags")
+        input(type="text" placeholder="Tags (not implemented atm)")
       .sub-option
         #submitButton(ng-click="submitNote()")
           span(class="glyphicon glyphicon-send")
