@@ -14,7 +14,8 @@ var bodyParser = require('body-parser');
 
 // Connect to database
 mongoose.connect(config.mongo.uri, config.mongo.options);
-
+//var notes = mongoose
+// use var= mongoose.createConnection and create 1 for users and one for notes
 // Populate DB with sample data
 if(config.seedDB) { require('./config/seed'); }
 

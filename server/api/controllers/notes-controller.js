@@ -16,6 +16,8 @@ module.exports.create = function(req, res) {
 module.exports.index = function(req, res) {
   console.log(req.params);
   return Note.find({}, function(err, notesList) {
+    console.log('noteslist');
+    console.log(notesList);
     return res.json(notesList);
   });
 };
@@ -34,7 +36,7 @@ module.exports.show = function(req, res) {
 
 module.exports.showBySub = function(req, res) {
   console.log('showBySub');
-  console.log(req.params.id);
+  console.log(req.params);
   // var str = req.params.query.toString().slice(0, - 1);
   // var x = JSON.parse(str);
   return Note.find({subject:req.params.id}, function(err, notesList) {

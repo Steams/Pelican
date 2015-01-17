@@ -122,7 +122,7 @@
   height: 160px;
   width: 100%;
 //  background-color:$my-dark-orange;
-  background-image: url('../assets/images/creatives-desk.jpg');
+  background-image: url(/assets/images/creatives-desk.jpg);
   background-size: cover;
   background-position-y: 100px;
 }
@@ -200,4 +200,3 @@
   transition-duration: 0.5s;
   @include box-shadow(0px,0px,10px,0px);
 }
-

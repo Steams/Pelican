@@ -13,7 +13,8 @@
         #user-icon-holder
           img#user-icon(src='assets/images/radcliffe.jpg')
         #edit-bar()
-          #create-note(class="fa fa-pencil" ng-click="createNote()")
+          a#create-note(ui-sref=".submit" class="fa fa-pencil" ng-click="createNote()")
+          a(ui-sref=".login" class="" ) login
 
   #menu-button(class='menu-button-default-animation' on='false' data-menu-Button)
     h1

@@ -1,0 +1,13 @@
+h1 login
+if (!isAuthenticated)
+  form(action="" method="post")
+    input(name="username" placeholder="username")
+    input(name="password" type="password")
+    input(type="submit" value="login")
+else
+  h2 logged in true
+  h2 #{user.name}
+  a(href="/logout") logout
+  
+//
+   Created by steams on 1/14/15.

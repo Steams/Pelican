@@ -11,10 +11,13 @@ angular.module 'landerApp', [
   'lander.directives.list',
   'lander.directives.submit',
   'lander.directives.menuButton'
+  'lander.directives.login'
   'textAngular'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider) ->
   $urlRouterProvider
-  .otherwise '/'
+#  .otherwise '/'
 
   $locationProvider.html5Mode true
+
+.value('api','/api/things/notes')

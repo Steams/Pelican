@@ -6,7 +6,6 @@ angular.module 'lander.directives.menuButton', []
     link : ($scope,el,attrs)->
 
       $scope.menuClose = ->
-        alert('kkhvkhb')
         $('#menu-button').trigger('click')
 
       addState = (element,state)->

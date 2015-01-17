@@ -1,0 +1,166 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'possport-local',
+1 verbose cli   'passport-http' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose readDependencies using package.json deps
+5 verbose cache add [ 'possport-local', null ]
+6 verbose cache add name=undefined spec="possport-local" args=["possport-local",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'possport-local',
+7 verbose parsed url   path: 'possport-local',
+7 verbose parsed url   href: 'possport-local' }
+8 verbose cache add [ 'passport-http', null ]
+9 verbose cache add name=undefined spec="passport-http" args=["passport-http",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'passport-http',
+10 verbose parsed url   path: 'passport-http',
+10 verbose parsed url   href: 'passport-http' }
+11 silly lockFile 434c2d15-possport-local possport-local
+12 verbose lock possport-local /home/steams/.npm/434c2d15-possport-local.lock
+13 silly lockFile 0f9a2ab8-passport-http passport-http
+14 verbose lock passport-http /home/steams/.npm/0f9a2ab8-passport-http.lock
+15 silly lockFile 434c2d15-possport-local possport-local
+16 silly lockFile 434c2d15-possport-local possport-local
+17 silly lockFile 0f9a2ab8-passport-http passport-http
+18 silly lockFile 0f9a2ab8-passport-http passport-http
+19 verbose addNamed [ 'possport-local', '' ]
+20 verbose addNamed [ null, '*' ]
+21 silly lockFile 2bddcf5a-possport-local possport-local@
+22 verbose lock possport-local@ /home/steams/.npm/2bddcf5a-possport-local.lock
+23 verbose addNamed [ 'passport-http', '' ]
+24 verbose addNamed [ null, '*' ]
+25 silly lockFile bb8dc255-passport-http passport-http@
+26 verbose lock passport-http@ /home/steams/.npm/bb8dc255-passport-http.lock
+27 silly addNameRange { name: 'possport-local', range: '*', hasData: false }
+28 silly addNameRange { name: 'passport-http', range: '*', hasData: false }
+29 verbose request where is /possport-local
+30 verbose request registry https://registry.npmjs.org/
+31 verbose request id 3a87c3ce8d66704d
+32 verbose url raw /possport-local
+33 verbose url resolving [ 'https://registry.npmjs.org/', './possport-local' ]
+34 verbose url resolved https://registry.npmjs.org/possport-local
+35 verbose request where is https://registry.npmjs.org/possport-local
+36 info trying registry request attempt 1 at 19:55:08
+37 http GET https://registry.npmjs.org/possport-local
+38 verbose request where is /passport-http
+39 verbose request registry https://registry.npmjs.org/
+40 verbose url raw /passport-http
+41 verbose url resolving [ 'https://registry.npmjs.org/', './passport-http' ]
+42 verbose url resolved https://registry.npmjs.org/passport-http
+43 verbose request where is https://registry.npmjs.org/passport-http
+44 info trying registry request attempt 1 at 19:55:08
+45 http GET https://registry.npmjs.org/passport-http
+46 http 404 https://registry.npmjs.org/possport-local
+47 verbose headers { date: 'Thu, 15 Jan 2015 00:55:36 GMT',
+47 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+47 verbose headers   'content-type': 'application/json',
+47 verbose headers   'cache-control': 'max-age=0',
+47 verbose headers   'content-length': '52',
+47 verbose headers   'accept-ranges': 'bytes',
+47 verbose headers   via: '1.1 varnish',
+47 verbose headers   age: '0',
+47 verbose headers   'x-served-by': 'cache-atl6225-ATL',
+47 verbose headers   'x-cache': 'MISS',
+47 verbose headers   'x-cache-hits': '0',
+47 verbose headers   'x-timer': 'S1421283336.228341,VS0,VE75',
+47 verbose headers   'keep-alive': 'timeout=10, max=50',
+47 verbose headers   connection: 'Keep-Alive' }
+48 silly registry.get cb [ 404,
+48 silly registry.get   { date: 'Thu, 15 Jan 2015 00:55:36 GMT',
+48 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+48 silly registry.get     'content-type': 'application/json',
+48 silly registry.get     'cache-control': 'max-age=0',
+48 silly registry.get     'content-length': '52',
+48 silly registry.get     'accept-ranges': 'bytes',
+48 silly registry.get     via: '1.1 varnish',
+48 silly registry.get     age: '0',
+48 silly registry.get     'x-served-by': 'cache-atl6225-ATL',
+48 silly registry.get     'x-cache': 'MISS',
+48 silly registry.get     'x-cache-hits': '0',
+48 silly registry.get     'x-timer': 'S1421283336.228341,VS0,VE75',
+48 silly registry.get     'keep-alive': 'timeout=10, max=50',
+48 silly registry.get     connection: 'Keep-Alive' } ]
+49 silly lockFile 2bddcf5a-possport-local possport-local@
+50 silly lockFile 2bddcf5a-possport-local possport-local@
+51 http 200 https://registry.npmjs.org/passport-http
+52 silly registry.get cb [ 200,
+52 silly registry.get   { date: 'Thu, 15 Jan 2015 00:55:36 GMT',
+52 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+52 silly registry.get     etag: '"4T296K58NFN12XCK6LTX9ILVV"',
+52 silly registry.get     'content-type': 'application/json',
+52 silly registry.get     'cache-control': 'max-age=60',
+52 silly registry.get     'content-length': '14161',
+52 silly registry.get     'accept-ranges': 'bytes',
+52 silly registry.get     via: '1.1 varnish',
+52 silly registry.get     age: '0',
+52 silly registry.get     'x-served-by': 'cache-atl6220-ATL',
+52 silly registry.get     'x-cache': 'HIT',
+52 silly registry.get     'x-cache-hits': '1',
+52 silly registry.get     'x-timer': 'S1421283336.360775,VS0,VE315',
+52 silly registry.get     vary: 'Accept',
+52 silly registry.get     'keep-alive': 'timeout=10, max=50',
+52 silly registry.get     connection: 'Keep-Alive' } ]
+53 silly addNameRange number 2 { name: 'passport-http', range: '*', hasData: true }
+54 silly addNameRange versions [ 'passport-http',
+54 silly addNameRange   [ '0.1.0',
+54 silly addNameRange     '0.1.1',
+54 silly addNameRange     '0.1.2',
+54 silly addNameRange     '0.1.3',
+54 silly addNameRange     '0.1.4',
+54 silly addNameRange     '0.2.0',
+54 silly addNameRange     '0.2.1',
+54 silly addNameRange     '0.2.2' ] ]
+55 verbose addNamed [ 'passport-http', '0.2.2' ]
+56 verbose addNamed [ '0.2.2', '0.2.2' ]
+57 silly lockFile 1000ad4f-passport-http-0-2-2 passport-http@0.2.2
+58 verbose lock passport-http@0.2.2 /home/steams/.npm/1000ad4f-passport-http-0-2-2.lock
+59 silly lockFile dedb0c3c-ort-http-passport-http-0-2-2-tgz https://registry.npmjs.org/passport-http/-/passport-http-0.2.2.tgz
+60 verbose lock https://registry.npmjs.org/passport-http/-/passport-http-0.2.2.tgz /home/steams/.npm/dedb0c3c-ort-http-passport-http-0-2-2-tgz.lock
+61 verbose addRemoteTarball [ 'https://registry.npmjs.org/passport-http/-/passport-http-0.2.2.tgz',
+61 verbose addRemoteTarball   '2501314c0ff4a831e8a51ccfdb1b68f5c7cbc9f6' ]
+62 info retry fetch attempt 1 at 19:55:35
+63 verbose fetch to= /tmp/npm-29883-6rQGHxMv/registry.npmjs.org/passport-http/-/passport-http-0.2.2.tgz
+64 http GET https://registry.npmjs.org/passport-http/-/passport-http-0.2.2.tgz
+65 http 200 https://registry.npmjs.org/passport-http/-/passport-http-0.2.2.tgz
+66 silly lockFile dedb0c3c-ort-http-passport-http-0-2-2-tgz https://registry.npmjs.org/passport-http/-/passport-http-0.2.2.tgz
+67 silly lockFile dedb0c3c-ort-http-passport-http-0-2-2-tgz https://registry.npmjs.org/passport-http/-/passport-http-0.2.2.tgz
+68 silly lockFile 1000ad4f-passport-http-0-2-2 passport-http@0.2.2
+69 silly lockFile 1000ad4f-passport-http-0-2-2 passport-http@0.2.2
+70 silly lockFile bb8dc255-passport-http passport-http@
+71 silly lockFile bb8dc255-passport-http passport-http@
+72 error 404 404 Not Found: possport-local
+72 error 404
+72 error 404 'possport-local' is not in the npm registry.
+72 error 404 You should bug the author to publish it
+72 error 404 It was specified as a dependency of 'lander'
+72 error 404
+72 error 404 Note that you can also install from a
+72 error 404 tarball, folder, or http url, or git url.
+73 error System Linux 3.2.0-72-generic
+74 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "--save" "possport-local" "passport-http"
+75 error cwd /home/steams/Development/lander
+76 error node -v v0.10.33
+77 error npm -v 1.4.28
+78 error code E404
+79 verbose exit [ 1, true ]

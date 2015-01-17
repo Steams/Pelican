@@ -1,0 +1,24 @@
+#login-holder(class="row")
+  #login-list(class="col-sm-7")
+    ul
+      li.login-list-item(distance = '2')
+        p.login-list-item-title About
+        .login-list-item-content
+      li.login-list-item(distance = '1')
+        p.login-list-item-title Sign Up
+        .login-list-item-content
+      li.login-list-item(active distance = '0')
+        p.login-list-item-title Login
+        .login-list-item-content
+          #login-user-icon-holder
+            img#login-user-icon(src='assets/images/radcliffe.jpg')
+          form#login-credentials
+            input#login-username(placeholder="username" class="login-input login-input-username" ng-model="username")
+            input#login-password(type="password" placeholder="password" class="login-input" ng-model="password")
+            input(type="submit" value="Login" ng-click="login()")
+      li.login-list-item(distance = '-1')
+        p.login-list-item-title Guest
+        .login-list-item-content
+
+
+  #login-info(class="col-sm-5")
