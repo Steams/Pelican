@@ -1,0 +1,145 @@
+#home-container{
+  position: absolute;
+  display: flex;
+  height: auto;
+  width: 100%;
+  top:60px;
+  padding-top: 1px;
+  padding-right: 50px;
+  padding-left: 50px;
+//  background-color: #69726D;
+  background-color: #EEE8D8;
+}
+
+.home-column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+}
+
+#home-column-1{
+  width: 280px;
+  margin-right: 1px;
+  ul{
+    width: 100%;
+  }
+}
+
+.home-column-list-vertical,.home-column-list-horizontal{
+  flex-grow: 1;
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  li{
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #EEE8D8;
+    border-top: 1px solid #EEE8D8;
+
+  }
+}
+
+.home-column-list-vertical{
+  flex-direction: column;
+
+  li{
+    width: 100%;
+    height: 250px;
+  }
+}
+.home-column-list-horizontal{
+  flex-grow:0;
+  flex-direction: row;
+  flex-wrap: wrap;
+//  align-content: flex-start;
+//  justify-content: center;
+  li{
+//    flex-grow: 1;
+  }
+}
+
+.home-column-list-header{
+  display: block;
+  background-color: #fff;
+  height: 50px;
+  margin-bottom: 1px;
+}
+
+.home-column-list-content{
+  background-color: #fff;
+  flex-grow: 1;
+}
+
+#home-column-2{
+  flex-grow: 1;
+  flex-direction: column;
+//  align-items: flex-start;
+//  align-items: flex-start;
+//  justify-content: flex-start;
+}
+
+#home-center-column-top{
+  width: 100%;
+  height:auto;
+//  margin-bottom: 1px;
+
+  li{
+    width: 33.33%;
+    height: 280px;
+    background-color: #fff;
+  }
+
+  #greeting{
+    width:33.33%;
+  }
+
+  #explanation{
+    width: 33.33%;
+  }
+
+  #login{
+    width: 33.33%;
+  }
+  #signUp{
+    flex-grow: 2;
+  }
+
+}
+
+#home-center-column-bottom{
+//  flex-grow: 1;
+  width: 100%;
+//  margin-top: 1px;
+
+}
+
+#something{
+  width: 70%;
+  height: inherit;
+  background-color: #fff;
+  border-right: 1px solid #EEE8D8;
+  border-top: 1px solid #EEE8D8;
+}
+
+.long{
+  height: 450px !important;
+}
+
+
+li[color="purple"] .home-column-list-content{
+//  background-color: #261a3b;
+}
+
+li[color="green"] .home-column-list-content{
+//  background-color: #004444;
+}
+
+li[color="orange"] .home-column-list-content{
+//  background-color: $my-dark-orange;
+}
+
+li[color="black"] .home-column-list-content{
+//  background-color: #000000;
+}

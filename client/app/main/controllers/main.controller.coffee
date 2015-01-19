@@ -8,9 +8,10 @@ angular.module 'landerApp'
   $scope.init = ()->
     notesFactory.queryNotes()
     $scope.checkLogin()
+    $scope.editor =  document.getElementsByClassName('ta-bind')[0]
 
   $scope.holder = {}
-  editor =  document.getElementsByClassName('ta-bind')[0]
+#  editor =  document.getElementsByClassName('ta-bind')[0]
   Notes = $resource('/api/things/notes/:id',{id:'@id'})
   Login = $resource('/login')
   CheckLogin = $resource('/loginInfo')
@@ -25,6 +26,7 @@ angular.module 'landerApp'
 #    )
 
   $scope.openNote =(index)->
+    editor =  document.getElementsByClassName('ta-bind')[0]
     editor.innerHTML = $scope.notes()[index].content
 
   $scope.loadList = (subject)->

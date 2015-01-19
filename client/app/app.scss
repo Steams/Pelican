@@ -15,20 +15,26 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     padding: 0.2em 0;
 }
 body,html{
+//  box-sizing: border-box;
   position:absolute;
   height:100%;
   width:100%;
-  overflow: hidden;
+//  padding-left:30px;
+//  padding-right: 30px;
+
+//  overflow: hidden;
 }
 
 body{
-  background-color:#E8EBF0;
+//  background-color:#E8EBF0;
+  background-color: #fff;
 }
 
 
 // Component styles are injected through grunt
 // injector
 @import 'main/a_variables.scss';
+@import 'main/home/home.scss';
 @import 'main/main.scss';
 @import 'main/mixins.scss';
 @import 'main/partials/editor.scss';

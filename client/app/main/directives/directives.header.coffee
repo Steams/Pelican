@@ -6,4 +6,6 @@ angular.module 'lander.directives.header', []
     replace : true
     templateUrl: 'app/main/partials/header.html'
     controller : "MainCtrl"
+    link:(scope,el,attrs)->
+#      alert('asdas')
   }

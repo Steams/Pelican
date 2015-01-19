@@ -9,13 +9,13 @@ angular.module 'landerApp'
     controller: ''}
 #  adding controller above might fix/break scoping problems
   )
-  .state('main.submit',{
-     url: 'submit'
+  .state('submit',{
+     url: '/submit'
      templateUrl: 'app/main/submit.html'
      controller: 'MainCtrl'}
   )
-  .state('main.login',{
-     url:'login'
-     templateUrl:'app/main/partials/login.html'
+  .state('login',{
+     url:'/login'
+     templateUrl:'app/main/login.html'
      controller: 'MainCtrl'}
   )

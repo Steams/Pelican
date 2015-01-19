@@ -6,12 +6,13 @@ angular.module 'landerApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
+  'lander.directives.login'
   'lander.directives.header',
   'lander.directives.menu',
   'lander.directives.list',
   'lander.directives.submit',
   'lander.directives.menuButton'
-  'lander.directives.login'
+  'home.directives.home'
   'textAngular'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider) ->

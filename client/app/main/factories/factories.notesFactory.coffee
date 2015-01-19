@@ -26,6 +26,6 @@ angular.module 'landerApp'
       ,
       (err)-> console.log err
     )
-    
+
   return factory
 ]

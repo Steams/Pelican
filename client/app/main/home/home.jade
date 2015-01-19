@@ -1,0 +1,19 @@
+#home-container
+  #home-column-1(class="home-column")
+    ul.home-column-list-vertical
+      home-list-item(ng-repeat = "item in columnOne" class="long")
+  #home-column-2(class="home-column")
+      ul#home-center-column-top.home-column-list-horizontal
+        li#greeting
+        li#explanation
+        li#login
+        li#moret
+        li#signUp
+      ul#home-center-column-bottom.home-column-list-horizontal
+        #something
+        ul.home-column-list-vertical
+          home-list-item(ng-repeat = "item in columnTwo" class="short")
+
+  //#home-column-3(class="home-column")
+    ul.home-column-list
+      home-list-item(ng-repeat = "item in columnThree")

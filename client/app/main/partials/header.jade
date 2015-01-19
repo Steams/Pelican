@@ -9,13 +9,14 @@
       #user-greeting(class='col-sm-4')
         div Welcome Back
       #user-bar(class='col-sm-8')
-        #user-name {{name}}
+        #user-name
+          h4 {{name}}
         #user-icon-holder
           img#user-icon(src='assets/images/radcliffe.jpg')
         #edit-bar()
           a#create-note(ui-sref=".submit" class="fa fa-pencil" ng-click="createNote()")
           a(ui-sref=".login" class="" ) login
 
-  #menu-button(class='menu-button-default-animation' on='false' data-menu-Button)
+  //#menu-button(class='menu-button-default-animation' on='false' data-menu-Button)
     h1
       span(class='fa fa-book')

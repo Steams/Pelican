@@ -6,8 +6,9 @@ angular.module 'lander.directives.submit', []
     replace : true
     templateUrl: 'app/main/partials/submit.html'
     controller : "MainCtrl"
-    link:(scope,el,attr)->
+    link:($scope,el,attr)->
       create = ->
+
         console.log('creating submission view')
         submitDrawerButton = document.getElementById("openSubmitDrawer")
   #      toolbar = document.getElementsByClassName('ta-toolbar')[0]
