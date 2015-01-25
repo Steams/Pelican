@@ -54,8 +54,9 @@ angular.module 'lander.directives.submit', []
             $('#editor').attr('on','false')
 
         $('#expand-icon').click(toggleEditorExpandPause)
-        $('#editor').hover(toggleEditorExpand)
-
+#        $('#editor').hover(toggleEditorExpand)
+        $('#editor').mouseenter(expandEditor)
+        $('#editor').mouseleave(compressEditor)
   #      mq = window.matchMedia("(max-width: 649px)")
         mqm = window.matchMedia("(max-width: 900px)")
         submitDrawer = document.getElementById("submitDrawer")

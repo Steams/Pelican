@@ -6,6 +6,7 @@ Note = require('../models/note-model.js');
 module.exports.create = function(req, res) {
   var note;
   note = new Note(req.body);
+  console.log('req body');
   console.log(req.body);
   console.log('note ' + note);
   return note.save(function(err, result) {

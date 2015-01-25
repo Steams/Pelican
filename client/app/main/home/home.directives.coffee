@@ -40,4 +40,18 @@ angular.module 'home.directives.home', []
     replace : true
     templateUrl : 'app/main/home/listItem.html'
     controller : 'homeCtrl'
+    link:(scope,element,attr)->
+      element.on 'mousemove',(event)->
+#        console.log element
+#        console.log element[0].firstChild.style.backgroundPositionX
+#        console.log 'offset left: ' +element[0].offsetLeft
+#        console.log 'offset Top: ' +element[0].offsetTop
+        offsetX = event.pageX - element[0].offsetLeft
+        offsetY = event.pageY - element[0].offsetTop - 60
+#        console.log 'X: '+offsetX+' Y: '+ offsetY
+        element[0].firstChild.style.backgroundPositionX = 'Calc(50% - ' + offsetX/15 + 'px)'
+        element[0].firstChild.style.backgroundPositionY = 'Calc(50% - ' + offsetY/15 + 'px)'
+        element[0].firstChild.offsetLeft +=offsetX
+        element[0].firstChild.offsetTop +=offsetY
+
   }

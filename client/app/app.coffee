@@ -13,6 +13,7 @@ angular.module 'landerApp', [
   'lander.directives.submit',
   'lander.directives.menuButton'
   'home.directives.home'
+  'lander.directives.pulsingButton'
   'textAngular'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider) ->

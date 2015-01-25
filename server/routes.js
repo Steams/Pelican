@@ -17,7 +17,7 @@ module.exports = function(app) {
   // Insert routes below
 
   app.use(bodyParser.urlencoded({
-    extended: false
+    extended: true
   }));
   app.use(cookieParser());
   app.use(expressSession({

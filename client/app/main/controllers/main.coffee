@@ -19,3 +19,8 @@ angular.module 'landerApp'
      templateUrl:'app/main/login.html'
      controller: 'MainCtrl'}
   )
+  .state('subject',{
+    url:'/api/things/notes/subject*'
+    templateUrl:'app/main/submit.html'
+    controller: 'MainCtrl'}
+  )

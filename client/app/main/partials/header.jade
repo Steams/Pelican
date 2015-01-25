@@ -7,16 +7,17 @@
       #logo-lander L A N D E R
     #second-bar(class='col-xs-9 row' style="padding:0;margin:0;")
       #user-greeting(class='col-sm-4')
-        div Welcome Back
+        div(ng-show="name" class="ng-hide") Welcome Back
+        div(ng-hide="name") Welcome to Lander
       #user-bar(class='col-sm-8')
         #user-name
           h4 {{name}}
-        #user-icon-holder
+        #user-icon-holder(ng-hide="!name")
           img#user-icon(src='assets/images/radcliffe.jpg')
         #edit-bar()
           a#create-note(ui-sref=".submit" class="fa fa-pencil" ng-click="createNote()")
           a(ui-sref=".login" class="" ) login
 
-  //#menu-button(class='menu-button-default-animation' on='false' data-menu-Button)
+  #menu-button(class='menu-button-default-animation' on='false' data-menu-Button)
     h1
       span(class='fa fa-book')

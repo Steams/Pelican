@@ -5,12 +5,63 @@
   width: 100%;
   top:60px;
   padding-top: 1px;
-  padding-right: 50px;
-  padding-left: 50px;
 //  background-color: #69726D;
-  background-color: #EEE8D8;
+  background-color: transparent;
+//  background-image: url(../assets/images/autumn-leaves.jpg);
+  background-size: cover;
+  z-index: 2;
 }
 
+#home-container::after{
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
+  content: "";
+  top:0px;
+  left:0px;
+  background-image: url(/assets/images/creatives-desk.jpg);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  filter: blur(10px) brightness(1);
+  z-index: -1;
+}
+
+#new-note{
+
+  display: block;
+  color:$dark;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  top:70px;
+  right:50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: $my-dark-orange;
+  box-shadow:  4px 2px 10px 0px rgba(0,0,0,0.55);
+  border-radius: 30px 30px 30px 30px;
+  border: 1px solid $my-dark-orange;
+  z-index: 5;
+  transition-property: width,height,line-height,top;
+  transition-duration: 0.3s;
+
+  p{
+    transition-property: font-size;
+    transition-duration: 0.3s;
+  }
+}
+
+#new-note:hover{
+  cursor: pointer;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  p{
+//    font-size: 1.5em;
+  }
+}
 .home-column{
   display: flex;
   flex-direction: column;
@@ -20,7 +71,8 @@
 
 #home-column-1{
   width: 280px;
-  margin-right: 1px;
+//  margin-right: 1px;
+//  margin-top: 1px;
   ul{
     width: 100%;
   }
@@ -33,11 +85,47 @@
   padding: 0;
 
   li{
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid #EEE8D8;
-    border-top: 1px solid #EEE8D8;
+    position: relative;
+    margin-top: 1px;
+    list-style: none;
 
+    .home-list-item-background {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(135, 140, 140, 0.70);
+      opacity: 0.8;
+      background-image: url(../assets/images/life-line.jpg);
+      background-size:450%;
+      background-origin: content-box;
+      background-repeat: no-repeat;
+      background-position: center center;
+      transition-property: background-position-y,background-position-x;
+//      transition-duration: 0.3s;
+//      filter:blur(2px);
+      background-position-y: 50%;
+      background-position-x: 50%;
+      margin:1px;
+
+      img{
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        margin:auto;
+        height: 400px;
+        width: inherit;
+      }
+    }
+
+    .home-list-item-foreground{
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
   }
 }
 
@@ -60,16 +148,48 @@
   }
 }
 
+.home-column-list-header:before{
+  position: absolute;
+  content: '';
+  top:50%;
+  transform:translate(0,-50%);
+  left:10px;
+  width: 15px;
+  height: 15px;
+//  background-color: red;
+  border-radius: 30px 30px 30px 30px;
+  border: 2px solid #05e2ba;
+}
+
 .home-column-list-header{
+//  order: 2;
+  position: relative;
   display: block;
-  background-color: #fff;
+  background-color: #F8F8F8;
   height: 50px;
-  margin-bottom: 1px;
+  line-height: 50px;
+  margin-right: 1px;
+
+  margin-top: 1px;
+
+  span.left{
+    float: left;
+    margin-left: 40px;
+  }
+  span.right{
+    margin-right: 30px;
+    float: right;
+  }
 }
 
 .home-column-list-content{
-  background-color: #fff;
+//  order: 1;
+  position: relative;
+  background-color: rgba(255,255,255,0.7);
+//  background-color: #f6dfff;
   flex-grow: 1;
+  margin-right: 1px;
+
 }
 
 #home-column-2{
@@ -80,30 +200,144 @@
 //  justify-content: flex-start;
 }
 
+#home-center-column-top:before{
+  background-image: url(../assets/images/milk-no-sugar.jpg);
+  position: absolute;
+  content:"";
+  filter:blur(2px);
+}
 #home-center-column-top{
+  position: relative;
   width: 100%;
   height:auto;
+
+
 //  margin-bottom: 1px;
 
   li{
-    width: 33.33%;
-    height: 280px;
-    background-color: #fff;
+    width: Calc(33.333% - 1px);
+    height: 270px;
+//    background-color: #fff;
+    color: #333333;
+//    background-color: rgba(120,120,120,0.8);
+    background-color: rgba(188, 225, 255, 0.4);
+    margin-right: 1px;
+
+//    margin-bottom: 1px;
   }
 
   #greeting{
-    width:33.33%;
+    position: relative;
+    width: 55%;
+    padding: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
+//    display:none;
+
+    p{
+      display: inline-block;
+      font-family: 'Raleway';
+      font-weight: 200;
+      font-size: 30px;
+      color: #ffffff;
+      text-shadow: 1px 2px 3px $dark;
+//      display:none;
+    }
+
+    .quote{
+      display: inline-block;
+      position: relative;
+//      color: #6c6c6c;
+      font-size: 20px;
+      color: #ddd2bb;
+      padding:10px;
+    }
+
+    .quote-left{
+      top:-10px;
+    }
+    .quote-right{
+      top:10px;
+    }
+
+//    .quote:before{
+//      position: absolute;
+//      left: -30px;
+//      top: 0px;
+//      content:"";
+//      height: 20px;
+//      width: 20px;
+//      border-radius: 30px 30px 30px 30px;
+//      border:3px solid #009688;
+//
+//    }
+
+    #gpa{
+      display: inline-block;
+      span{
+        font-family: 'Ubuntu';
+        font-weight: 700;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: $my-dark-orange;
+      }
+    }
+
+    #anxiety{
+      position: relative;
+//      margin-left: 40%;
+      display: inline-block;
+      span{
+        color: #2e81b3;
+        font-family: 'Ubuntu';
+        font-weight: 700;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    #pelican{
+      display: block;
+      span:nth-child(1){
+        color: #747474;
+        font-weight: 300;
+        padding: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+      }
+    }
+
+    #lander{
+      display: block;
+      float: right;
+      font-size: 60px;
+      color: $my-dark-orange;
+      font-family: 'Ubuntu';
+//      text-shadow: none;
+
+    }
+
   }
 
-  #explanation{
-    width: 33.33%;
-  }
 
-  #login{
-    width: 33.33%;
+  #greeting:hover{
+
   }
-  #signUp{
+  #box2{
     flex-grow: 2;
+  }
+
+
+  #box3{
+//    width: 33%;
+  }
+
+  #box4{
+//    width: 45%;
+  }
+  #box5{
+//    flex-grow: 2;
   }
 
 }
@@ -114,32 +348,42 @@
 //  margin-top: 1px;
 
 }
-
+#something:before{
+  position: absolute;
+  background-color: rgba(246, 223, 255, 0.40);
+  content:"";
+  width: 100%;
+  height: 100%;
+}
 #something{
-  width: 70%;
+  position: relative;
+  width: 65%;
   height: inherit;
-  background-color: #fff;
-  border-right: 1px solid #EEE8D8;
-  border-top: 1px solid #EEE8D8;
+  background-color: rgba(100,100,100,0.8);
+//  background-color: #00CACC;
+//  border-right: 1px solid #EEE8D8;
+//  border-top: 1px solid #EEE8D8;
+  margin-right: 1px;
+  margin-top: 1px;
 }
 
 .long{
-  height: 450px !important;
+  height: 400px !important;
 }
 
 
 li[color="purple"] .home-column-list-content{
-//  background-color: #261a3b;
+//  background-color: rgba(113, 73, 249, 0.86);
 }
 
 li[color="green"] .home-column-list-content{
-//  background-color: #004444;
+//  background-color: rgba(5, 186, 152, 0.64);
 }
 
 li[color="orange"] .home-column-list-content{
-//  background-color: $my-dark-orange;
+//  background-color: rgba(226, 142, 111, 0.86);
 }
 
 li[color="black"] .home-column-list-content{
-//  background-color: #000000;
+//  background-color: rgba(100,100,100,0.8);
 }

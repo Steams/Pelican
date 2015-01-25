@@ -1,14 +1,24 @@
 #home-container
+  a#new-note(ui-sref="submit" data-pulsing-button)
+    p( class="fa fa-plus")
   #home-column-1(class="home-column")
     ul.home-column-list-vertical
-      home-list-item(ng-repeat = "item in columnOne" class="long")
+      home-list-item(ng-repeat = "item in columnOne" class="long" imgs="uihiuhiu")
   #home-column-2(class="home-column")
       ul#home-center-column-top.home-column-list-horizontal
         li#greeting
-        li#explanation
-        li#login
-        li#moret
-        li#signUp
+          //p#gpa GPA
+          //  span Up
+          //p#anxiety Anxiety
+          //  span Down
+          //p#pelican No
+          //  span PELICAN
+          //  span left Behind
+          //p#lander Lander
+        li#box2
+        li#box3
+        li#box4
+        li#box5
       ul#home-center-column-bottom.home-column-list-horizontal
         #something
         ul.home-column-list-vertical

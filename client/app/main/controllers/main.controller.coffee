@@ -9,6 +9,9 @@ angular.module 'landerApp'
     notesFactory.queryNotes()
     $scope.checkLogin()
     $scope.editor =  document.getElementsByClassName('ta-bind')[0]
+    setTimeout(()->
+      $scope.openNote 3
+    ,30)
 
   $scope.holder = {}
 #  editor =  document.getElementsByClassName('ta-bind')[0]

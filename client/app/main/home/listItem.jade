@@ -1,7 +1,13 @@
 
 li( color="{{item.color}}")
-  .home-column-list-header {{item.header}}
-  .home-column-list-content
+  .home-list-item-background
+    img(src="/assets/images/radlogotrans.svg")
+  .home-list-item-foreground
+      .home-column-list-header
+        span.left {{item.header}}
+        span.right btns
+      .home-column-list-content
+
 
 //
    Created by steams on 1/18/15.

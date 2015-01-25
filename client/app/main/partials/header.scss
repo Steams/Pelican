@@ -5,49 +5,49 @@
 }
 
 .menu-button-default-animation{
-  bottom:Calc(100% - 120px);
+  bottom:Calc(100% - 110px);
 //  @media screen and (max-width: $break-tablet) {
 ////    bottom:Calc(100% - 150px);
 //  }
 }
 
 .menu-button-default-animation:hover{
-  bottom:Calc(100% - 130px);
+  bottom:Calc(100% - 120px);
 //  @media screen and (max-width: $break-tablet) {
 //    bottom:Calc(100% - 170px);
 //  }
 }
 
 .menu-button-default-noHover-animation{
-  bottom:Calc(100% - 120px);
+  bottom:Calc(100% - 110px);
 //  @media screen and (max-width: $break-tablet) {
 //    bottom:Calc(100% - 150px);
 //  }
 }
 
 .menu-button-close-start-animation{
-  bottom:Calc(100% - 140px);
+  bottom:Calc(100% - 130px);
 //  @media screen and (max-width: $break-tablet) {
 //    bottom:Calc(100% - 180px);
 //  }
 }
 
 .menu-button-close-end-animation{
-  bottom:Calc(100% - 90px);
+  bottom:Calc(100% - 80px);
 //  @media screen and (max-width: $break-tablet) {
 //    bottom:Calc(100% - 130px);
 //  }
 }
 
 .menu-button-close-hover-animation{
-  bottom:Calc(100% - 90px);
+  bottom:Calc(100% - 80px);
 //  @media screen and (max-width: $break-tablet) {
 //    bottom:Calc(100% - 130px);
 //  }
 }
 
 .menu-button-close-hover-animation:hover{
-  bottom:Calc(100% - 100px);
+  bottom:Calc(100% - 90px);
 //  @media screen and (max-width: $break-tablet) {
 //    bottom:Calc(100% - 140px);
 //  }
@@ -102,7 +102,7 @@
   background-color:$my-dark-orange;
   margin:0px;
   z-index: 5;
-  @include box-shadow(0px,1px,10px,0px);
+  @include box-shadow(0px,1px,5px,0px);
 }
 
 #logo{
