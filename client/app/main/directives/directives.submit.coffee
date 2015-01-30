@@ -14,23 +14,27 @@ angular.module 'lander.directives.submit', []
   #      toolbar = document.getElementsByClassName('ta-toolbar')[0]
 
         expandEditor = ()->
-          $('#editor').css('top','0px')
-          $('#editor').css('left','0px')
-          $('#editor').css('height','100%')
-          $('#editor').css('width','100%')
-          $('#editor').attr('on','true')
+          if $('#editor').attr('on')!='paused' && $('#editor').attr('on')!='true-paused'
+            $('#editor').css('top','0px')
+            $('#editor').css('left','0px')
+            $('#editor').css('height','100%')
+            $('#editor').css('width','100%')
+            $('#editor').attr('on','true')
 
         compressEditor = ()->
-          $('#editor').attr('on','false')
-          $('#editor').css('top','100px')
-          $('#editor').css('left','30px')
-          $('#editor').css('height','90%')
-          $('#editor').css('width','93%')
+          if $('#editor').attr('on')!='paused' && $('#editor').attr('on')!='true-paused'
+            $('#editor').attr('on','false')
+            $('#editor').css('top','100px')
+            $('#editor').css('left','30px')
+            $('#editor').css('height','90%')
+            $('#editor').css('width','93%')
 
 
 
         toggleEditorExpand = ()->
-          if $('#editor').attr('on')== 'true'
+          if $('#editor').attr('on')== 'true' || $('#editor').attr('on')== 'true-paused'
+            # $('#editor').attr('on','true')
+            # alert('asd')
             compressEditor()
           else
             if $('#editor').attr('on')== 'false'
@@ -38,6 +42,8 @@ angular.module 'lander.directives.submit', []
 
         toggleEditorExpandPause= ()->
           if $('#editor').attr('on')== 'true-paused'
+            # alert('ad')
+            $('#editor').attr('on','true')
             compressEditor()
           else
             if $('#editor').attr('on')== 'false'

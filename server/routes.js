@@ -10,6 +10,8 @@ var passport = require('passport');
 var passportLocal = require('passport-local');
 var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
+var Models = require('./api/models/lander-models');
+var User = Models.userModel;
 
 // var express = require('express');
 module.exports = function(app) {
@@ -31,12 +33,14 @@ module.exports = function(app) {
   app.use(passport.session());
 
   passport.use(new passportLocal.Strategy(function(username,password,done){
-    if(username === password){
-      done(null,{id:username, name:username});
-    }
-    else{
-      done(null,null);
-    }
+    User.find({where:{name:username} }).then(function(user){
+      if (password == user.password){
+        done(null,{id:user.id, name:username});
+      }
+      else{
+          done(null,{});
+      }
+    });
   }));
 
   passport.serializeUser(function(user,done){
@@ -44,8 +48,13 @@ module.exports = function(app) {
   });
 
   passport.deserializeUser(function(id,done){
-    done(null, {id:id,name:id});
+    User.find({where:{id:id}}).then(function(user){
+      done(null, {id:id,name:user.name});
+    });
   });
+
+  app.use('/api/things', require('./api/thing'));
+
   app.post('/login',passport.authenticate('local'),function(req,res){
     // return jso object of user data on is authenticated in req
     // res.redirect('/login');
@@ -69,8 +78,6 @@ module.exports = function(app) {
     // req.logout();
       // res.redirect('/login');
   });
-  app.use('/api/things', require('./api/thing'));
-
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')
    .get(errors[404]);

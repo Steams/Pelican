@@ -6,7 +6,7 @@ angular.module 'landerApp'
     defer = $q.defer()
     if subject
       if subject != "all" && subject != "All"
-        $http.get(api+'/subject/'+subject)
+        $http.get(api+'/subjects/'+subject)
         .success (res)->
           defer.resolve(res)
 #          console.log(res)

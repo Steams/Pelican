@@ -10,7 +10,7 @@ angular.module 'landerApp'
     $scope.checkLogin()
     $scope.editor =  document.getElementsByClassName('ta-bind')[0]
     setTimeout(()->
-      $scope.openNote 3
+      $scope.openNote 0
     ,30)
 
   $scope.holder = {}
@@ -29,9 +29,27 @@ angular.module 'landerApp'
 #    )
 
   $scope.openNote =(index)->
+    $scope.selected = index;
     editor =  document.getElementsByClassName('ta-bind')[0]
     editor.innerHTML = $scope.notes()[index].content
+    view = {}
+    view.noteId = $scope.notes()[index].id
+    view.userName = $scope.name
+    notesFactory.view(view);
+    # console.log('Viewing note title : '+ $scope.notes()[index].title +'Viewed by : '+view.userName)
 
+    # editor.innerHTML = $scope.notes().find({title:index}).content
+
+  $scope.likeNote = ()->
+    console.log('selected :'+$scope.selected)
+    index = $scope.selected
+    editor = document.getElementsByClassName('ta-bind')[0]
+    like = {}
+    like.noteId = $scope.notes()[index].id
+    like.userName = $scope.name;
+    # make service for liking note
+    notesFactory.like(like)
+    # console.log('Liked note title : '+$scope.notes()[index].title+'Liked note User :'+like.userName)
   $scope.loadList = (subject)->
    notesFactory.loadList(subject)
 
@@ -57,7 +75,10 @@ angular.module 'landerApp'
 
     login.$save (result)->
       console.log result
-      $scope.$parent.name = result.user.name
+      if result.user.name
+        $scope.$parent.name = result.user.name
+      else
+        alert('user does not exist')
 
 
   $scope.checkLogin = ->

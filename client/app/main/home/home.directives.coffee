@@ -1,7 +1,7 @@
 angular.module 'home.directives.home', []
 .controller 'homeCtrl',['$scope',($scope)->
   $scope.columnOne = [
-    {header:'Shannon',color:'green'},
+    {header:'Rochelle',color:'green'},
     {header:'second header',color:'purple'},
     {header:'third header',color:'green'}
     {header:'forth header',color:'purple'}

@@ -121,6 +121,22 @@
   cursor: pointer;
   font-size: 27px;
 }
+
+#like-icon{
+  position: absolute;
+  top:45px;
+  left: 10px;
+  z-index: 2;
+  color: #D23A3A;
+  text-shadow: 1px 1px $dark;
+  font-size: 25px;
+  transition-property: font-size;
+  transition-duration: 0.2s;
+}
+#like-icon:hover{
+  cursor: pointer;
+  font-size: 27px;
+}
 #editor-toolbar-holder{
   height: 160px;
   width: 100%;

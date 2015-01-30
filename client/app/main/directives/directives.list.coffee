@@ -4,6 +4,6 @@ angular.module 'lander.directives.list', []
     restrict : 'E'
     scope :true
     replace : true
-    templateUrl: 'app/main/partials/list.html'
+    templateUrl: 'app/main/partials/noteList.html'
     controller : "MainCtrl"
   }

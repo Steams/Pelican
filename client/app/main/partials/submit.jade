@@ -23,6 +23,7 @@ div#submission-holder(class="row")
           span(class="glyphicon glyphicon-send")
   #editor-holder(class="col-xs-9")
     i#expand-icon(class="fa fa-arrows-alt")
+    i#like-icon(class="fa fa-heart" ng-click="likeNote()")
     #editor-toolbar-holder
       text-angular-toolbar( name="toolbar" id='toolbar')
     #editor-background-fill

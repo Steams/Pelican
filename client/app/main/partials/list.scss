@@ -80,7 +80,17 @@
   background-color: #ffffff;
   color:#606060;
   padding:5px;
+  
+  h6:nth-child(2){
+    display:block;
+    float:left;
+  }
+  h6:nth-child(3){
+    display:block;
+    float:right;
+  }
 }
+
 .blank{
   opacity:0;
 }

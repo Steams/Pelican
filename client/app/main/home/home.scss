@@ -95,7 +95,7 @@
       width: 100%;
       background-color: rgba(135, 140, 140, 0.70);
       opacity: 0.8;
-      background-image: url(../assets/images/life-line.jpg);
+      background-image: url(/assets/images/life-line.jpg);
       background-size:450%;
       background-origin: content-box;
       background-repeat: no-repeat;
@@ -201,7 +201,7 @@
 }
 
 #home-center-column-top:before{
-  background-image: url(../assets/images/milk-no-sugar.jpg);
+  background-image: url(/assets/images/milk-no-sugar.jpg);
   position: absolute;
   content:"";
   filter:blur(2px);

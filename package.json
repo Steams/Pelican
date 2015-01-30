@@ -19,6 +19,8 @@
     "passport": "^0.2.1",
     "passport-http": "^0.2.2",
     "passport-local": "^1.0.0",
+    "sequelize": "^2.0.0-rc8",
+    "sequelize-cli": "^1.0.6",
     "serve-favicon": "~2.0.1",
     "sqlite3": "^3.0.4"
   },
