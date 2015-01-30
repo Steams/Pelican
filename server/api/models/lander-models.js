@@ -11,6 +11,7 @@ var db = require('./landerDB.js');
 
 
 User.hasMany(Note);
+User.hasMany(Event);
 User.hasMany(Like);
 User.hasMany(Notebook);
 User.belongsToMany(Community);
@@ -29,24 +30,33 @@ Note.hasMany(View);
 Notebook.belongsTo(User,{as:'Author'});
 Notebook.hasMany(Note);
 
-Community.hasMany(User,{as:'Member'});
+Community.hasMany(User,{as:'Members'});
 Community.hasMany(Note);
+Community.hasMany(Event);
+Community.hasMany(Community,{as:'ChildCommunities'});
+Community.belongsTo(Community,{as:'ParentCommunity'});
 
 Event.belongsTo(User,{as:'Creator'});
 Event.hasMany(Note);
-
-
-
-// Note.belongsToMany(User,{through:'Like'});
-// User.belongsToMany(Note,{through:'Like'});
+Event.belongsTo(Community);
 
 db.sync({force:false}).then(function(){
 	console.log('db created');
+	// Community.create({name:'global'});
+	// User.bulkCreate([
+	// 	{name:'Radcliffe',password:'passforRadcliffe'},
+	// 	{name:'Kathrin',password:'passforKathrin'},
+	// 	{name:'Skai',password:'passforSkai'},
+	// 	{name:'Nicanor',password:'passforNicanor'},
+	// ]);
+	// User.create({name:'visitor',password:'no password'});
 });
 
 
 module.exports.noteModel = Note;
 module.exports.userModel = User;
-// module.exports.communityModel = Community;
+module.exports.communityModel = Community;
 module.exports.likeModel = Like;
 module.exports.viewModel = View;
+module.exports.notebookModel = Notebook;
+module.exports.eventModel = Event;

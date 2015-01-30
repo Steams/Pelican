@@ -2,31 +2,36 @@
 
 var express = require('express');
 var controller = require('./thing.controller');
-// var notesController = require('../controllers/notes-controller.js');
+
 var notesController = require('../controllers/notesController.js');
+var eventsController = require('../controllers/eventsController.js');
 var authorsController = require('../controllers/authorsController.js');
 var subjectsController = require('../controllers/subjectsController.js');
-var landerController = require('../controllers/lander-controller.js');
+var communitiesController = require('../controllers/communitiesController.js');
+
 
 var router = express.Router();
 
-// router.get('/', controller.index);
-// router.get('/notes', notesController.index);
-// router.get('/notes/subject/:id', notesController.showBySub);
-
 router.post('/notes',notesController.createNote);
-router.get('/notes',notesController.indexNotes);
 router.get('/notes/',notesController.showNotesByQuery);
+router.get('/notes',notesController.indexNotes);
+router.delete('/notes',notesController.destroy);
+
 
 router.post('/authors',authorsController.createUser);
 router.get('/authors',authorsController.indexUsers);
 router.get('/authors/:author',notesController.showNotesByAuthor);
 
-router.get('/sqlNotes/subjects/:subject',notesController.showNotesBySubject);
-router.get('/sqlNotes/subjects',subjectsController.showSubjects);
+router.get('/notes/subjects/:subject',notesController.showNotesBySubject);
+router.get('/notes/subjects',subjectsController.showSubjects);
 
-// router.get('/Communities',landerController.indexCommunities);
-// router.post('/Communities',landerController.createCommunity);
+router.get('/communities',communitiesController.indexCommunities);
+router.post('/communities',communitiesController.createCommunity);
+router.delete('/communities',communitiesController.destroy);
+
+router.get('/events',eventsController.indexEvents);
+router.post('/events',eventsController.createEvent);
+router.delete('/events',eventsController.destroy);
 
 router.post('/likes',notesController.likeNote);
 router.get('/likes',notesController.indexLikes);

@@ -3,7 +3,7 @@ var Note = Models.noteModel;
 var User = Models.userModel;
 var Like = Models.likeModel;
 var View = Models.viewModel;
-
+var Community = Models.communityModel;
 
 exports.createNote = function(req,res){
 	console.log(req.body);
@@ -18,7 +18,21 @@ exports.createNote = function(req,res){
 		User.find({where:{name:req.body.author} }).then(function(author){
 			note.setAuthor(author).then(function(){
 				author.addNotes([note]).then(function(){
-					res.json(note)
+					if(!req.body.community)
+					{
+						Community.find({where:{name:'global'} }).then(function(community){
+							note.setCommunity(community).then(function(){
+								res.json(note)
+							});
+						});
+					}
+					else{
+						Community.find({where:{name:req.body.community} }).then(function(community){
+							note.setCommunity(community).then(function(){
+								res.json(note)
+							});
+						});
+					}
 				});
 			});
 		});
@@ -73,63 +87,27 @@ exports.showNotesByCommunity = function(req,res){
 	});
 };
 
-var getNoteLikes = function(note,callback){
-	console.log('getting note likes');
-	note.getLikes().then(function(likes){
-		callback(likes);
-		// return likes;
-	});
-};
+// var getNoteLikes = function(note,callback){
+// 	console.log('getting note likes');
+// 	note.getLikes().then(function(likes){
+// 		callback(likes);
+// 		// return likes;
+// 	});
+// };
 
 exports.indexNotes = function(req,res){
 	Note.findAll({include: [Like,{model:User,as:'Author'},View]}).then(function(notes){
 		res.json(notes);
 	});
-		// if(notes.length > 0){
-		// 	var x=0;
-		// 	var notesArray = [];
-
-		// 	for( x; x < notes.length;x++){
-		// 		var y=x;
-		// 		notesArray[y] = {
-		// 			note:notes[y],
-		// 			likes:[]
-		// 		};
-		// 		//callback because likes are defered
-		// 		getNoteLikes(notes[y],function(likes){
-		// 			if (likes.length > 0){
-		// 				console.log('found likes');
-		// 				notesArray[y].likes = likes;
-		// 			}
-		// 			if(y == (notes.length-1)){
-		// 				res.json(notesArray);
-		// 			}
-		// 		});
-		// 	}
-		// }
-		// else{
-		// 	result = {
-		// 		result:'no notes'
-		// 	};
-			// res.json(result);
-		// }
-	// });
+	
 };
 
-// exports.createLike = function(req,res){
-// 	console.log('creating like');
-// 	var like = Like.build({});
-// 	like.save().then(function(like){
-// 		User.find({where:{name:req.body.userName} }).then(function(user){
-// 			Note.find({where:{id:req.body.noteId} }).then(function(note){
-// 				like.setUser(user);
-// 				like.setNote(note);
-// 				res.json(like);
-// 			});
-// 		});
-// 		// like.setUser()
-// 	});
-// };
+exports.destroy = function(req,res){
+	Note.destroy({truncate:true}).then(function(){
+		res.send(200);
+	})
+}
+
 exports.indexLikes = function(req,res){
 	Like.findAll().then(function(likes){
 		res.json(likes);
@@ -156,7 +134,7 @@ exports.likeNote = function(req,res){
 						console.log('we good first');
 						like.save().then(function(){
 							console.log('we good');
-							res.json(like);
+							res.send(200);
 						});
 					}
 				});

@@ -8,6 +8,9 @@ var Event = db.define('Event',{
 	name:{
 		type:Sequelize.STRING
 	},
+	desc:{
+		type:Sequelize.STRING
+	}
 });
 
 module.exports = Event;

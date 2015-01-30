@@ -4,9 +4,9 @@ angular.module 'landerApp'
 .controller 'MainCtrl',['$scope','$resource','$sce','notesFactory',($scope,$resource,$sce,notesFactory) ->
 
   $scope.notes = ()-> return notesFactory.notes #keep notes up to date by always checking factory when referecing it
-
+  $scope.selected = 0
   $scope.init = ()->
-    notesFactory.queryNotes()
+    notesFactory.indexNotes()
     $scope.checkLogin()
     $scope.editor =  document.getElementsByClassName('ta-bind')[0]
     setTimeout(()->
@@ -29,7 +29,9 @@ angular.module 'landerApp'
 #    )
 
   $scope.openNote =(index)->
-    $scope.selected = index;
+    $scope.$parent.$parent.selected = index;
+    console.log('index : '+index)
+    console.log('selected now : '+$scope.$parent.$parent.selected)
     editor =  document.getElementsByClassName('ta-bind')[0]
     editor.innerHTML = $scope.notes()[index].content
     view = {}
@@ -41,15 +43,18 @@ angular.module 'landerApp'
     # editor.innerHTML = $scope.notes().find({title:index}).content
 
   $scope.likeNote = ()->
-    console.log('selected :'+$scope.selected)
-    index = $scope.selected
+    console.log('selected :'+$scope.$parent.$parent.selected)
+    # console.log($scope)
+    index = $scope.$parent.$parent.selected
     editor = document.getElementsByClassName('ta-bind')[0]
     like = {}
     like.noteId = $scope.notes()[index].id
     like.userName = $scope.name;
     # make service for liking note
-    notesFactory.like(like)
+    if notesFactory.like(like) != 500
+      $scope.notes()[index].likeCount++
     # console.log('Liked note title : '+$scope.notes()[index].title+'Liked note User :'+like.userName)
+
   $scope.loadList = (subject)->
    notesFactory.loadList(subject)
 

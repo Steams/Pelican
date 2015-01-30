@@ -65,23 +65,23 @@ var bodyParser = require('body-parser');
 // 	});
 // };
 
-exports.createCommunity = function(req,res){
-	console.log('creating community');
-	console.log(req.body);
-	Community.create({
-		name:req.body.name,
-		parentCommunity:req.body.parentCommunnity,
-	}).then(function(community){
-		res.json(community);
-	});
-};
+// exports.createCommunity = function(req,res){
+// 	console.log('creating community');
+// 	console.log(req.body);
+// 	Community.create({
+// 		name:req.body.name,
+// 		parentCommunity:req.body.parentCommunnity,
+// 	}).then(function(community){
+// 		res.json(community);
+// 	});
+// };
 
-exports.indexCommunities = function(req,res){
-	console.log('indexing communities');
-	Community.findAll().then(function(communities){
-		res.json(communities);
-	});
-};
+// exports.indexCommunities = function(req,res){
+// 	console.log('indexing communities');
+// 	Community.findAll({include:[{model:User,as:'Member'},Note]}).then(function(communities){
+// 		res.json(communities);
+// 	});
+// };
 
 // exports.createLike = function(req,res){
 // 	console.log('creating like');

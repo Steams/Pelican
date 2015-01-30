@@ -1,19 +1,24 @@
 angular.module 'landerApp'
-.factory 'notesFactory', ['submitNote','queryNotes','getNotesBySubject','likeNote','viewNote',
-(submitNote,queryNotes,getNotesBySubject,likeNote,viewNote)->
+.factory 'notesFactory', ['submitNote','indexNotes','getNotesBySubject','likeNote','viewNote',
+(submitNote,indexNotes,getNotesBySubject,likeNote,viewNote)->
 
   factory = this
 
   factory.notes = []
 
   factory.like = (like)->
-    likeNote(like).then(
+    return likeNote(like).then(
       (res)->
-        undefined
+        console.log res
+        console.log res.status
+        return res.status
       ,
       (err)->
         console.log err
+        console.log err.status
+        return err.status
     )
+
 
   factory.view = (view)->
     viewNote(view).then(
@@ -24,10 +29,14 @@ angular.module 'landerApp'
         console.log err
     )
 
-  factory.queryNotes = ()->
-    queryNotes().then(#get Notes returns a promise
-      (res)-> 
+  factory.indexNotes = ()->
+    indexNotes().then(#get Notes returns a promise
+      (res)->
         factory.notes = res
+        factory.notes.forEach( (note)->
+            note.likeCount = note.Likes.length
+            note.viewCount = note.Views.length
+          )
         console.log res,#on promise resolved
       (err)-> console.log err #on promise rejected
     )

@@ -1,5 +1,5 @@
 angular.module 'landerApp'
-.service 'getNotesBySubject',['$http','$q','api','queryNotes',($http,$q,api,queryNotes,subject)->
+.service 'getNotesBySubject',['$http','$q','api','indexNotes',($http,$q,api,indexNotes,subject)->
 
   return (subject)->
     console.log('subject: '+ subject)
