@@ -1,0 +1,55 @@
+div#note-view-holder
+    ul#navigator(on='false')
+        #navigator-header
+            #navigator-header-logo Pelican
+        #navigator-welcome
+            h6 Welcome Back
+            #navigator-icon-holder
+                img#navigator-icon(src='assets/images/radcliffe.jpg')
+                #user-name
+                    h4 {{name}}
+        li.navigator-option
+            div
+                i(class="fa fa-home")
+            div Home
+        li.navigator-option 
+            div
+                i(class="fa fa-book")
+            div Notes
+        li.navigator-option 
+            div
+                i(class="fa fa-users")
+            div Nests
+        li.navigator-option 
+            div
+                i(class="fa fa-bookmark")
+            div Events
+        li.navigator-option 
+            div
+                i(class="fa fa-code")
+            div About
+    #notes-content-container
+        #search-panel
+            #search-panel-top
+                #search-box
+                    div Global
+                    #search-bar
+                        i(class="fa fa-search")
+                        input(type="text")
+                #search-options
+                    i(class="fa fa-gears")
+                    i(class="fa fa-sort-numeric-desc")
+                    i(class="fa fa-eye")
+                    #search-options-sort
+                        .search-sorting-option Rating
+                        .search-sorting-option Recent
+            #search-panel-bottom
+                list
+        #note-panel
+            i#expand-icon(class="fa fa-arrows-alt")
+            i#like-icon(class="fa fa-heart" ng-click="likeNote()")
+            #editor-toolbar-holder
+                #note-information
+            #editor-background-fill
+            div.viewer(id="editor")
+        

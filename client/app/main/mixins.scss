@@ -11,3 +11,8 @@
   -webkit-border-radius: $tl $tr $bl $br;
   border: $px solid $color;
 }
+
+.round-icon{
+//    padding:3px;
+    @include border-radius(30px,30px,30px,30px,1px,$my-dark-orange);
+}

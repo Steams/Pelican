@@ -12,7 +12,8 @@ angular.module 'landerApp'
   .state('submit',{
      url: '/submit'
      templateUrl: 'app/main/submit.html'
-     controller: 'MainCtrl'}
+     controller: 'MainCtrl'
+   }
   )
   .state('login',{
      url:'/login'
@@ -23,4 +24,10 @@ angular.module 'landerApp'
     url:'/api/things/notes/subject*'
     templateUrl:'app/main/submit.html'
     controller: 'MainCtrl'}
+  )
+  .state('notes',{
+    url:'/notes'
+    templateUrl:'app/main/notes.html'
+    controller:'viewCtrl'
+    }
   )

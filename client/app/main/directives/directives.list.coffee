@@ -5,5 +5,5 @@ angular.module 'lander.directives.list', []
     scope :true
     replace : true
     templateUrl: 'app/main/partials/noteList.html'
-    controller : "MainCtrl"
+    controller : "viewCtrl"
   }
