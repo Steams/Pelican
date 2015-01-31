@@ -1,9 +1,9 @@
 angular.module 'lander.directives.list', []
-.directive 'list', () ->
+.directive 'noteList', () ->
   return {
     restrict : 'E'
     scope :true
     replace : true
-    templateUrl: 'app/main/partials/noteList.html'
+    templateUrl: 'app/main/notes/noteList.html'
     controller : "viewCtrl"
   }

@@ -1,0 +1,107 @@
+#note-list-container{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto';
+}
+
+#note-list-container ul {
+    width:100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    height:100%;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+#note-list-container ul li{
+    position: relative;
+    height: 100px;
+    width: 100%;
+    margin: 4px auto;
+    background: linear-gradient(45deg, rgba(0,0,0,.4) 50%, transparent 0) 100% 0 / 25px 25px no-repeat,
+        linear-gradient(-135deg, transparent 18px, rgba(90, 113, 99, 0.2) 0) 0 / auto; /* ceil(25/sqrt(2)) = 18 */
+}
+
+#note-list-container ul li:hover{
+    cursor: pointer;
+}
+
+.list-item-body{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    
+}
+
+.list-item-stats-holder{
+    display: flex;
+    height: 100%;
+    width: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-right: 2px solid;
+    
+}
+
+.list-item-stat{
+    i{
+        padding: 10px;
+    }
+}
+
+.list-item-details{
+    flex-grow: 1;
+    height: 100%;
+    padding: 10px 0px 0px 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.list-item-details-top{
+    height: 40px;
+    display: flex;
+    
+    .list-item-title{
+        font-size: 30px;
+        font-family: 'Raleway';
+        font-weight: 200;
+    }
+}
+
+.list-item-details-bottom{
+    flex-grow: 1;
+    color:$my-light-text;
+}
+
+
+.Mathematics{
+    .list-item-body{
+        .list-item-stats-holder{
+            border-color: #9365B8;
+        }
+    }
+}
+
+.Engineering{
+    .list-item-body{
+        .list-item-stats-holder{
+            border-color: #b96773;
+        }
+    }
+}
+
+.English{
+    .list-item-body{
+        .list-item-stats-holder{
+            border-color: #67b9b7;
+        }
+    }
+}

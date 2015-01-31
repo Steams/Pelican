@@ -1,0 +1,19 @@
+#note-list-container
+  ul
+    li(ng-repeat="author in authors() | filter:$parent.filter"  class="{{author.subject}}" ng-click="openauthor($index)")
+        .list-item-body
+            .list-item-stats-holder
+                .list-item-stat
+                    i(class="fa fa-eye")
+                    span
+                .list-item-stat
+                    i(class="fa fa-heart-o")
+                    span
+            .list-item-details
+                .list-item-details-top
+                    .list-item-title {{author.name}}
+                    .list-item-tags
+                    .list-item-time
+                .list-item-details-bottom
+                    .list-item-description Rank : {{author.rank}}
+                    .list-item-author Reputation : {{author.reputation}}

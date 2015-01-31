@@ -15,6 +15,10 @@ angular.module 'landerApp', [
   'lander.directives.viewNotesTemplate',
   'home.directives.home',
   'lander.directives.pulsingButton',
+  'lander.directives.expandingPanel',
+  'lander.directives.communitiesList',
+  'lander.directives.authorsList',
+  'lander.directives.navigator',
   'textAngular'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider) ->

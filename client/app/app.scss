@@ -22,7 +22,7 @@ body,html{
 //  padding-left:30px;
 //  padding-right: 30px;
 
-//  overflow: hidden;
+ overflow: hidden;
 }
 
 body{
@@ -34,10 +34,15 @@ body{
 // Component styles are injected through grunt
 // injector
 @import 'main/a_variables.scss';
+@import 'main/authors/authors.scss';
+@import 'main/authors/authorsList.scss';
+@import 'main/communities/communities.scss';
+@import 'main/communities/communitiesList.scss';
 @import 'main/home/home.scss';
 @import 'main/main.scss';
 @import 'main/mixins.scss';
-@import 'main/note.scss';
+@import 'main/notes/note.scss';
+@import 'main/notes/noteList.scss';
 @import 'main/partials/editor.scss';
 @import 'main/partials/header.scss';
 @import 'main/partials/list.scss';

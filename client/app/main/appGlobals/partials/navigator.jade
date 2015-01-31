@@ -1,0 +1,41 @@
+ul#navigator(on='false')
+    #navigator-header
+        #navigator-header-logo Pelican
+    #navigator-welcome
+        h6 Welcome Back
+        #navigator-icon-holder
+            img#navigator-icon(src='assets/images/radcliffe.jpg')
+            #user-name
+                h4 {{name}}
+    a.navigator-option(ui-sref="main")
+        div
+            i(class="fa fa-home")
+        div Home
+    a.navigator-option.active(ui-sref="notes")
+        div
+            i(class="fa fa-book")
+        div Notes
+    a.navigator-option(ui-sref="communities")
+        div
+            i(class="fa fa-users")
+        div Nests
+    a.navigator-option(ui-sref="authors")
+        div
+            i(class="fa fa-user")
+        div Authors
+    a.navigator-option
+        div
+            i(class="fa fa-bookmark")
+        div Events
+    a.navigator-option
+        div
+            i(class="fa fa-search-plus")
+        div Pretty search
+    a.navigator-option
+        div
+            i(class="fa fa-code")
+        div About
+    a.navigator-option
+        div
+            i(class="fa fa-sign-out")
+        div Logout

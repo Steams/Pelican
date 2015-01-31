@@ -1,20 +1,21 @@
 'use strict'
 
 angular.module 'landerApp'
-.controller 'MainCtrl',['$scope','$resource','$sce','notesFactory',($scope,$resource,$sce,notesFactory) ->
+.controller 'viewCtrl',['$scope','$resource','$sce','notesFactory',($scope,$resource,$sce,notesFactory) ->
 
   $scope.notes = ()-> return notesFactory.notes #keep notes up to date by always checking factory when referecing it
-  $scope.selected = 0
+  $scope.selected = ()-> return notesFactory.selected
+  $scope.selectNote = (index)-> return notesFactory.selectNote(index)
   $scope.init = ()->
     notesFactory.indexNotes()
     $scope.checkLogin()
-    $scope.editor =  document.getElementsByClassName('ta-bind')[0]
+    $scope.editor =  document.getElementById('editor')
     setTimeout(()->
       $scope.openNote 0
     ,30)
 
   $scope.holder = {}
-#  editor =  document.getElementsByClassName('ta-bind')[0]
+#  editor =  document.getElementById('editor')
   Notes = $resource('/api/things/notes/:id',{id:'@id'})
   Login = $resource('/login')
   CheckLogin = $resource('/loginInfo')
@@ -29,13 +30,14 @@ angular.module 'landerApp'
 #    )
 
   $scope.openNote =(index)->
-    $scope.$parent.$parent.selected = index;
+    $scope.selectNote(index)
     console.log('index : '+index)
-    console.log('selected now : '+$scope.$parent.$parent.selected)
-    editor =  document.getElementsByClassName('ta-bind')[0]
-    editor.innerHTML = $scope.notes()[index].content
+    console.log('selected now : '+$scope.selected())
+    # console.log(notesFactory.selected)
+    editor =  document.getElementById('editor')
+    editor.innerHTML = $scope.selected().content
     view = {}
-    view.noteId = $scope.notes()[index].id
+    view.noteId = $scope.selected().id
     view.userName = $scope.name
     notesFactory.view(view);
     # console.log('Viewing note title : '+ $scope.notes()[index].title +'Viewed by : '+view.userName)
@@ -43,16 +45,14 @@ angular.module 'landerApp'
     # editor.innerHTML = $scope.notes().find({title:index}).content
 
   $scope.likeNote = ()->
-    console.log('selected :'+$scope.$parent.$parent.selected)
-    # console.log($scope)
-    index = $scope.$parent.$parent.selected
-    editor = document.getElementsByClassName('ta-bind')[0]
+    console.log('selected :'+ $scope.selected)
+    editor = document.getElementById('editor')
     like = {}
-    like.noteId = $scope.notes()[index].id
+    like.noteId = $scope.selected().id
     like.userName = $scope.name;
     # make service for liking note
     if notesFactory.like(like) != 500
-      $scope.notes()[index].likeCount++
+      $scope.selected().likeCount++
     # console.log('Liked note title : '+$scope.notes()[index].title+'Liked note User :'+like.userName)
 
   $scope.loadList = (subject)->
@@ -69,7 +69,7 @@ angular.module 'landerApp'
     $scope.submitAuthor=''
     note.subject = $scope.submitSubject
     $scope.submitSubject = ''
-    note.content = $sce.trustAsHtml(document.getElementsByClassName('ta-bind')[0].innerHTML).valueOf()
+    note.content = $sce.trustAsHtml(document.getElementById('editor').innerHTML).valueOf()
     notesFactory.submit(note)
 
   $scope.login = ->
@@ -94,7 +94,7 @@ angular.module 'landerApp'
 
   $scope.createNote =()->
     console.log('hhbiyuyg')
-    document.getElementsByClassName('ta-bind')[0].innerHTML = " "
+    document.getElementById('editor').innerHTML = " "
 
   $scope.init()
 

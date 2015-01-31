@@ -1,0 +1,27 @@
+div#note-view-holder
+    navigator-panel
+    #notes-content-container
+        #search-panel
+            #search-options-view
+            #search-panel-top
+                #search-box
+                    div Global
+                    #search-bar
+                        i(class="fa fa-search")
+                        input(type="text" ng-model="filter")
+                #search-options
+                    i(class="fa fa-gears")
+                    i(class="fa fa-sort-numeric-desc")
+                    i(class="fa fa-eye")
+                    #search-options-sort
+                        .search-sorting-option Rating
+                        .search-sorting-option Recent
+            #search-panel-bottom
+                note-list
+        #note-panel
+            i#expand-icon(class="fa fa-arrows-alt")
+            i#like-icon(class="fa fa-heart" ng-click="likeNote()")
+            #editor-toolbar-holder
+                #note-information
+            #editor-background-fill
+            div.viewer(id="editor" data-expanding-panel)

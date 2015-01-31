@@ -14,5 +14,5 @@
 
 .round-icon{
 //    padding:3px;
-    @include border-radius(30px,30px,30px,30px,1px,$my-dark-orange);
+    @include border-radius(30px,30px,30px,30px,2px,$my-dark-orange);
 }

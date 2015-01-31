@@ -1,0 +1,34 @@
+//#list-container
+#note-list-container
+  ul
+    li(ng-repeat="note in notes() | filter:$parent.filter" class="{{note.subject}}" ng-click="openNote($index)")
+        .list-item-body
+            .list-item-stats-holder
+                .list-item-stat
+                    i(class="fa fa-eye") 
+                    span {{note.viewCount}}
+                
+                .list-item-stat
+                    i(class="fa fa-heart-o") 
+                    span {{note.likeCount}}
+            .list-item-details
+                .list-item-details-top
+                    .list-item-title {{note.title}}
+                    .list-item-tags
+                    .list-item-time
+                .list-item-details-bottom
+                    .list-item-description Description : {{note.desc}}
+                    .list-item-author Author : {{note.Author.name}}
+//      .list-item-content
+//        .list-item-top
+//          h4 {{note.title}}
+//          br
+//          p {{note.desc}}
+//        .list-item-bottom
+//         h4 Author : {{note.Author.name}}
+//         h6(class="likes") Likes : {{note.likeCount}}
+//         h6(class="views") Views : {{note.viewCount}}
+
+
+
+

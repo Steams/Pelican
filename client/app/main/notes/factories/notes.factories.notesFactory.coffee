@@ -1,10 +1,15 @@
 angular.module 'landerApp'
-.factory 'notesFactory', ['submitNote','indexNotes','getNotesBySubject','likeNote','viewNote',
-(submitNote,indexNotes,getNotesBySubject,likeNote,viewNote)->
+.factory 'notesFactory', ['submitNote','indexModel','getNotesBySubject','likeNote','viewNote',
+(submitNote,indexModel,getNotesBySubject,likeNote,viewNote)->
 
   factory = this
 
   factory.notes = []
+  factory.selected= factory.notes[0]
+
+  factory.selectNote = (index)->
+    factory.selected = factory.notes[index]
+    return factory.notes[index]
 
   factory.like = (like)->
     return likeNote(like).then(
@@ -30,7 +35,7 @@ angular.module 'landerApp'
     )
 
   factory.indexNotes = ()->
-    indexNotes().then(#get Notes returns a promise
+    indexModel('/api/things/notes').then(#get Notes returns a promise
       (res)->
         factory.notes = res
         factory.notes.forEach( (note)->

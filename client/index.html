@@ -47,7 +47,7 @@
     <![endif]-->
 
     <!-- application content here -->
-    <!-- <my-header></my-header> -->
+<!--     <my-header></my-header> -->
     <!-- <menu></menu> -->
     <div ui-view=""></div>
 
@@ -85,10 +85,25 @@
         <script src="app/app.js"></script>
 
           <!-- injector:js -->
-          <script src="app/main/controllers/main.js"></script>
+          <script src="app/main/appGlobals/controllers/main.js"></script>
+          <script src="app/main/appGlobals/directives/appGlobals.js"></script>
+          <script src="app/main/appGlobals/services/services.js"></script>
+          <script src="app/main/authors/controllers/authors.js"></script>
+          <script src="app/main/authors/directives/authors.js"></script>
+          <script src="app/main/authors/factories/authors.js"></script>
+          <script src="app/main/authors/services/authors.js"></script>
+          <script src="app/main/authors/services/communities.js"></script>
+          <script src="app/main/authors/services/notes.js"></script>
+          <script src="app/main/communities/controllers/communities.js"></script>
+          <script src="app/main/communities/directives/communities.js"></script>
+          <script src="app/main/communities/factories/communities.js"></script>
+          <script src="app/main/communities/services/communities.js"></script>
+          <script src="app/main/communities/services/notes.js"></script>
           <script src="app/main/directives/directives.js"></script>
-          <script src="app/main/factories/factories.js"></script>
           <script src="app/main/home/home.js"></script>
+          <script src="app/main/notes/directives/notes.js"></script>
+          <script src="app/main/notes/factories/notes.js"></script>
+          <script src="app/main/notes/services/notes.js"></script>
           <script src="app/main/services/services.js"></script>
           <script src="components/modal/modal.js"></script>
           <script src="components/navbar/navbar.js"></script>

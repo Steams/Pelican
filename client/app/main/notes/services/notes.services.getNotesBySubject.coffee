@@ -1,5 +1,5 @@
 angular.module 'landerApp'
-.service 'getNotesBySubject',['$http','$q','api','indexNotes',($http,$q,api,indexNotes,subject)->
+.service 'getNotesBySubject',['$http','$q','api','indexModel',($http,$q,api,indexModel,subject)->
 
   return (subject)->
     console.log('subject: '+ subject)
@@ -14,7 +14,7 @@ angular.module 'landerApp'
           defer.reject(err)
 
       else
-        queryNotes().then(
+        indexModel('/api/things/notes').then(
           (res)->
 #            console.log(res)
             defer.resolve(res)
