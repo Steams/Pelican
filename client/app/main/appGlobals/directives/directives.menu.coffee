@@ -1,42 +1,42 @@
 angular.module 'lander.directives.menu', []
 .directive 'menu', () ->
   return {
-    restrict : 'E'
+    restrict : 'EA'
     scope :true
-    replace : true
-    templateUrl: 'app/main/partials/menu.html'
-    controller : "MainCtrl"
+    # replace : true
+    # templateUrl: 'app/main/partials/menu.html'
+    # controller : "MainCtrl"
     link :(scope,el,attrs)->
-      menu = document.querySelector '#menu'
-      showMenu = ->
-        menu.style.left = "0px"
+      # menu = document.querySelector '#menu'
+      # showMenu = ->
+      #   menu.style.left = "0px"
 
-      hideMenu = ->
-        menu.style.left="-999px"
+      # hideMenu = ->
+      #   menu.style.left="-999px"
 
-      searchBar = document.querySelector '#filter'
-      searchButton = document.querySelector '#search-icon'
+      # searchBar = document.querySelector '#filter'
+      # searchButton = document.querySelector '#search-icon'
 
-      hideSearchBar = ->
-        if searchBar.value == ''
-          searchBar.style.width = '0px'
-          searchButton.style.right = '200px'
-          setTimeout(()->
-            searchBar.style.display = 'none'
-          ,500)
-
-
-      showSearchBar =  ->
-        searchBar.style.display = 'block'
-        setTimeout(()->
-          searchBar.style.width = '90%'
-          searchBar.focus()
-          searchButton.style.right = '30px'
-        ,10)
+      # hideSearchBar = ->
+      #   if searchBar.value == ''
+      #     searchBar.style.width = '0px'
+      #     searchButton.style.right = '200px'
+      #     setTimeout(()->
+      #       searchBar.style.display = 'none'
+      #     ,500)
 
 
-      searchButton.addEventListener 'click',showSearchBar
-      searchBar.addEventListener 'blur', hideSearchBar
+      # showSearchBar =  ->
+      #   searchBar.style.display = 'block'
+      #   setTimeout(()->
+      #     searchBar.style.width = '90%'
+      #     searchBar.focus()
+      #     searchButton.style.right = '30px'
+      #   ,10)
+
+
+      # searchButton.addEventListener 'click',showSearchBar
+      # searchBar.addEventListener 'blur', hideSearchBar
 
       # Menu settings_______________________________________________________________
       menuSettings = document.querySelector '#menu-settings'
@@ -117,11 +117,11 @@ angular.module 'lander.directives.menu', []
       settingsClose.addEventListener 'click',toggleSettings
 
       # Menu Button___________________________________________________________________
-      menuButton = document.querySelector '#menu-button'
-      menuButton.addEventListener 'click', ()->
-        console.log menuButton.getAttribute('on')
-        if menuButton.getAttribute('on') != 'true'
-          setTimeout hideMenu, 20
-        else
-          setTimeout showMenu, 20
+      # menuButton = document.querySelector '#menu-button'
+      # menuButton.addEventListener 'click', ()->
+      #   console.log menuButton.getAttribute('on')
+      #   if menuButton.getAttribute('on') != 'true'
+      #     setTimeout hideMenu, 20
+      #   else
+      #     setTimeout showMenu, 20
   }

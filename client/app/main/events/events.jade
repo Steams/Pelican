@@ -4,7 +4,7 @@ div#note-view-holder
             #search-options-view
             #search-panel-top
                 #search-box
-                    div Communities
+                    div Events
                     #search-bar
                         i(class="fa fa-search")
                         input(type="text" ng-model="filter")
@@ -13,8 +13,7 @@ div#note-view-holder
                     i(class="fa fa-sort-numeric-desc")
                     i(class="fa fa-eye")
                     #search-options-sort(data-sort-switch)
-                        .search-sorting-option Members
-                        .search-sorting-option Age
-                        .search-sorting-option Name
+                        .search-sorting-option Rating
+                        .search-sorting-option Recent
             #search-panel-bottom
-                communities-list
+                events-list

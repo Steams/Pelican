@@ -5,56 +5,54 @@ angular.module 'lander.directives.expandingPanel', []
     link:($scope,el,attr)->
       create = ->
         # alert('asdasd')
-        expandEditor = ()->
-          if $('#editor').attr('on')!='paused' && $('#editor').attr('on')!='true-paused'
-            $('#editor').css('top','0px')
-            $('#editor').css('left','0px')
-            $('#editor').css('height','100%')
-            $('#editor').css('width','100%')
-            $('#editor').attr('on','true')
+        expandviewPanel = ()->
+          if $('#viewPanel').attr('on')!='paused' && $('#viewPanel').attr('on')!='true-paused'
+            $('#viewPanel').css('top','0px')
+            $('#viewPanel').css('left','0px')
+            $('#viewPanel').css('height','100%')
+            $('#viewPanel').css('width','100%')
+            $('#viewPanel').attr('on','true')
 
-        compressEditor = ()->
-          if $('#editor').attr('on')!='paused' && $('#editor').attr('on')!='true-paused'
-            $('#editor').attr('on','false')
-            $('#editor').css('top','100px')
-            $('#editor').css('left','30px')
-            $('#editor').css('height','90%')
-            $('#editor').css('width','93%')
+        compressviewPanel = ()->
+          if $('#viewPanel').attr('on')!='paused' && $('#viewPanel').attr('on')!='true-paused'
+            $('#viewPanel').attr('on','false')
+            $('#viewPanel').css('top','100px')
+            $('#viewPanel').css('left','30px')
+            $('#viewPanel').css('height','90%')
+            $('#viewPanel').css('width','93%')
 
-
-
-        toggleEditorExpand = ()->
-          if $('#editor').attr('on')== 'true' || $('#editor').attr('on')== 'true-paused'
-            # $('#editor').attr('on','true')
+        toggleviewPanelExpand = ()->
+          if $('#viewPanel').attr('on')== 'true' || $('#viewPanel').attr('on')== 'true-paused'
+            # $('#viewPanel').attr('on','true')
             # alert('asd')
-            compressEditor()
+            compressviewPanel()
           else
-            if $('#editor').attr('on')== 'false'
-              expandEditor()
+            if $('#viewPanel').attr('on')== 'false'
+              expandviewPanel()
 
-        toggleEditorExpandPause= ()->
-          if $('#editor').attr('on')== 'true-paused'
+        toggleviewPanelExpandPause= ()->
+          if $('#viewPanel').attr('on')== 'true-paused'
             # alert('ad')
-            $('#editor').attr('on','true')
-            compressEditor()
+            $('#viewPanel').attr('on','true')
+            compressviewPanel()
           else
-            if $('#editor').attr('on')== 'false'
-              expandEditor()
-              $('#editor').attr('on','true-paused')
+            if $('#viewPanel').attr('on')== 'false'
+              expandviewPanel()
+              $('#viewPanel').attr('on','true-paused')
 
         pauseCompress = ()->
-          if $('#editor').attr('on') != 'true-paused'
-            compressEditor()
-            $('#editor').attr('on','paused')
+          if $('#viewPanel').attr('on') != 'true-paused'
+            compressviewPanel()
+            $('#viewPanel').attr('on','paused')
 
         UnPauseCompress = ()->
-          if $('#editor').attr('on') != 'true-paused'
-            $('#editor').attr('on','false')
+          if $('#viewPanel').attr('on') != 'true-paused'
+            $('#viewPanel').attr('on','false')
 
-        $('#expand-icon').click(toggleEditorExpandPause)
-#        $('#editor').hover(toggleEditorExpand)
-        $('#editor').mouseenter(expandEditor)
-        $('#editor').mouseleave(compressEditor)
+        $('#expand-panel-icon').click(toggleviewPanelExpandPause)
+#        $('#viewPanel').hover(toggleviewPanelExpand)
+        $('#viewPanel').mouseenter(expandviewPanel)
+        $('#viewPanel').mouseleave(compressviewPanel)
   #      mq = window.matchMedia("(max-width: 649px)")
         # mqm = window.matchMedia("(max-width: 900px)")
   #       submitDrawer = document.getElementById("submitDrawer")
@@ -104,18 +102,18 @@ angular.module 'lander.directives.expandingPanel', []
   #         mq.addListener(WidthChangeSmall)
   #         WidthChangeSmall(mq)
 
-  #       $('#editor').click(()->
+  #       $('#viewPanel').click(()->
   #           console.log($('#toolbar'))
   #           if (mq.matches)
   #            $('#toolbar').css('top','0px')
   #         )
 
-  #       $('#editor').blur(()->
+  #       $('#viewPanel').blur(()->
   #         if (mq.matches)
   #          $('#toolbar').css('top','-70px'))
 
-        document.getElementById('editor').addEventListener 'focus',pauseCompress
-        document.getElementById('editor').addEventListener 'blur',UnPauseCompress
+        document.getElementById('viewPanel').addEventListener 'focus',pauseCompress
+        document.getElementById('viewPanel').addEventListener 'blur',UnPauseCompress
 
 
         # toggleSubmitDrawer = ->

@@ -49,7 +49,8 @@
     <!-- application content here -->
 <!--     <my-header></my-header> -->
     <!-- <menu></menu> -->
-    <div ui-view=""></div>
+    <navigator-panel></navigator-panel>
+    <div ui-view="" id="primary-ui-view"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -86,7 +87,7 @@
 
           <!-- injector:js -->
           <script src="app/main/appGlobals/controllers/main.js"></script>
-          <script src="app/main/appGlobals/directives/appGlobals.js"></script>
+          <script src="app/main/appGlobals/directives/directives.js"></script>
           <script src="app/main/appGlobals/services/services.js"></script>
           <script src="app/main/authors/controllers/authors.js"></script>
           <script src="app/main/authors/directives/authors.js"></script>
@@ -99,12 +100,16 @@
           <script src="app/main/communities/factories/communities.js"></script>
           <script src="app/main/communities/services/communities.js"></script>
           <script src="app/main/communities/services/notes.js"></script>
+          <script src="app/main/composer/directives/directives.js"></script>
           <script src="app/main/directives/directives.js"></script>
+          <script src="app/main/events/controllers/events.js"></script>
+          <script src="app/main/events/directives/authors.js"></script>
+          <script src="app/main/events/factories/authors.js"></script>
+          <script src="app/main/events/services/events.js"></script>
           <script src="app/main/home/home.js"></script>
           <script src="app/main/notes/directives/notes.js"></script>
           <script src="app/main/notes/factories/notes.js"></script>
           <script src="app/main/notes/services/notes.js"></script>
-          <script src="app/main/services/services.js"></script>
           <script src="components/modal/modal.js"></script>
           <script src="components/navbar/navbar.js"></script>
           <!-- endinjector -->

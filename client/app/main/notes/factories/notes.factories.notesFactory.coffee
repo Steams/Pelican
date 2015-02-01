@@ -7,9 +7,9 @@ angular.module 'landerApp'
   factory.notes = []
   factory.selected= factory.notes[0]
 
-  factory.selectNote = (index)->
-    factory.selected = factory.notes[index]
-    return factory.notes[index]
+  factory.selectNote = (id)->
+    factory.selected = $.grep(factory.notes,(e)-> return e.id ==id)[0]
+    return $.grep(factory.notes,(e)-> return e.id ==id)[0]
 
   factory.like = (like)->
     return likeNote(like).then(

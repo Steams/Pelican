@@ -1,4 +1,4 @@
-angular.module 'lander.directives.list', []
+angular.module 'lander.directives.noteList', []
 .directive 'noteList', () ->
   return {
     restrict : 'E'

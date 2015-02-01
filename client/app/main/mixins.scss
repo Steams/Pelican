@@ -2,7 +2,8 @@
 @mixin box-shadow($h,$v,$b,$s){
   -webkit-box-shadow: $h $v $b $s rgba(0,0,0,0.55);
   -moz-box-shadow: $h $v $b $s rgba(0,0,0,0.55);
-  box-shadow:  $h $v $b $s rgba(0,0,0,0.55);
+  // box-shadow: $h $v $b $s rgba(0,0,0,0.55);
+  // box-shadow: 10px 10px 5px #888888;
 }
 
 @mixin border-radius($tl,$tr,$bl,$br,$px,$color){

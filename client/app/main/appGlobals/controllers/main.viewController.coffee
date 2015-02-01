@@ -9,13 +9,13 @@ angular.module 'landerApp'
   $scope.init = ()->
     notesFactory.indexNotes()
     $scope.checkLogin()
-    $scope.editor =  document.getElementById('editor')
+    $scope.viewPanel =  document.getElementById('viewPanel')
     setTimeout(()->
       $scope.openNote 0
     ,30)
 
   $scope.holder = {}
-#  editor =  document.getElementById('editor')
+#  viewPanel =  document.getElementById('viewPanel')
   Notes = $resource('/api/things/notes/:id',{id:'@id'})
   Login = $resource('/login')
   CheckLogin = $resource('/loginInfo')
@@ -26,27 +26,27 @@ angular.module 'landerApp'
 #    Notes.get({id:id},(data)->
 #      console.log 'getting note...'
 #      content = data.list[0].content
-#      editor.innerHTML= content
+#      viewPanel.innerHTML= content
 #    )
 
-  $scope.openNote =(index)->
-    $scope.selectNote(index)
-    console.log('index : '+index)
+  $scope.openNote =(id)->
+    $scope.selectNote(id)
+    console.log('id : '+id)
     console.log('selected now : '+$scope.selected())
     # console.log(notesFactory.selected)
-    editor =  document.getElementById('editor')
-    editor.innerHTML = $scope.selected().content
+    viewPanel =  document.getElementById('viewPanel')
+    viewPanel.innerHTML = $scope.selected().content
     view = {}
     view.noteId = $scope.selected().id
     view.userName = $scope.name
     notesFactory.view(view);
     # console.log('Viewing note title : '+ $scope.notes()[index].title +'Viewed by : '+view.userName)
 
-    # editor.innerHTML = $scope.notes().find({title:index}).content
+    # viewPanel.innerHTML = $scope.notes().find({title:index}).content
 
   $scope.likeNote = ()->
     console.log('selected :'+ $scope.selected)
-    editor = document.getElementById('editor')
+    viewPanel = document.getElementById('viewPanel')
     like = {}
     like.noteId = $scope.selected().id
     like.userName = $scope.name;
@@ -69,7 +69,7 @@ angular.module 'landerApp'
     $scope.submitAuthor=''
     note.subject = $scope.submitSubject
     $scope.submitSubject = ''
-    note.content = $sce.trustAsHtml(document.getElementById('editor').innerHTML).valueOf()
+    note.content = $sce.trustAsHtml(document.getElementById('viewPanel').innerHTML).valueOf()
     notesFactory.submit(note)
 
   $scope.login = ->
@@ -94,7 +94,7 @@ angular.module 'landerApp'
 
   $scope.createNote =()->
     console.log('hhbiyuyg')
-    document.getElementById('editor').innerHTML = " "
+    document.getElementById('viewPanel').innerHTML = " "
 
   $scope.init()
 

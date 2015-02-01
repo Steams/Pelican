@@ -8,8 +8,8 @@ angular.module 'landerApp'
         templateUrl: 'app/main/index.html'
         controller: 'MainCtrl'}
         )
-        .state('submit',{
-        url: '/submit'
+        .state('compose',{
+        url: '/compose'
         templateUrl: 'app/main/submit.html'
         controller: 'MainCtrl'}
         )
@@ -31,16 +31,16 @@ angular.module 'landerApp'
        .state('communities',{
        url:'/communities'
        templateUrl:'app/main/communities/communities.html'
-       controller:''}
+       controller:'communitiesCtrl'}
        )
        .state('authors',{
        url:'/authors'
        templateUrl:'app/main/authors/authors.html'
        controller:'authorsCtrl'}
        )
-#    .state('events',{
-#    url:''
-#    templateUrl:''
-#    controller:''}
-#    )
+       .state('events',{
+       url:'/events'
+       templateUrl:'app/main/events/events.html'
+       controller:'eventsCtrl'}
+       )
 

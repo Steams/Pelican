@@ -1,0 +1,7 @@
+.search-sorting-option[active="true"]{
+	border-bottom:2px solid $my-light-text;
+}
+
+#search-options-sort::before{
+	content:"sort by:"
+}

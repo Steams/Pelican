@@ -62,17 +62,19 @@
     padding: 10px 0px 0px 10px;
     display: flex;
     flex-direction: column;
-    
 }
 
 .list-item-details-top{
     height: 40px;
     display: flex;
-    
     .list-item-title{
         font-size: 30px;
         font-family: 'Raleway';
         font-weight: 200;
+        width:340px;
+        white-space:nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 

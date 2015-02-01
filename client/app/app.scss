@@ -34,20 +34,24 @@ body{
 // Component styles are injected through grunt
 // injector
 @import 'main/a_variables.scss';
+@import 'main/appGlobals/partials/navigator.scss';
+@import 'main/appGlobals/partials/sortSwitch.scss';
 @import 'main/authors/authors.scss';
 @import 'main/authors/authorsList.scss';
 @import 'main/communities/communities.scss';
 @import 'main/communities/communitiesList.scss';
+@import 'main/composer/editor.scss';
+@import 'main/composer/submit.scss';
+@import 'main/events/events.scss';
+@import 'main/events/eventsList.scss';
 @import 'main/home/home.scss';
 @import 'main/main.scss';
 @import 'main/mixins.scss';
 @import 'main/notes/note.scss';
 @import 'main/notes/noteList.scss';
-@import 'main/partials/editor.scss';
 @import 'main/partials/header.scss';
 @import 'main/partials/list.scss';
 @import 'main/partials/login.scss';
 @import 'main/partials/menu.scss';
-@import 'main/partials/submit.scss';
 @import 'modal/modal.scss';
 // endinjector

@@ -1,7 +1,7 @@
 //#list-container
 #note-list-container
   ul
-    li(ng-repeat="note in notes() | filter:$parent.filter" class="{{note.subject}}" ng-click="openNote($index)")
+    li(ng-repeat="note in notes() | filter:$parent.filter | orderBy: $scope.order" class="{{note.subject}}" ng-click="openNote(note.id)")
         .list-item-body
             .list-item-stats-holder
                 .list-item-stat

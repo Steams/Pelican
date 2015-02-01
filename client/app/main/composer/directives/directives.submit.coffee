@@ -4,13 +4,13 @@ angular.module 'lander.directives.submit', []
     restrict : 'AE'
     scope : true
     replace : true
-    templateUrl: 'app/main/partials/submit.html'
+    templateUrl: 'app/main/composer/submit.html'
     controller : "MainCtrl"
     link:($scope,el,attr)->
       create = ->
 
         console.log('creating submission view')
-        submitDrawerButton = document.getElementById("openSubmitDrawer")
+        # submitDrawerButton = document.getElementById("openSubmitDrawer")
   #      toolbar = document.getElementsByClassName('ta-toolbar')[0]
 
         expandEditor = ()->
@@ -65,7 +65,7 @@ angular.module 'lander.directives.submit', []
         $('#editor').mouseleave(compressEditor)
   #      mq = window.matchMedia("(max-width: 649px)")
         mqm = window.matchMedia("(max-width: 900px)")
-        submitDrawer = document.getElementById("submitDrawer")
+        # submitDrawer = document.getElementById("submitDrawer")
         if (matchMedia)
           WidthChange= (mq)->
             if (mq.matches)
@@ -78,9 +78,9 @@ angular.module 'lander.directives.submit', []
               else
                 console.log('under 900 and NOT under 649')
                 $('#toolbar').css('top','10px')
-              submitDrawer.style.top= '-500px'
-              submitDrawer.setAttribute('on','false')
-              submitDrawer.style.height= 'auto'
+              # submitDrawer.style.top= '-500px'
+              # submitDrawer.setAttribute('on','false')
+              # submitDrawer.style.height= 'auto'
   #            submitDrawer.style.width= $('#logo').width()
 
 
@@ -89,9 +89,9 @@ angular.module 'lander.directives.submit', []
   #            mqs = window.matchMedia("(max-width: 649px)")
   ##            if (mqs.matches)
   #           $('#toolbar').css('top','10px')
-              submitDrawer.style.top= '0px'
-              submitDrawer.setAttribute('on','true')
-              submitDrawer.style.height= '100%'
+              # submitDrawer.style.top= '0px'
+              # submitDrawer.setAttribute('on','true')
+              # submitDrawer.style.height= '100%'
 
           mqm.addListener(WidthChange)
           WidthChange(mqm)
@@ -101,12 +101,12 @@ angular.module 'lander.directives.submit', []
           WidthChangeSmall= (mq)->
             if (mq.matches)
               console.log('under 649')
-              $('#submitDrawer').attr('class','')
+              # $('#submitDrawer').attr('class','')
               $('#toolbar').css('top','-70px')
   #            $('#submitDrawer').width($('#submission-holder').width())
             else
               console.log('over 649')
-              $('#submitDrawer').attr('class','col-xs-3')
+              # $('#submitDrawer').attr('class','col-xs-3')
               $('#toolbar').css('top','0px')
 
           mq.addListener(WidthChangeSmall)
@@ -126,23 +126,23 @@ angular.module 'lander.directives.submit', []
         document.getElementsByClassName('ta-bind')[0].addEventListener 'blur',UnPauseCompress
 
 
-        toggleSubmitDrawer = ->
-          if submitDrawer.getAttribute('on') =='true'
-            if (mqm.matches)
-              submitDrawer.style.top= '-500px'
-            else
-              submitDrawer.style.width= '0px'
+        # toggleSubmitDrawer = ->
+        #   if submitDrawer.getAttribute('on') =='true'
+        #     if (mqm.matches)
+        #       submitDrawer.style.top= '-500px'
+        #     else
+        #       submitDrawer.style.width= '0px'
 
-            submitDrawerButton.style.transform='rotate(0deg)'
-            submitDrawer.setAttribute('on','false')
-          else
-            if (mqm.matches)
-               submitDrawer.style.top= '0px'
-            else
-              submitDrawer.style.width= '340px'
+        #     submitDrawerButton.style.transform='rotate(0deg)'
+        #     submitDrawer.setAttribute('on','false')
+        #   else
+        #     if (mqm.matches)
+        #        submitDrawer.style.top= '0px'
+        #     else
+        #       submitDrawer.style.width= '340px'
 
-            submitDrawerButton.style.transform='rotate(180deg)'
-            submitDrawer.setAttribute('on','true')
+        #     submitDrawerButton.style.transform='rotate(180deg)'
+        #     submitDrawer.setAttribute('on','true')
   #
   #      toggleToolbar = ->
   #        if submitToolbarButton.getAttribute('on') =='true'
@@ -163,7 +163,7 @@ angular.module 'lander.directives.submit', []
   #
   #          submitToolbarButton.setAttribute('on','true')
 
-        submitDrawerButton.addEventListener 'click',toggleSubmitDrawer
+        # submitDrawerButton.addEventListener 'click',toggleSubmitDrawer
 
   #      submitToolbarButton.addEventListener 'click',toggleToolbar
 

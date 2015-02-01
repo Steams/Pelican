@@ -11,7 +11,11 @@ ul#navigator(on='false')
         div
             i(class="fa fa-home")
         div Home
-    a.navigator-option.active(ui-sref="notes")
+    a.navigator-option(ui-sref="compose")
+        div
+            i(class="fa fa-pencil-square-o")
+        div Compose
+    a.navigator-option(ui-sref="notes")
         div
             i(class="fa fa-book")
         div Notes
@@ -23,7 +27,7 @@ ul#navigator(on='false')
         div
             i(class="fa fa-user")
         div Authors
-    a.navigator-option
+    a.navigator-option(ui-sref="events")
         div
             i(class="fa fa-bookmark")
         div Events
@@ -34,7 +38,7 @@ ul#navigator(on='false')
     a.navigator-option
         div
             i(class="fa fa-code")
-        div About
+        div About Pelican
     a.navigator-option
         div
             i(class="fa fa-sign-out")

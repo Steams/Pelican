@@ -7,18 +7,19 @@ angular.module 'landerApp', [
   'ui.router',
   'ui.bootstrap',
   'lander.directives.login'
-  'lander.directives.header',
-  'lander.directives.menu',
-  'lander.directives.list',
+  # 'lander.directives.header',
+  # 'lander.directives.menu',
+  'lander.directives.noteList',
   'lander.directives.submit',
   'lander.directives.menuButton'
-  'lander.directives.viewNotesTemplate',
   'home.directives.home',
   'lander.directives.pulsingButton',
   'lander.directives.expandingPanel',
   'lander.directives.communitiesList',
   'lander.directives.authorsList',
   'lander.directives.navigator',
+  'lander.directives.eventsList',
+  'lander.directives.sortSwitch',
   'textAngular'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider) ->

@@ -1,27 +1,51 @@
-div#note-view-holder
-    navigator-panel
-    #notes-content-container
-        #search-panel
-            #search-options-view
-            #search-panel-top
-                #search-box
-                    div Global
-                    #search-bar
-                        i(class="fa fa-search")
-                        input(type="text" ng-model="filter")
-                #search-options
-                    i(class="fa fa-gears")
-                    i(class="fa fa-sort-numeric-desc")
-                    i(class="fa fa-eye")
-                    #search-options-sort
-                        .search-sorting-option Rating
-                        .search-sorting-option Recent
-            #search-panel-bottom
-                note-list
-        #note-panel
-            i#expand-icon(class="fa fa-arrows-alt")
-            i#like-icon(class="fa fa-heart" ng-click="likeNote()")
-            #editor-toolbar-holder
-                #note-information
-            #editor-background-fill
-            div.viewer(id="editor" data-expanding-panel)
+div#note-view-holder(ng-init="$scope.order='subject'")
+	#notes-content-container
+		#search-panel
+			#search-options-view
+			#search-panel-top
+				#search-box
+					div Global
+					#search-bar
+						i(class="fa fa-search")
+						input(type="text" ng-model="filter")
+				#search-options
+					i(class="fa fa-gears" id="menu-settings-button" )
+					i(class="fa fa-sort-numeric-desc")
+					i(class="fa fa-eye")
+					#search-options-sort(data-sort-switch="")
+						.search-sorting-option(ng-click="$scope.order='-viewCount'") Rating
+						.search-sorting-option(ng-click="$scope.order='-createdAt'") Recent
+			#search-panel-bottom(data-menu)
+				#menu-settings(on='false')
+					#menu-settings-title Search Settings
+					.settings-category
+						span.subject-label Subject
+						input.subject-input(type='text' list='subjects' ng-model="search.subject")
+					br
+					.settings-category
+						span.subject-label Author
+						input.subject-input(type='text' list='Authors' ng-model="search.author" placeholder="not yet implemented")
+					br
+					.settings-category
+						span.subject-label Contains Text
+						input.subject-input(type='text' ng-model="search.content" placeholder="use filter bar")
+					#menu-settings-close(ng-click="loadList(search.subject)")
+					span(class="glyphicon glyphicon-circle-arrow-up settings-close-icon ok")
+
+					datalist(id="subjects")
+						option Mathematics
+						option English
+						option Engineering
+						option All
+					datalist(id="Authors")
+						option Radcliffe
+						option Skai
+						option Charles
+				note-list
+		#note-panel
+			i#expand-panel-icon(class="fa fa-arrows-alt")
+			i#like-icon(class="fa fa-heart" ng-click="likeNote()")
+			#editor-toolbar-holder
+				#note-information
+			#editor-background-fill
+			div.viewer(id="viewPanel" data-expanding-panel)
