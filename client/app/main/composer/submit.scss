@@ -1,40 +1,3 @@
-#submission-holder{
-  display: flex;
-  position:absolute;
-  width:100%;
-  height:100%;
-  margin: 0px;
-//  padding-top: 1px;
-//  border-top: 1px solid #EEE8D8;
-  overflow: hidden;
-}
-
-#submitDrawer{
-  height:100%;
-  background-color:#fff;
-  color:#ffffff;
-//  width: 340px;
-  max-width:340px;
-  // width:270px;
-  // width:0px;
-  // flex-grow:1;
-  transition-property:top,height,width;
-  transition-duration:0.5s;
-  padding:0px;
-  padding-top:50px;
-  @media screen and (max-width: $break-medium) {
-//    width: 25%;
-     position: absolute;
-    top:0px;
-    z-index: 4;
-  }
-  @media screen and (max-width: $break-small) {
-    width: 300px;
-//    height:Calc(100% - 70px);
-    padding-top:10px;
-  }
-}
-
 #sub-options-holder{
   height:100%;
   width:100%;
@@ -56,18 +19,21 @@
 }
 
 #submitButton{
-  height: 40px;
-  width:100%;
-  background-color:#FE5621;
-  transition-property:background-color;
-  transition-duration:0.3s;
+    height: 30px;
+    width:100px;
+    float:right;
+    border-radius: 2px 2px 2px 2px;
+    line-height: 30px;
+    background-color:#36bcc7;
+    transition-property:background-color !important;
+    transition-duration:0.3s;
 
-  span{
-    line-height:40px;
-    font-weight:700;
-    color:#528845;
-    font-size:30px;
-  }
+    span{
+        line-height:40px;
+        font-weight:700;
+        color:#528845;
+        font-size:30px;
+    }
 
 }
 

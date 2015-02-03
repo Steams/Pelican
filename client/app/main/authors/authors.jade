@@ -1,19 +1,6 @@
-div#note-view-holder
+div#note-view-holder(ng-init="setHeading('Authors');$scope.show='true'")
     #notes-content-container
-        #search-panel
-            #search-options-view
-            #search-panel-top
-                #search-box
-                    div Authors
-                    #search-bar
-                        i(class="fa fa-search")
-                        input(type="text" ng-model="filter")
-                #search-options
-                    i(class="fa fa-gears")
-                    i(class="fa fa-sort-numeric-desc")
-                    i(class="fa fa-eye")
-                    #search-options-sort(data-sort-switch)
-                        .search-sorting-option Rating
-                        .search-sorting-option Recent
-            #search-panel-bottom
-                authors-list
+        search-panel
+            authors-list
+        #content-panel
+            authors-detail

@@ -1,42 +1,24 @@
-div#submission-holder(class="row")
+div#submission-holder( ng-init="setHeading('Compose Note')")
   div#note-view-holder
       #notes-content-container
-          #search-panel
-              #search-options-view
-              #search-panel-top
-                  #search-box
-                      div Compose Note
-                      #search-bar
-                          //- i(class="fa fa-search")
-                          //- input(type="text" ng-model="filter")
-                  #search-options
-                      i(class="fa fa-gears")
-                      i(class="fa fa-sort-numeric-desc")
-                      i(class="fa fa-eye")
-                      #search-options-sort(data-sort-switch)
-                          .search-sorting-option Rating
-                          .search-sorting-option Recent
-              #search-panel-bottom
-                #sub-options-holder
-                  .sub-option
-                    //- p Title
-                    input(type="text" ng-model='submitTitle' placeholder="Title")
-                  .sub-option
-                    //- p Authors
-                    input(type="text" ng-model='submitAuthor' placeholder="Authors")
-                  .sub-option
-                    //- p Description
-                    input(type="text" ng-model='submitDesc' placeholder="Description")
-                  .sub-option
-                    //- p Subject
-                    input(type="text" ng-model="submitSubject" placeholder="Subject")
-                  .sub-option
-                    //- p Tags
-                    input(type="text" placeholder="Tags (not implemented atm)")
-                  .sub-option
-                    #submitButton(ng-click="submitNote()")
-                      span(class="glyphicon glyphicon-send")
-          #note-panel
+          search-panel
+            #sub-options-holder(ng-controller="composerCtrl")
+              .sub-option
+                //- p Title
+                input(type="text" ng-model='submitTitle' placeholder="Title")
+              .sub-option
+                //- p Description
+                input(type="text" ng-model='submitDesc' placeholder="Description")
+              .sub-option
+                //- p Subject
+                input(type="text" ng-model="submitSubject" placeholder="Subject")
+              .sub-option
+                //- p Tags
+                input(type="text" placeholder="Tags (not implemented atm)")
+              .sub-option
+                #submitButton(ng-click="submitNote()") Send
+                      //- span(class="glyphicon glyphicon-send")
+          #content-panel
               i#expand-icon(class="fa fa-arrows-alt")
               i#like-icon(class="fa fa-heart" ng-click="likeNote()")
               #editor-toolbar-holder

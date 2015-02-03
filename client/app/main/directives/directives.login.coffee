@@ -5,7 +5,7 @@ angular.module 'lander.directives.login', []
 #    scope : true
   replace : true
   templateUrl: 'app/main/partials/login.html'
-  controller : "MainCtrl"
+  controller : "globalCtrl"
   link:(scope,el,attrs)->
     setActiveTrue = (item)->
       item.attr('active','true')

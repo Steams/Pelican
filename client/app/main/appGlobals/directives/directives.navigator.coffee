@@ -3,6 +3,7 @@ angular.module 'lander.directives.navigator', []
 	return {
 		restrict : 'E'
 		scope :true
+		controller: 'globalCtrl'
 		replace : true
 		templateUrl: 'app/main/appGlobals/partials/navigator.html'
 		link:(scope,el,attrs)->
@@ -12,4 +13,6 @@ angular.module 'lander.directives.navigator', []
 					$('.navigator-option').each (index2)->
 						$(this).attr('active','false')
 					$(this).attr('active','true')
+					# scope.setHeading($(this).attr('name'))
+					# alert(scope.heading)
 	}

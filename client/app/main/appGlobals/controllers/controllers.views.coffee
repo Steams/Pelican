@@ -2,7 +2,7 @@
 
 angular.module 'landerApp'
 .controller 'viewCtrl',['$scope','$resource','$sce','notesFactory',($scope,$resource,$sce,notesFactory) ->
-
+  
   $scope.notes = ()-> return notesFactory.notes #keep notes up to date by always checking factory when referecing it
   $scope.selected = ()-> return notesFactory.selected
   $scope.selectNote = (index)-> return notesFactory.selectNote(index)

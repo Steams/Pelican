@@ -2,7 +2,7 @@ var Sequelize = require('sequelize');
 var db = require('./landerDB.js');
 
 var Notebook = db.define('Notebook',{
-	title:Sequelize.STRING,
+	name:Sequelize.STRING,
 	id:{
 		type:Sequelize.UUID,
 		defaultValue:Sequelize.UUIDV4,

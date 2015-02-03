@@ -4,7 +4,7 @@ angular.module 'landerApp'
   factory = this
   factory.authors = []
   factory.selected= factory.authors[0]
-
+  factory.user;
   factory.selectAuthor = (index)->
     factory.selected = factory.authors[index]
     return factory.authors[index]

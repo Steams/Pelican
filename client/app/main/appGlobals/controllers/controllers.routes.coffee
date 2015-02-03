@@ -6,41 +6,51 @@ angular.module 'landerApp'
         .state('main',{
         url: '/'
         templateUrl: 'app/main/index.html'
-        controller: 'MainCtrl'}
+        controller: 'globalCtrl'}
         )
         .state('compose',{
         url: '/compose'
         templateUrl: 'app/main/submit.html'
-        controller: 'MainCtrl'}
+        controller: 'globalCtrl'}
         )
         .state('login',{
         url:'/login'
         templateUrl:'app/main/login.html'
-        controller: 'MainCtrl'}
+        controller: 'globalCtrl'}
         )
         .state('subject',{
         url:'/api/things/notes/subject*'
         templateUrl:'app/main/submit.html'
-        controller: 'MainCtrl'}
+        controller: 'globalCtrl'}
         )
         .state('notes',{
         url:'/notes'
         templateUrl:'app/main/notes/notes.html'
-        controller:'viewCtrl'}
+        controller:'globalCtrl'}
         )
        .state('communities',{
        url:'/communities'
        templateUrl:'app/main/communities/communities.html'
-       controller:'communitiesCtrl'}
+       controller:'globalCtrl'}
        )
        .state('authors',{
        url:'/authors'
        templateUrl:'app/main/authors/authors.html'
-       controller:'authorsCtrl'}
+       controller:'globalCtrl'}
+       )
+       .state('authors.detail',{
+       url:'/authors/'
+       templateUrl:'app/main/authors/authors.html'
+       controller:'globalCtrl'}
        )
        .state('events',{
        url:'/events'
        templateUrl:'app/main/events/events.html'
-       controller:'eventsCtrl'}
+       controller:'globalCtrl'}
+       )
+       .state('notebooks',{
+       url:'/notebooks'
+       templateUrl:'app/main/notebooks/notebooks.html'
+       controller:'globalCtrl'}
        )
 

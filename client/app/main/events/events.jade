@@ -1,19 +1,4 @@
-div#note-view-holder
-    #notes-content-container
-        #search-panel
-            #search-options-view
-            #search-panel-top
-                #search-box
-                    div Events
-                    #search-bar
-                        i(class="fa fa-search")
-                        input(type="text" ng-model="filter")
-                #search-options
-                    i(class="fa fa-gears")
-                    i(class="fa fa-sort-numeric-desc")
-                    i(class="fa fa-eye")
-                    #search-options-sort(data-sort-switch)
-                        .search-sorting-option Rating
-                        .search-sorting-option Recent
-            #search-panel-bottom
-                events-list
+div#note-view-holder(ng-init="setHeading('Upcoming Events');$scope.show='true'")
+    #notes-content-container 
+        search-panel
+            events-list

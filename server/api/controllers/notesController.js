@@ -99,7 +99,6 @@ exports.indexNotes = function(req,res){
 	Note.findAll({include: [Like,{model:User,as:'Author'},View]}).then(function(notes){
 		res.json(notes);
 	});
-	
 };
 
 exports.destroy = function(req,res){

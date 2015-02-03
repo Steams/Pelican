@@ -35,7 +35,7 @@ module.exports = function(app) {
   passport.use(new passportLocal.Strategy(function(username,password,done){
     User.find({where:{name:username} }).then(function(user){
       if (password == user.password){
-        done(null,{id:user.id, name:username});
+        done(null,user);
       }
       else{
           done(null,{});
@@ -49,7 +49,7 @@ module.exports = function(app) {
 
   passport.deserializeUser(function(id,done){
     User.find({where:{id:id}}).then(function(user){
-      done(null, {id:id,name:user.name});
+      done(null, user);
     });
   });
 

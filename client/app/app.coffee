@@ -20,6 +20,8 @@ angular.module 'landerApp', [
   'lander.directives.navigator',
   'lander.directives.eventsList',
   'lander.directives.sortSwitch',
+  'lander.directives.notebooksList',
+  'lander.directives.searchPanel',
   'textAngular'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider) ->

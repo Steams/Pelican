@@ -8,7 +8,7 @@ var eventsController = require('../controllers/eventsController.js');
 var authorsController = require('../controllers/authorsController.js');
 var subjectsController = require('../controllers/subjectsController.js');
 var communitiesController = require('../controllers/communitiesController.js');
-
+var notebookController = require('../controllers/notebookController.js')
 
 var router = express.Router();
 
@@ -39,6 +39,11 @@ router.delete('/likes',notesController.deleteLikes);
 router.post('/views',notesController.viewNote);
 router.get('/views',notesController.indexViews);
 router.delete('/views',notesController.deleteViews);
+
+router.post('/notebooks',notebookController.createNotebook);
+router.get('/notebooks',notebookController.indexNotebooks);
+router.put('/notebooks',notebookController.addNote);
+
 // router.get('/sqlNotes/Likes',landerLikesController.indexLikes);
 //router.get('/notes/:id', notesController.show);
 

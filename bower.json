@@ -20,7 +20,8 @@
     "paper-button": "Polymer/paper-button#~0.5.2",
     "paper-input": "Polymer/paper-input#~0.5.2",
     "textAngular": "~1.2.2",
-    "rangy": "~1.2.3"
+    "rangy": "~1.2.3",
+    "moment": "~2.9.0"
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",

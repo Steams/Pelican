@@ -1,0 +1,17 @@
+#search-panel(shrink='false')
+	i#toggle-search-panel(class='fa fa-arrows-h')
+	#search-options-view
+	#search-panel-top
+		#search-box
+			div {{heading()}}
+			#search-bar
+				i(class="fa fa-search" ng-show="$scope.show")
+				input(type="text" ng-model="filter" ng-show="$scope.show")
+		#search-options
+			i(class="fa fa-gears" id="menu-settings-button" )
+			i(class="fa fa-sort-numeric-desc")
+			i(class="fa fa-eye")
+			#search-options-sort(data-sort-switch="")
+				.search-sorting-option(ng-click="$scope.order='-viewCount'") Rating
+				.search-sorting-option(ng-click="$scope.order='-createdAt'") Recent
+	#search-panel-bottom(data-menu ng-transclude)

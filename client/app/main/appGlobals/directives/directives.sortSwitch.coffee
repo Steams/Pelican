@@ -8,6 +8,6 @@ angular.module 'lander.directives.sortSwitch', []
 					# alert('yigyg')
 					$('.search-sorting-option').each (index2)->
 						$(this).attr('active','false')
-				$(this).attr('active','true')
+					$(this).attr('active','true')
     # controller : "authorsCtrl"
 }

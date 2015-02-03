@@ -1,0 +1,60 @@
+#authorsDetails-holder{
+	position:absolute;
+	height:100%;
+	width:100%;
+	background-color: #D8D3D3;
+	display:flex;
+	flex-direction:column;
+}
+
+#details-top{
+	position:relative;
+	height:250px;
+	width:100%;
+	background-color: #FFF;
+}
+
+#details-top:before{
+	position:absolute;
+	top:0px;
+	left:0px;
+	background-image:url('/assets/images/autumn-forest.jpg');
+    height: 100%;
+    width: 100%;
+    content:"";
+}
+
+#details-top:after{
+	position:absolute;
+	top:100%;
+	left:50%;
+	transform:translate(-50%,0px);
+	content:"";
+	height:0px;
+	width:0px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #DEC0E2;
+}
+#details-top-icon{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	height:70px;
+	width:70px;
+	border-radius:100px;
+	background-color: #DEC0E2; 
+}
+
+#details-top-bar{
+    position: absolute;
+    bottom:0px;
+    height: 50px;
+    width: 100%;
+    background-color: #DEC0E2;
+}
+#details-bottom{
+	flex-grow:1;
+	background-color:#F9EFEF;
+}

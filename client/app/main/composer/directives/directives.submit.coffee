@@ -5,7 +5,7 @@ angular.module 'lander.directives.submit', []
     scope : true
     replace : true
     templateUrl: 'app/main/composer/submit.html'
-    controller : "MainCtrl"
+    controller : "composerCtrl"
     link:($scope,el,attr)->
       create = ->
 

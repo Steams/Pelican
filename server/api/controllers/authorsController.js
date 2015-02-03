@@ -17,7 +17,7 @@ exports.createUser = function(req,res){
 };
 
 exports.indexUsers = function(req,res){
-	User.findAll({include:[{model:Note,include:[Like]}]}).then(function(users){
+	User.findAll({include:[Like,{model:Note,include:[Like]}]}).then(function(users){
 		res.json(users);
 	});
 };

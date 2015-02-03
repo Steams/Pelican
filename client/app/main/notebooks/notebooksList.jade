@@ -1,6 +1,6 @@
 #note-list-container
   ul
-    li(ng-repeat="event in events() | filter:$parent.filter"  class="{{event.subject}}" ng-click="openauthor($index)")
+    li(ng-repeat="notebook in notebooks()"  class="{{notebook.subject}}" ng-click="opennotebook($index)")
         .list-item-body
             .list-item-stats-holder
                 .list-item-stat
@@ -11,11 +11,11 @@
                     span
             .list-item-details
                 .list-item-details-top
-                    .list-item-title {{event.name}}
+                    .list-item-title {{notebook.name}}
                     .list-item-tags
                     .list-item-time
                 .list-item-details-bottom
-                    .list-item-description Description : {{event.desc}}
-                    .list-item-author Time :{{event.createdAt}}
-                    //- time should actually be the event.time, and converted to readablee string
+                    .list-item-description Owner : {{notebook.OwnerName}}
+                    .list-item-author Time :{{notebook.createdAt}}
+                    //- time should actually be the notebook.time, and converted to readablee string
                     //- find a library to that for you

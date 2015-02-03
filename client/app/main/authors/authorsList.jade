@@ -4,11 +4,11 @@
         .list-item-body
             .list-item-stats-holder
                 .list-item-stat
-                    i(class="fa fa-eye")
-                    span
+                    i(class="fa fa-pencil-square-o")
+                    span {{author.Notes.length}}
                 .list-item-stat
                     i(class="fa fa-heart-o")
-                    span
+                    span {{author.Likes.length}}
             .list-item-details
                 .list-item-details-top
                     .list-item-title {{author.name}}

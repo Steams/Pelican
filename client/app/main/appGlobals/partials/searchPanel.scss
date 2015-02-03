@@ -1,0 +1,109 @@
+
+#search-panel{
+    position: relative;
+    height:100%;
+    width: 500px;
+    opacity:1;
+    background-color:gery;
+    padding: 30px;
+    padding-bottom: 0px;
+    transition-property:width,opacity;
+    transition-duration:0.5s;
+    
+    *:not(#toggle-search-panel){
+        opacity:1;
+        transition-property:width,opacity;
+        transition-duration:0.5s;
+    }
+}
+
+#search-options-view{
+    position: absolute;
+    height: 100%;
+    width: Calc(100% - 30px);
+    background-color: black;
+    opacity:0;
+    display: none;
+//    z-index: 2;
+
+}
+
+#search-panel-top{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $my-light-text;
+}
+#search-box{
+    height: 70%;
+    width: 100%;
+    
+    div:nth-child(1){
+        float:left;
+        font-family: 'Raleway';
+        font-weight: 200;
+        font-size: 30px;
+        
+    }
+    div:nth-child(2){
+        float:right;
+        opacity:0.7;
+        
+        input{
+            border:2px solid $my-light-text;
+//            height: 30px;
+        }
+        
+        i{
+            float:left;
+        }
+    }
+}
+#search-options{
+    color:$my-light-text;
+    i,a{
+        padding: 10px;
+//        padding-right: 20px;
+    }
+    
+    i:hover,a:hover{
+        font-size: 17px;
+        cursor: pointer;
+        //        padding-right: 20px;
+    }
+    
+    #search-options-sort{
+        float: right;
+        .search-sorting-option{
+            display: inline-block;
+            padding: 5px;
+        }
+    }
+}
+
+#search-panel-bottom{
+    position: relative;
+    height: Calc(100% - 150px);
+    width: 100%;
+}
+
+#toggle-search-panel{
+    width:30px;
+    height:30px;
+    // border:1px solid red;
+    position:fixed;
+    top:10px;
+    left:100px;
+    z-index:5;
+}
+[shrink="true"]{
+    width:0px !important;
+    // left:-200px;
+    // opacity:0 !important;
+    *:not(#toggle-search-panel){
+        opacity:0 !important;
+        // width:0px !important;
+    }
+
+}
