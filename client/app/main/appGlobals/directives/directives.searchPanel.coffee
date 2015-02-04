@@ -9,9 +9,13 @@ angular.module 'lander.directives.searchPanel', []
 		templateUrl: 'app/main/appGlobals/partials/searchPanel.html'
 		link:(scope,el,attr)->
 			$('#toggle-search-panel').click ()->
-				# alert('asd')
-				if($('#search-panel').attr('shrink') == 'false')
-					$('#search-panel').attr('shrink','true')
-				else
-					$('#search-panel').attr('shrink','false')
+                if($('.content-panel').attr('show') == 'false')
+                    $('.content-panel').attr('show','true')
+                else
+                    $('.content-panel').attr('show','false')
+#				# alert('asd')
+#				if($('#search-panel').attr('shrink') == 'false')
+#					$('#search-panel').attr('shrink','true')
+#				else
+#					$('#search-panel').attr('shrink','false')
 	}

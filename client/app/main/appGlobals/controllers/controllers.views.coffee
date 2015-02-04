@@ -2,7 +2,7 @@
 
 angular.module 'landerApp'
 .controller 'viewCtrl',['$scope','$resource','$sce','notesFactory',($scope,$resource,$sce,notesFactory) ->
-  
+
   $scope.notes = ()-> return notesFactory.notes #keep notes up to date by always checking factory when referecing it
   $scope.selected = ()-> return notesFactory.selected
   $scope.selectNote = (index)-> return notesFactory.selectNote(index)
@@ -46,7 +46,6 @@ angular.module 'landerApp'
 
   $scope.likeNote = ()->
     console.log('selected :'+ $scope.selected)
-    viewPanel = document.getElementById('viewPanel')
     like = {}
     like.noteId = $scope.selected().id
     like.userName = $scope.name;

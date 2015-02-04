@@ -1,4 +1,5 @@
-div#note-view-holder(ng-init="setHeading('Upcoming Events');$scope.show='true'")
-    #notes-content-container 
+.view-wrapper(ng-init="setHeading('Upcoming Events');$scope.show='true'")
+    .content-container
         search-panel
             events-list
+        .content-panel

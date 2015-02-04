@@ -1,7 +1,5 @@
-#home-wrapper
+#home-wrapper(ng-init="$scope.order='subject';setHeading('Home');$scope.show='true'")
   #home-container
-    a#new-note(ui-sref="compose" data-pulsing-button)
-      p( class="fa fa-plus")
     #home-column-1(class="home-column")
       ul.home-column-list-vertical
         home-list-item(ng-repeat = "item in columnOne" class="long" imgs="uihiuhiu")

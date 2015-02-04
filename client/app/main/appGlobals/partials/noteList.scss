@@ -7,6 +7,8 @@
     font-family: 'Roboto';
 }
 
+#notes-list-container:hover{
+}
 #note-list-container ul {
     width:100%;
     overflow: scroll;
@@ -15,6 +17,7 @@
     list-style:none;
     margin:0;
     padding:0;
+//    background-color: #1B2224;
 }
 
 #note-list-container ul li{
@@ -22,12 +25,25 @@
     height: 100px;
     width: 100%;
     margin: 4px auto;
+    top:0px;
+    left:0px;
+    box-shadow: -1px 2px 3px 0px rgba(50, 50, 50, 0.2);
+    transition-property: top,left,box-shadow;
+    transition-duration: 0.1s;
     background: linear-gradient(45deg, rgba(0,0,0,.4) 50%, transparent 0) 100% 0 / 25px 25px no-repeat,
-        linear-gradient(-135deg, transparent 18px, rgba(90, 113, 99, 0.2) 0) 0 / auto; /* ceil(25/sqrt(2)) = 18 */
+        linear-gradient(-135deg, transparent 18px, rgba(240, 240, 228, 0.78) 0) 0 / auto; /* ceil(25/sqrt(2)) = 18 */
+//    background: linear-gradient(45deg, rgba(0,0,0,.4) 50%, transparent 0) 100% 0 / 25px 25px no-repeat,
+//        linear-gradient(-135deg, transparent 18px, rgba(90, 113, 99, 0.2) 0) 0 / auto; /* ceil(25/sqrt(2)) = 18 */
 }
 
 #note-list-container ul li:hover{
     cursor: pointer;
+    // height:110%;
+    top:-2px;
+    left:2px;
+    box-shadow: -1px 2px 4px 0px rgba(50, 50, 50, 0.6);
+//    background: linear-gradient(45deg, rgba(0,0,0,.4) 50%, transparent 0) 100% 0 / 25px 25px no-repeat,
+//        linear-gradient(-135deg, transparent 18px, rgba(120, 93, 109, 0.2) 0) 0 / auto; /* ceil(25/sqrt(2)) = 18 */
 }
 
 .list-item-body{
@@ -35,7 +51,7 @@
     height: 100%;
     width: 100%;
     display: flex;
-    padding: 10px;
+    padding: 0px;
     
 }
 
@@ -46,7 +62,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    border-right: 2px solid;
+    border-right: 1px solid;
     
 }
 
@@ -87,7 +103,7 @@
 .Mathematics{
     .list-item-body{
         .list-item-stats-holder{
-            border-color: #9365B8;
+            background-color: #9365B8;
         }
     }
 }
@@ -95,7 +111,7 @@
 .Engineering{
     .list-item-body{
         .list-item-stats-holder{
-            border-color: #b96773;
+            background-color: #b96773;
         }
     }
 }
@@ -103,7 +119,7 @@
 .English{
     .list-item-body{
         .list-item-stats-holder{
-            border-color: #67b9b7;
+            background-color: #67b9b7;
         }
     }
 }

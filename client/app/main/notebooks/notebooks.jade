@@ -1,4 +1,5 @@
-div#note-view-holder(ng-init="setHeading('My Notebooks');$scope.show='true'")
-    #notes-content-container
+.view-wrapper(ng-init="setHeading('My Notebooks');$scope.show='true'")
+    .content-container
         search-panel
             notebooks-list
+        .content-panel

@@ -2,19 +2,13 @@
 #search-panel{
     position: relative;
     height:100%;
-    width: 500px;
+    width: 450px;
     opacity:1;
-    background-color:gery;
     padding: 30px;
     padding-bottom: 0px;
     transition-property:width,opacity;
     transition-duration:0.5s;
-    
-    *:not(#toggle-search-panel){
-        opacity:1;
-        transition-property:width,opacity;
-        transition-duration:0.5s;
-    }
+    background-color: #fff;
 }
 
 #search-options-view{
@@ -93,9 +87,9 @@
     height:30px;
     // border:1px solid red;
     position:fixed;
-    top:10px;
+    top:60px;
     left:100px;
-    z-index:5;
+    z-index:10;
 }
 [shrink="true"]{
     width:0px !important;

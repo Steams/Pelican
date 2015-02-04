@@ -7,43 +7,45 @@ ul#navigator(on='false')
             img#navigator-icon(src='assets/images/radcliffe.jpg')
             #user-name
                 h4 {{user().name}}
-    a.navigator-option(ui-sref="main" name="home")
-        div
-            i(class="fa fa-home")
-        div Home
-    a.navigator-option(ui-sref="compose" name="Composer")
-        div
-            i(class="fa fa-pencil-square-o")
-        div Compose
-    a.navigator-option(ui-sref="notes" name="Notes")
-        div
-            i(class="fa fa-file-text-o")
-        div Notes
-    a.navigator-option(ui-sref="notebooks" name="My notebooks")
-        div
-            i(class="fa fa-book")
-        div Notebooks
-    a.navigator-option(ui-sref="communities" name="Communities")
-        div
-            i(class="fa fa-users")
-        div Nests
-    a.navigator-option(ui-sref="authors" name="Authors")
-        div
-            i(class="fa fa-user")
-        div Authors
-    a.navigator-option(ui-sref="events" name="Upcoming events")
-        div
-            i(class="fa fa-bookmark-o")
-        div Events
-    a.navigator-option
-        div
-            i(class="fa fa-search-plus")
-        div Pretty search
-    a.navigator-option
-        div
-            i(class="fa fa-code")
-        div About Pelican
-    a.navigator-option
-        div
-            i(class="fa fa-sign-out")
-        div Logout
+    #navigator-menu-button(class="fa fa-bars")
+    #navigator-options-holder(show="false")
+        a.navigator-option(ui-sref="main" name="home")
+            div
+                i(class="fa fa-home")
+            div Home
+        a.navigator-option(ui-sref="compose" name="Composer")
+            div
+                i(class="fa fa-pencil-square-o")
+            div Compose
+        a.navigator-option(ui-sref="notes" name="Notes")
+            div
+                i(class="fa fa-file-text-o")
+            div Notes
+        a.navigator-option(ui-sref="notebooks" name="My notebooks")
+            div
+                i(class="fa fa-book")
+            div Notebooks
+        a.navigator-option(ui-sref="communities" name="Communities")
+            div
+                i(class="fa fa-users")
+            div Nests
+        a.navigator-option(ui-sref="authors" name="Authors")
+            div
+                i(class="fa fa-user")
+            div Authors
+        a.navigator-option(ui-sref="events" name="Upcoming events")
+            div
+                i(class="fa fa-bookmark-o")
+            div Events
+        a.navigator-option
+            div
+                i(class="fa fa-search-plus")
+            div Pretty search
+        a.navigator-option
+            div
+                i(class="fa fa-code")
+            div About Pelican
+        a.navigator-option
+            div
+                i(class="fa fa-sign-out")
+            div Logout

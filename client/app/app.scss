@@ -34,9 +34,13 @@ body{
 // Component styles are injected through grunt
 // injector
 @import 'main/a_variables.scss';
+@import 'main/appGlobals/partials/contentLayout.scss';
 @import 'main/appGlobals/partials/navigator.scss';
+@import 'main/appGlobals/partials/noteList.scss';
+@import 'main/appGlobals/partials/responsiveLayout.scss';
 @import 'main/appGlobals/partials/searchPanel.scss';
 @import 'main/appGlobals/partials/sortSwitch.scss';
+@import 'main/appGlobals/partials/viewPanel.scss';
 @import 'main/authors/authors.scss';
 @import 'main/authors/authorsDetail.scss';
 @import 'main/authors/authorsList.scss';
@@ -52,7 +56,6 @@ body{
 @import 'main/notebooks/notebooks.scss';
 @import 'main/notebooks/notebooksList.scss';
 @import 'main/notes/note.scss';
-@import 'main/notes/noteList.scss';
 @import 'main/partials/header.scss';
 @import 'main/partials/list.scss';
 @import 'main/partials/login.scss';

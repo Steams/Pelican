@@ -2,7 +2,7 @@ var Models = require('../models/lander-models');
 var Note = Models.noteModel;
 var User = Models.userModel;
 var Like = Models.likeModel;
-
+var View = Models.viewModel;
 
 exports.createUser = function(req,res){
 	console.log('creating User');
@@ -17,7 +17,7 @@ exports.createUser = function(req,res){
 };
 
 exports.indexUsers = function(req,res){
-	User.findAll({include:[Like,{model:Note,include:[Like]}]}).then(function(users){
+	User.findAll({include:[Like,View,{model:Note,include:[Like,View]}]}).then(function(users){
 		res.json(users);
 	});
 };

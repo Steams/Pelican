@@ -7,7 +7,7 @@
 //    background-color: #2D3137;
 	transition-property:width;
 	transition-duration:0.25s;
-	transition-delay: 0.6s;
+	transition-delay: 0.3s;
     transition-timing-function: ease;
 	overflow:hidden;
     padding: 0;
@@ -32,13 +32,16 @@
         }
         div:nth-child(2){
             display: block;
+            position:absolute;
+            left:60px;
+            top:0px;
             height: 45px !important;
             line-height: 45px;
-            padding-left: 30px;
-            opacity: 0;
+            // padding-left: 30px;
+            opacity: 1;
             transition-property: opacity,padding-left;
             transition-duration: 0.3s;
-            transition-delay: 0.6s;
+            transition-delay: 0.3s;
             transition-timing-function: ease;
         }
     }
@@ -72,7 +75,7 @@
        
         }
         div:nth-child(2){
-            padding-left: 15px;
+            // padding-left: 15px;
           opacity:1;
         }
     }
@@ -84,17 +87,17 @@
     transition-property: height;
     transition-duration: 0.25s;
     transition-timing-function: ease;
-    transition-delay: 0.6s;
+    transition-delay: 0.3s;
 }
 
 #navigator:hover>#navigator-header{
-    height: 100px;
+    // height: 100px;
 }
 #navigator>div>div{
     opacity: 0;
     transition-property: opacity;
     transition-duration: 0.25s;
-    transition-delay: 0.6s;
+    transition-delay: 0.3s;
     transition-timing-function: ease;
 }
 
@@ -117,10 +120,10 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     z-index: -1;
-//    filter: brightness(0.6);
+//    filter: brightness(0.3);
 //    transition-property: filter;
 //    transition-duration: 0.2s;
-//    transition-delay: 0.6s;
+//    transition-delay: 0.3s;
 }
 #navigator:hover>#navigator-header:before{
 //    filter:blur(1px) brightness(0.5);
@@ -136,17 +139,17 @@
     #navigator-header-logo{
         height: 100%;
         width: 100%;
-        background-color: rgba(10, 10,10, 0.6);
+        background-color: rgba(10, 10,10, 0.3);
         display: block;
         border-radius: 3px;
         color:white;
-        line-height: 100px;
+        line-height: 60px;
         text-align: center;
         font-family: 'Raleway';
         font-size: 20px;
         text-shadow: 2px 2px #1B2224;
 //        font-weight: 700;
-    }   
+    }
 }
 #navigator-welcome{
     height: 120px;
@@ -158,7 +161,7 @@
     opacity: 0;
     transition-property: opacity;
     transition-duration: 0.25s;
-    transition-delay: 0.6s;
+    transition-delay: 0.3s;
     font-family: 'Roboto';
     margin:0 auto;
 }
@@ -171,9 +174,15 @@
     
 }
 
+
+
 #navigator-icon{
     @extend .round-icon;
     height:40px;
     width:40px;
+}
+
+#navigator-menu-button{
+    display: none;
 }
 

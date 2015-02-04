@@ -1,6 +1,6 @@
 #note-list-container
   ul
-    li(ng-repeat="notebook in notebooks()"  class="{{notebook.subject}}" ng-click="opennotebook($index)")
+      li(ng-repeat="notebook in notebooks()"  class="{{notebook.subject}}" ng-click="opennotebook($index)" onclick="if($('.content-panel').attr('show') == 'false'){$('.content-panel').attr('show','true');}else{$('.content-panel').attr('show','false');}")
         .list-item-body
             .list-item-stats-holder
                 .list-item-stat

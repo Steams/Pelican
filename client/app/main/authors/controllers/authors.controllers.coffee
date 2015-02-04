@@ -30,10 +30,10 @@ angular.module 'landerApp'
 #    )
 
   $scope.openAuthor =(index)->
-  #   $scope.selectAuthor(index)
+    $scope.selectAuthor(index)
   #   console.log('index : '+index)
-  #   console.log('selected now : '+$scope.selected())
-  #   # console.log(authorsFactory.selected)
+    console.log('selected now : '+$scope.selected())
+    console.log(authorsFactory.selected)
   #   editor =  document.getElementById('editor')
   #   editor.innerHTML = $scope.selected().content
   #   view = {}
@@ -44,57 +44,7 @@ angular.module 'landerApp'
 
     # editor.innerHTML = $scope.authors().find({title:index}).content
 
-  # $scope.likeNote = ()->
-  #   console.log('selected :'+ $scope.selected)
-  #   editor = document.getElementById('editor')
-  #   like = {}
-  #   like.noteId = $scope.selected().id
-  #   like.userName = $scope.name;
-  #   # make service for liking note
-  #   if authorsFactory.like(like) != 500
-  #     $scope.selected().likeCount++
-  #   # console.log('Liked note title : '+$scope.authors()[index].title+'Liked note User :'+like.userName)
 
-  # $scope.loadList = (subject)->
-  #  authorsFactory.loadList(subject)
-
-  # $scope.submitNote = ->
-  #   console.log 'submiting note...'
-  #   note = new authors()
-  #   note.title = $scope.submitTitle
-  #   $scope.submitTitle = ''
-  #   note.desc = $scope.submitDesc
-  #   $scope.submitDesc =''
-  #   note.author = $scope.submitAuthor
-  #   $scope.submitAuthor=''
-  #   note.subject = $scope.submitSubject
-  #   $scope.submitSubject = ''
-  #   note.content = $sce.trustAsHtml(document.getElementById('editor').innerHTML).valueOf()
-  #   authorsFactory.submit(note)
-
-  $scope.login = ->
-    login = new Login()
-    login.username = $scope.username
-    login.password = $scope.password
-    console.log(login)
-
-    login.$save (result)->
-      console.log result
-      if result.user.name
-        $scope.$parent.name = result.user.name
-      else
-        alert('user does not exist')
-
-
-  $scope.checkLogin = ->
-    CheckLogin.get({},(data)->
-      console.log 'getting login'
-      console.log data
-      $scope.name = data.user.name)
-
-  # $scope.createNote =()->
-  #   console.log('hhbiyuyg')
-  #   document.getElementById('editor').innerHTML = " "
 
   $scope.init()
 ]

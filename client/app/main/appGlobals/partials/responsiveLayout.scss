@@ -1,0 +1,190 @@
+$break-small: 320px;
+$break-large: 1200px;
+$break-medium: 964px;
+
+@media screen and (max-width:$break-large){
+//    #search-panel{
+//        width: 40% !important;
+//    }
+}
+ @media screen and (max-width:$break-large){
+    
+     .view-wrapper,.content-container{
+        width: 100% !important;
+        position: fixed;
+        height: Calc(100% - 50px);
+        top:50px;
+        left: 0px !important;
+    }
+     
+     .viewer{
+     }
+     
+     #home-container{
+        width: 100% !important;
+        left:0px !important;
+        z-index: 2;
+     }
+    #search-panel{
+        width: 100% !important;
+    }
+     
+    .content-panel[show="true"]{
+        display: block;
+        opacity:1;
+        position: fixed !important;
+        height: Calc(100% - 50px);
+        width:100%;
+        top:Calc(50% + 25px);
+        left:50%;
+        transform: translate(-50%,-50%);
+        transition-property: width,height,opacity;
+        transition-duration: 0.5s;
+        z-index:4 ;
+    }
+     
+     .content-panel[show="false"]{
+         display: block;
+         opacity:0;
+         position: fixed !important;
+         height: Calc(0% - 50px);
+         width:0%;
+         top:Calc(50% + 25px);
+         left:50%;
+         transform: translate(-50%,-50%);
+         z-index:4 ;
+         transition-property: width,height,opacity;
+         transition-duration: 0.5s;
+     }
+    
+    #navigator-menu-button{
+        display: block;
+        position: absolute;
+        right: 0px;
+        padding: 20px;
+        color: #fff;
+        top:0px;
+        font-size: 25px;
+    }
+     
+    #navigator-menu-button:hover{
+        cursor: pointer;
+    }
+    #navigator-options-holder{
+        position: fixed;
+        top:50px;
+        height: 100%;
+        width: 70%;
+        max-width: 400px;
+//        min-width: 
+        background-color: $my-dark-grey;
+        transition-property: left;
+        transition-duration: 0.5s;
+//        transition-timing-function: ease;
+    }
+     
+     #navigator-options-holder[show="false"]{
+//         display: none !important;
+         left:-999px;
+     }
+
+     #navigator-options-holder[show="true"]{
+//         display: block !important;
+         left:0px;
+     }
+    
+     #navigator{
+         position:fixed;
+         top:0px;
+         left:0px;
+         height:50px;
+         width:100%;
+         background-color:$my-dark-grey;
+         transition-property:none;
+         overflow:visible;
+     }
+     #navigator:hover{
+         width:100%;
+     }
+     
+
+     #navigator>#navigator-header{
+         height: 100%;
+         width: 40px;
+         transition-property: width;
+         transition-duration: 0.25s;
+         transition-timing-function: ease;
+         transition-delay: 0.3s;
+     }
+
+     #navigator:hover>#navigator-header{
+          width: 70px;
+     }
+     #navigator>div>div{
+         opacity: 0;
+         transition-property: opacity;
+         transition-duration: 0.25s;
+         transition-delay: 0.3s;
+         transition-timing-function: ease;
+     }
+
+
+     #navigator:hover>div>div{
+         opacity: 1;
+     }
+
+     #navigator-header:before{
+         
+     }
+     #navigator:hover>#navigator-header:before{
+         //    filter:blur(1px) brightness(0.5);
+     }
+     #navigator-header{
+         //	height:50px;
+         position: relative;
+         width:100%;
+         display:flex;
+         align-items: center;
+         justify-content: center;
+
+         #navigator-header-logo{
+             height: 100%;
+             width: 100%;
+             background-color: rgba(10, 10,10, 0.3);
+             display: block;
+             border-radius: 3px;
+             color:white;
+             line-height: 60px;
+             text-align: center;
+             font-family: 'Raleway';
+             font-size: 20px;
+             text-shadow: 2px 2px #1B2224;
+             //        font-weight: 700;
+         }
+     }
+     #navigator-welcome{
+         display: none;
+         height: 120px;
+         color:#636567;
+         font-size: 20px;
+         padding: 10px;
+         text-align: center;
+         width: 170px;
+         opacity: 0;
+         transition-property: opacity;
+         transition-duration: 0.25s;
+         transition-delay: 0.3s;
+         font-family: 'Roboto';
+         margin:0 auto;
+     }
+
+     #navigator:hover>#navigator-welcome{
+         opacity: 1;
+     }
+
+     #navigator-icon-holder{
+
+     }
+
+
+ }   

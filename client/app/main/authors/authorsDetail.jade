@@ -1,5 +1,57 @@
-#authorsDetails-holder
-	#details-top
-		#details-top-icon
-		#details-top-bar
-	#details-bottom
+#authorsDetails-holder(ng-controller="authorsCtrl")
+    #details-top
+        #details-top-left
+        #details-top-center
+            #details-top-icon-holder
+                #details-top-icon
+            #details-user-name {{selected().name}}
+            #details-user-stats-holder
+                .top-details-user-stat
+                    #top-details-stat-title Written
+                    #top-details-stat-value {{selected().Notes.length}}
+                    #top-details-stat-divider
+                .top-details-user-stat
+                    #top-details-stat-title Read
+                    #top-details-stat-value {{selected().Views.length}}
+                    #top-details-stat-divider
+                .top-details-user-stat
+                    #top-details-stat-title Rank
+                    #top-details-stat-value {{selected().rank}}
+                    #top-details-stat-divider
+                .top-details-user-stat
+                    #top-details-stat-title Reputation
+                    #top-details-stat-value {{selected().reputation}}
+                    #top-details-stat-divider
+        #details-top-right
+            h3 {{selected().name}}
+    #details-bottom
+        #details-bottom-column-1.details-bottom-column
+            .details-user-stat Joined : {{selected().createdAt}}
+            .details-user-stat Rank : {{selected().rank}}
+            .details-user-stat Rep : {{selected().reputation}}
+            .details-user-stat Exp :
+            .details-user-stat Notes Written : {{selected().Notes.length}}
+            .details-user-stat Notes Liked : {{selected().Likes.length}}
+            #details-trophies
+            h2 Trophies
+        #details-bottom-column-2.details-bottom-column
+            h1 Notes
+            #d-note-list-container
+                ul
+                    li(ng-repeat="note in selected().Notes | filter:$parent.filter | orderBy: $scope.order" class="{{note.subject}}" ng-click="openNote(note.id)")
+                        .list-item-body
+                            .list-item-stats-holder
+                                .list-item-stat
+                                    i(class="fa fa-eye")
+                                    span {{note.Views.length}}
+                                .list-item-stat
+                                    i(class="fa fa-heart-o")
+                                    span {{note.Likes.length}}
+                            .list-item-details
+                                .list-item-details-top
+                                    .list-item-title {{note.title}}
+                                    .list-item-tags
+                                    .list-item-time
+                                .list-item-details-bottom
+                                    .list-item-description Description : {{note.desc}}
+                                    .list-item-author Author : {{selected().name}}

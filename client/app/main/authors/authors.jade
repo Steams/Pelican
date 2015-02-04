@@ -1,6 +1,6 @@
-div#note-view-holder(ng-init="setHeading('Authors');$scope.show='true'")
-    #notes-content-container
+.view-wrapper(ng-init="setHeading('Authors');$scope.show='true'")
+    .content-container
         search-panel
             authors-list
-        #content-panel
+        .content-panel(show="false")
             authors-detail

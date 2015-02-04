@@ -1,5 +1,5 @@
-div#note-view-holder(ng-init="$scope.order='subject';setHeading('Notes');$scope.show='true'")
-	#notes-content-container
+.view-wrapper(ng-init="$scope.order='subject';setHeading('Notes');$scope.show='true'")
+	.content-container
 		//- #search-panel(shrink='false')
 		//- 	#search-options-view
 		//- 	#search-panel-top
@@ -42,7 +42,7 @@ div#note-view-holder(ng-init="$scope.order='subject';setHeading('Notes');$scope.
 					option Skai
 					option Charles
 			note-list
-		#content-panel
+		.content-panel(ng-controller='viewCtrl' show="false")
 			i#expand-panel-icon(class="fa fa-arrows-alt")
 			i#like-icon(class="fa fa-heart" ng-click="likeNote()")
 			#editor-toolbar-holder
