@@ -1,4 +1,19 @@
+[ta-bind="ta-bind"] {
+    *{max-width: 700px !important;
+    margin: 0 auto;
+    outline: 0px;}
 
+    font-family: "Alegreya";
+    font-size: 20px;
+    line-height: 33px;
+    outline:0px;
+    color:#5F5F5F;
+}
+
+[ta-bind="ta-bind"]:active {
+    border: 0px !important;
+    outline:0px;
+}
 .form-content{
   // position:absolute;
   order:1;

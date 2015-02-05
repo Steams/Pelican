@@ -1,8 +1,12 @@
 'use strict'
 
 angular.module 'landerApp'
-.controller 'authorsCtrl',['$scope','$resource','$sce','authorsFactory',($scope,$resource,$sce,authorsFactory) ->
+.controller 'authorsCtrl',['$scope','$resource','$sce','authorsFactory','$location',($scope,$resource,$sce,authorsFactory,$location) ->
 
+  $scope.openAuthorNotes = (index,name)->
+    # console.log('')
+    $location.url(['authors/'+name])
+    # $location.search('author',name)
   $scope.authors = ()-> return authorsFactory.authors #keep authors up to date by always checking factory when referecing it
   $scope.selected = ()-> return authorsFactory.selected
   $scope.selectAuthor = (index)-> return authorsFactory.selectAuthor(index)

@@ -49,13 +49,13 @@ exports.showNotesByQuery = function(req,res){
 		query.title = req.param('title');
 	}
 	if (req.param('community')){
-		query.community = req.param('community');
+		query.CommunityName = req.param('community');
 	}
 	if(req.param('subject')){
 		query.subject = req.param('subject');
 	}
 
-	Note.findAll({where:query}).then(function(notes){
+	Note.findAll({where:query,include: [Like,{model:User,as:'Author'},View]}).then(function(notes){
 		res.json(notes);
 	});
 };

@@ -36,15 +36,15 @@ angular.module 'lander.directives.pulsingButton',[]
         lastMouseY = currentMouseY
         currentMouseY = event.pageY
 
-        console.log 'current mouse: ' + currentMouseY + 'last mouse: ' + lastMouseY
+        # console.log 'current mouse: ' + currentMouseY + 'last mouse: ' + lastMouseY
 
         if currentMouseY > lastMouseY && currentMouseY != lastMouseY  #if mouse moves down
           trackMouseY--
-          console.log 'track: ' + trackMouseY
+          # console.log 'track: ' + trackMouseY
         else #if mouse moves up
           if  currentMouseY < lastMouseY
             trackMouseY++
-            console.log 'track: ' + trackMouseY
+            # console.log 'track: ' + trackMouseY
         toggleButton()
 
       setDimensions = (height,width)->

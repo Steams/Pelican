@@ -38,9 +38,9 @@ angular.module 'landerApp'
        templateUrl:'app/main/authors/authors.html'
        controller:'globalCtrl'}
        )
-       .state('authors.detail',{
-       url:'/authors/'
-       templateUrl:'app/main/authors/authors.html'
+       .state('authorsDetail',{
+       url:'/authors/:author'
+       templateUrl:'app/main/notes/notes.html'
        controller:'globalCtrl'}
        )
        .state('events',{

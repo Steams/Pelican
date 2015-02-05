@@ -49,17 +49,18 @@ angular.module 'landerApp'
 
   factory.submit = (note)-> factory.notes.splice -1,0,submitNote(note)
 
-  factory.loadList = (subject)->
-    getNotesBySubject(subject).then(
+  factory.loadNotes = (query)->
+    factory.notes = []
+    indexModel('/api/things/notes'+query).then(
       (res)->
-        if(res.list)
-          factory.notes = res.list
-        else
-          factory.notes = res
-        factory.notes.push({subject:'blank'})
-        console.log(factory.notes)
-      ,
-      (err)-> console.log err
+        factory.notes = res
+        factory.notes.forEach( (note)->
+            note.likeCount = note.Likes.length
+            note.viewCount = note.Views.length
+          )
+        console.log res,#on promise resolved
+      (err)-> console.log err #on promise rejected
     )
+    factory.notes.push({subject:'blank'})
   return factory
 ]

@@ -1,7 +1,26 @@
 'use strict'
 
 angular.module 'landerApp'
-.controller 'globalCtrl',['$scope','$resource','$sce','mainFactory',($scope,$resource,$sce,mainFactory) ->
+.controller 'globalCtrl',['$scope','$resource','$sce','mainFactory','$location',($scope,$resource,$sce,mainFactory,$location) ->
+
+  $scope.getLocation = ()->
+    searchObj = $location.search()
+    url = $location.url().split('/')
+    console.log('Getting location url :'+url)
+    if(url[1] == 'authors')
+      return ""+url[2].split('?')[0]+"\'s  Notes"
+    if searchObj.author
+      return ""+searchObj.author+"\'s Notes"
+    else
+      if searchObj.community
+        return 'Notes from '+searchObj.community
+      else
+        if searchObj.subject
+          return ''+searchObj.subject+' Notes'
+    return 'All Notes'
+
+  $scope.openView = (url)->
+    $location.url(['/'+url])
 
   $scope.setUser = (user)-> mainFactory.setUser(user)
   $scope.setHeading = (heading)-> mainFactory.setSearchHeading(heading)

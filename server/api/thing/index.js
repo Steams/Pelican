@@ -13,8 +13,8 @@ var notebookController = require('../controllers/notebookController.js')
 var router = express.Router();
 
 router.post('/notes',notesController.createNote);
-router.get('/notes/',notesController.showNotesByQuery);
-router.get('/notes',notesController.indexNotes);
+router.get('/notes',notesController.showNotesByQuery);
+// router.get('/notes',notesController.indexNotes);
 router.delete('/notes',notesController.destroy);
 
 

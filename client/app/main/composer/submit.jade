@@ -15,11 +15,14 @@
             //- p Tags
             input(type="text" placeholder="Tags (not implemented atm)")
           .sub-option
+            #editButton Write
             #submitButton(ng-click="submitNote()") Send
                   //- span(class="glyphicon glyphicon-send")
       .content-panel(show="false")
           i#expand-icon(class="fa fa-arrows-alt")
           i#like-icon(class="fa fa-heart" ng-click="likeNote()")
+          i#close-icon(class="fa fa-send")
+          i#shrink-submit(class="fa fa-expand")
           #editor-toolbar-holder
             text-angular-toolbar( name="toolbar" id='toolbar')
           #editor-background-fill

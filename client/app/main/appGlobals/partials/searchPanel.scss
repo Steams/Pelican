@@ -93,11 +93,12 @@
 }
 [shrink="true"]{
     width:0px !important;
+    display: none;
     // left:-200px;
     // opacity:0 !important;
-    *:not(#toggle-search-panel){
-        opacity:0 !important;
-        // width:0px !important;
-    }
+//    *:not(#toggle-search-panel){
+//        opacity:0 !important;
+//        // width:0px !important;
+//    }
 
 }

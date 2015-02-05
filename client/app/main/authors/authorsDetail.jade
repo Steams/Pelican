@@ -38,20 +38,20 @@
             h1 Notes
             #d-note-list-container
                 ul
-                    li(ng-repeat="note in selected().Notes | filter:$parent.filter | orderBy: $scope.order" class="{{note.subject}}" ng-click="openNote(note.id)")
+                    li(ng-repeat="notes in selected().Notes | filter:$parent.filter | orderBy: $scope.order" class="{{note.subject}}" ng-click="openAuthorNotes($index,selected().name)")
                         .list-item-body
                             .list-item-stats-holder
                                 .list-item-stat
                                     i(class="fa fa-eye")
-                                    span {{note.Views.length}}
+                                    span {{notes.Views.length}}
                                 .list-item-stat
                                     i(class="fa fa-heart-o")
-                                    span {{note.Likes.length}}
+                                    span {{notes.Likes.length}}
                             .list-item-details
                                 .list-item-details-top
-                                    .list-item-title {{note.title}}
+                                    .list-item-title {{notes.title}}
                                     .list-item-tags
                                     .list-item-time
                                 .list-item-details-bottom
-                                    .list-item-description Description : {{note.desc}}
+                                    .list-item-description Description : {{notes.desc}}
                                     .list-item-author Author : {{selected().name}}

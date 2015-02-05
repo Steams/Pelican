@@ -1,13 +1,33 @@
 'use strict'
 
 angular.module 'landerApp'
-.controller 'viewCtrl',['$scope','$resource','$sce','notesFactory',($scope,$resource,$sce,notesFactory) ->
+.controller 'viewCtrl',['$scope','$resource','$sce','notesFactory','$location',($scope,$resource,$sce,notesFactory,$location) ->
 
   $scope.notes = ()-> return notesFactory.notes #keep notes up to date by always checking factory when referecing it
   $scope.selected = ()-> return notesFactory.selected
   $scope.selectNote = (index)-> return notesFactory.selectNote(index)
+  $scope.loadNotes = (query)-> return notesFactory.loadNotes(query)
   $scope.init = ()->
-    notesFactory.indexNotes()
+    console.log('Logging Params')
+    console.log($location.search())
+    searchObj = $location.search()
+    query = '?'
+    url = $location.url().split('/')
+    console.log(url)
+    if(url.length >2 )
+      query +='author='+url[2].split('?')[0]+'&'#strip out any queryies after the route name
+    else
+      if(searchObj.author)
+        query +='author='+searchObj.author+'&'
+    if(searchObj.subject)
+      query+='subject='+searchObj.subject+'&'
+    if(searchObj.title)
+      query +='title='+searchObj.title+'&'
+    if(searchObj.community)
+      query +='community='+searchObj.community+'&'
+    console.log(query)
+    notesFactory.loadNotes(query)
+
     $scope.checkLogin()
     $scope.viewPanel =  document.getElementById('viewPanel')
     setTimeout(()->
@@ -15,19 +35,11 @@ angular.module 'landerApp'
     ,30)
 
   $scope.holder = {}
-#  viewPanel =  document.getElementById('viewPanel')
   Notes = $resource('/api/things/notes/:id',{id:'@id'})
   Login = $resource('/login')
   CheckLogin = $resource('/loginInfo')
   SubjectNotes = $resource('/api/things/notes/subjects/:id')
   menu = document.querySelector '#menu'
-
-#  $scope.getNote = (id)->
-#    Notes.get({id:id},(data)->
-#      console.log 'getting note...'
-#      content = data.list[0].content
-#      viewPanel.innerHTML= content
-#    )
 
   $scope.openNote =(id)->
     $scope.selectNote(id)
@@ -40,16 +52,12 @@ angular.module 'landerApp'
     view.noteId = $scope.selected().id
     view.userName = $scope.name
     notesFactory.view(view);
-    # console.log('Viewing note title : '+ $scope.notes()[index].title +'Viewed by : '+view.userName)
-
-    # viewPanel.innerHTML = $scope.notes().find({title:index}).content
 
   $scope.likeNote = ()->
     console.log('selected :'+ $scope.selected)
     like = {}
     like.noteId = $scope.selected().id
     like.userName = $scope.name;
-    # make service for liking note
     if notesFactory.like(like) != 500
       $scope.selected().likeCount++
     # console.log('Liked note title : '+$scope.notes()[index].title+'Liked note User :'+like.userName)
@@ -84,7 +92,6 @@ angular.module 'landerApp'
       else
         alert('user does not exist')
 
-
   $scope.checkLogin = ->
     CheckLogin.get({},(data)->
       console.log 'getting login'
@@ -96,15 +103,4 @@ angular.module 'landerApp'
     document.getElementById('viewPanel').innerHTML = " "
 
   $scope.init()
-
-#
-#  $scope.addThing = ->
-#    return if $scope.newThing is ''
-#    $http.post '/api/things',
-#      name: $scope.newThing
-#
-#    $scope.newThing = ''
-#
-#  $scope.deleteThing = (thing) ->
-#    $http.delete '/api/things/' + thing._id
 ]
