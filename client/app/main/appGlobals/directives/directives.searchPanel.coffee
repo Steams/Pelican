@@ -2,29 +2,40 @@ angular.module 'lander.directives.searchPanel', []
 .directive 'searchPanel', () ->
 	return {
 		restrict : 'E'
-		# scope :{'heading':'heading'}
 		controller: 'globalCtrl'
 		replace : true
 		transclude:true
 		templateUrl: 'app/main/appGlobals/partials/searchPanel.html'
 		link:(scope,el,attr)->
-			$('#editButton').click ()->
-                if($('.content-panel').attr('show') == 'false')
-                    $('.content-panel').attr('show','true')
-                else
-                    $('.content-panel').attr('show','false')
-                return undefined
-            $('#close-icon').click ()->
-#                alert('adsad')
-                if($('.content-panel').attr('show') == 'false')
-                    $('.content-panel').attr('show','true')
-                else
-                    $('.content-panel').attr('show','false')
-                    
-            
-			$('#shrink-submit').click ()->
-				if($('#search-panel').attr('shrink') == 'false')
-					$('#search-panel').attr('shrink','true')
+			editButton = $('#editButton')
+			contentPanel = $('.content-panel')
+			closeButton = $('#close-icon')
+			shrinkButton = $('#shrink-submit')
+			searchPanel = $('#search-panel')
+			menuSettingsButton = $('#menu-settings-button')
+			menuSettingsPanel = $('#menu-settings')
+
+			editButton.click ()->
+				if(contentPanel.attr('show') == 'false')
+					contentPanel.attr('show','true')
 				else
-					$('#search-panel').attr('shrink','false')
+					contentPanel.attr('show','false')
+
+			closeButton.click ()->
+				if(contentPanel.attr('show') == 'false')
+					contentPanel.attr('show','true')
+				else
+					contentPanel.attr('show','false')
+
+			shrinkButton.click ()->
+				if(searchPanel.attr('shrink') == 'false')
+					searchPanel.attr('shrink','true')
+				else
+					searchPanel.attr('shrink','false')
+
+			menuSettingsButton.click ()->
+				if(menuSettingsPanel.attr('show') == 'false')
+					menuSettingsPanel.attr('show','true')
+				else
+					menuSettingsPanel.attr('show','false')
 	}

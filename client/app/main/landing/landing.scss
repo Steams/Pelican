@@ -1,0 +1,105 @@
+#landing-holder{
+	position:fixed;
+	width: 100%;
+    height: 1000px;
+    z-index: 10;
+    background-color: #fff;
+//    background: -webkit-linear-gradient(90deg, #FFEEEE 10%, #DDEFBB 90%); /* Chrome 10+, Saf5.1+ */
+//    background:    -moz-linear-gradient(90deg, #FFEEEE 10%, #DDEFBB 90%); /* FF3.6+ */
+//    background:     -ms-linear-gradient(90deg, #FFEEEE 10%, #DDEFBB 90%); /* IE10 */
+//    background:      -o-linear-gradient(90deg, #FFEEEE 10%, #DDEFBB 90%); /* Opera 11.10+ */
+//    background:         linear-gradient(90deg, #FFEEEE 10%, #DDEFBB 90%); /* W3C */
+
+//    background: -webkit-linear-gradient(90deg, #EFEFBB 10%, #D4D3DD 90%); /* Chrome 10+, Saf5.1+ */
+//    background:    -moz-linear-gradient(90deg, #EFEFBB 10%, #D4D3DD 90%); /* FF3.6+ */
+//    background:     -ms-linear-gradient(90deg, #EFEFBB 10%, #D4D3DD 90%); /* IE10 */
+//    background:      -o-linear-gradient(90deg, #EFEFBB 10%, #D4D3DD 90%); /* Opera 11.10+ */
+//    background:         linear-gradient(90deg, #EFEFBB 10%, #D4D3DD 90%); /* W3C */
+
+//    background: -webkit-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* Chrome 10+, Saf5.1+ */
+//    background:    -moz-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* FF3.6+ */
+//    background:     -ms-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* IE10 */
+//    background:      -o-linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* Opera 11.10+ */
+//    background:         linear-gradient(90deg, #649173 10%, #DBD5A4 90%); /* W3C */
+
+//    background: -webkit-linear-gradient(90deg, #DAE2F8 10%, #D6A4A4 90%); /* Chrome 10+, Saf5.1+ */
+//    background:    -moz-linear-gradient(90deg, #DAE2F8 10%, #D6A4A4 90%); /* FF3.6+ */
+//    background:     -ms-linear-gradient(90deg, #DAE2F8 10%, #D6A4A4 90%); /* IE10 */
+//    background:      -o-linear-gradient(90deg, #DAE2F8 10%, #D6A4A4 90%); /* Opera 11.10+ */
+//    background:         linear-gradient(90deg, #DAE2F8 10%, #D6A4A4 90%); /* W3C */
+
+}
+#landing-top{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+//    background:linear-gradient(0deg,rgba(255, 127, 181, 0.62) 10%, rgba(152, 198, 235, 0.63) 40%); /* W3C */
+
+}
+
+#landing-nav{
+    width: 100%;
+    height: 60px;
+//    color: white;
+    font-family: "Raleway";
+    font-weight: 500;
+//    background:linear-gradient(0deg, rgba(218, 226, 248, 0.0) 10%, rgba(214, 164, 164, 0.2) 90%); /* W3C */
+}
+
+#landing-header{
+    flex-grow: 1;
+    
+    #landing-header-content{
+        height: inherit;
+        width: 100%;
+        display: flex;
+    }
+}
+
+#landing-content-left,#landingr-content-center,#landing-content-right{
+    flex-grow: 1;
+    height: 100%;
+}
+
+#landing-content-center{
+    padding-top: 150px;
+}
+
+#landing-logo{
+    float: left;
+    height: 100%;
+    width: 200px;
+    line-height: 60px;
+    font-size: 25px;
+//    font-family: "Roboto";
+//    font-stretch: expanded;
+}
+
+#landing-options{
+    float: right;
+    display: flex;
+    height: 100%;
+    width: 200px;
+    
+}
+#launch,#landing-signIn{
+    height: 100%;
+    flex-grow: 1;
+    line-height: 60px;
+    text-align:center;
+//    background-color: red;
+}
+
+#landing-title{
+    font-family: 'Raleway';
+    font-weight: 500;
+//    color: #fff;
+    text-shadow: 1px 1px 2px #888e95;
+    font-size: 40px;
+}
+#landing-greeting{
+    font-family: "Lato";
+    color: #888a8d;
+}

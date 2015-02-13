@@ -9,7 +9,7 @@ angular.module 'landerApp'
 
   factory.selectNote = (id)->
     factory.selected = $.grep(factory.notes,(e)-> return e.id ==id)[0]
-    return $.grep(factory.notes,(e)-> return e.id ==id)[0]
+    return factory.selected
 
   factory.like = (like)->
     return likeNote(like).then(
@@ -24,7 +24,6 @@ angular.module 'landerApp'
         return err.status
     )
 
-
   factory.view = (view)->
     viewNote(view).then(
       (res)->
@@ -34,20 +33,7 @@ angular.module 'landerApp'
         console.log err
     )
 
-  factory.indexNotes = ()->
-    indexModel('/api/things/notes').then(#get Notes returns a promise
-      (res)->
-        factory.notes = res
-        factory.notes.forEach( (note)->
-            note.likeCount = note.Likes.length
-            note.viewCount = note.Views.length
-          )
-        console.log res,#on promise resolved
-      (err)-> console.log err #on promise rejected
-    )
-    factory.notes.push({subject:'blank'})
-
-  factory.submit = (note)-> factory.notes.splice -1,0,submitNote(note)
+  factory.submit = (note)-> factory.notes.splice(-1,0,submitNote(note))
 
   factory.loadNotes = (query)->
     factory.notes = []
@@ -57,10 +43,14 @@ angular.module 'landerApp'
         factory.notes.forEach( (note)->
             note.likeCount = note.Likes.length
             note.viewCount = note.Views.length
+            note.tagsFormatted = ()->
+              tags = note.tags.split(',')
+              return tags
           )
-        console.log res,#on promise resolved
+        console.log res
       (err)-> console.log err #on promise rejected
     )
     factory.notes.push({subject:'blank'})
+
   return factory
 ]

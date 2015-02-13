@@ -13,10 +13,7 @@ angular.module 'landerApp'
   $scope.init = ()->
     authorsFactory.indexAuthors()
     $scope.checkLogin()
-    $scope.editor =  document.getElementById('editor')
-    setTimeout(()->
-      $scope.openAuthor 0
-    ,30)
+    
 
   $scope.holder = {}
 #  editor =  document.getElementById('editor')
@@ -34,6 +31,7 @@ angular.module 'landerApp'
 #    )
 
   $scope.openAuthor =(index)->
+    # $location.search('foo','asd')
     $scope.selectAuthor(index)
   #   console.log('index : '+index)
     console.log('selected now : '+$scope.selected())

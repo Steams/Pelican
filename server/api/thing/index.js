@@ -8,14 +8,15 @@ var eventsController = require('../controllers/eventsController.js');
 var authorsController = require('../controllers/authorsController.js');
 var subjectsController = require('../controllers/subjectsController.js');
 var communitiesController = require('../controllers/communitiesController.js');
-var notebookController = require('../controllers/notebookController.js')
+var notebookController = require('../controllers/notebookController.js');
 
 var router = express.Router();
 
 router.post('/notes',notesController.createNote);
 router.get('/notes',notesController.showNotesByQuery);
 // router.get('/notes',notesController.indexNotes);
-router.delete('/notes',notesController.destroy);
+// router.delete('/notes',notesController.destroy);
+router.delete('/notes',notesController.deleteNote);
 
 
 router.post('/authors',authorsController.createUser);

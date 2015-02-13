@@ -4,6 +4,8 @@ angular.module 'lander.directives.pulsingButton',[]
     restrict:'A'
     scope:true
     link:(scope,element,attr)->
+      button = element[0]
+      style = button.style
 
 #     Show button on mouse scroll down 30 unit/pings, hide when mouse moves up
       trackMouseY = 0 #tracks how often the mouse has moved down
@@ -13,9 +15,10 @@ angular.module 'lander.directives.pulsingButton',[]
       toggleButton = ()->
         if trackMouseY > 20 #if mouse has moved down 30 times show button and reset tracker
           trackMouseY = 20
-          element[0].style.top = '85px'
+          style.top = '85px'
+
           setTimeout(()->
-            element[0].style.top = '70px'
+            style.top = '70px'
           , 270
           )
           setDimensions('50px','50px')
@@ -23,10 +26,10 @@ angular.module 'lander.directives.pulsingButton',[]
           if trackMouseY < 0
             trackMouseY = 0
 
-            if element[0].style.top != '-70px'
-              element[0].style.top = '85px'
+            if style.top != '-70px'
+              style.top = '85px'
               setTimeout(()->
-                element[0].style.top = '-70px'
+                style.top = '-70px'
                 setDimensions('1px','1px')
               , 270
               )
@@ -48,9 +51,9 @@ angular.module 'lander.directives.pulsingButton',[]
         toggleButton()
 
       setDimensions = (height,width)->
-        element[0].style.height = height
-        element[0].style.width =  width
-        element[0].style.lineHeight = height
+        style.height = height
+        style.width =  width
+        style.lineHeight = height
 
       growAnticipation = ()->
         setDimensions('45px','45px')

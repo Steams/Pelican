@@ -4,7 +4,7 @@ var User = Models.userModel;
 var Like = Models.likeModel;
 var View = Models.viewModel;
 var Community = Models.communityModel;
-
+var Event = Models.eventModel;
 exports.createNote = function(req,res){
 	console.log(req.body);
 	var note = Note.build({
@@ -13,6 +13,8 @@ exports.createNote = function(req,res){
 		desc:req.body.desc || 'no description',
 		content:req.body.content || 'no content',
 		subject:req.body.subject || 'no subject',
+		tags:req.body.tags || '',
+		isPrivate: req.body.isPrivate || false,
 	});
 	note.save().then(function(note){
 		User.find({where:{name:req.body.author} }).then(function(author){
@@ -54,8 +56,12 @@ exports.showNotesByQuery = function(req,res){
 	if(req.param('subject')){
 		query.subject = req.param('subject');
 	}
+	if(req.param('tags')){
+		// console.log(req.param('tags'))
+		query.tags = {like:'%'+req.param('tags')+'%'};
+	}
 
-	Note.findAll({where:query,include: [Like,{model:User,as:'Author'},View]}).then(function(notes){
+	Note.findAll({where:query,include: [Like,View,Event]}).then(function(notes){
 		res.json(notes);
 	});
 };
@@ -95,16 +101,24 @@ exports.showNotesByCommunity = function(req,res){
 // 	});
 // };
 
-exports.indexNotes = function(req,res){
-	Note.findAll({include: [Like,{model:User,as:'Author'},View]}).then(function(notes){
-		res.json(notes);
-	});
-};
+// exports.indexNotes = function(req,res){
+// 	Note.findAll({include: [Like,{model:User,as:'Author'},View]}).then(function(notes){
+// 		res.json(notes);
+// 	});
+// };
 
 exports.destroy = function(req,res){
 	Note.destroy({truncate:true}).then(function(){
 		res.send(200);
 	})
+}
+
+exports.deleteNote = function(req,res){
+	Note.find({where:{id:req.body.noteId} }).then(function(note){
+		note.destroy().then(function(){
+			res.send(200,'Note Deleted')
+		});
+	});
 }
 
 exports.indexLikes = function(req,res){
@@ -122,6 +136,7 @@ exports.deleteLikes = function(req,res){
 exports.likeNote = function(req,res){
 	console.log('adding view to note');
 	User.find({where:{name:req.body.userName} }).then(function(user){
+		console.log(user);
 		Note.find({where:{id:req.body.noteId} }).then(function(note){
 			var like = Like.build({UserName:user.name,NoteId:note.id});
 			// view.save().then(function(){

@@ -17,6 +17,7 @@ var Note = db.define('Note',{
 		type:Sequelize.BOOLEAN,
 		defaultValue:false
 	},
+	tags:{type:Sequelize.STRING},
 	subject:Sequelize.STRING,
 	content:Sequelize.STRING,
 });

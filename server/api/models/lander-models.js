@@ -15,7 +15,7 @@ User.hasMany(Event);
 User.hasMany(Like);
 User.hasMany(View);
 User.hasMany(Notebook);
-User.belongsToMany(Community);
+// User.belongsToMany(Community);
 // could add a through subscription to relationship
 Like.belongsTo(User);
 Like.belongsTo(Note);
@@ -28,6 +28,7 @@ Note.belongsTo(Community);
 Note.belongsTo(Notebook);
 Note.hasMany(Like);
 Note.hasMany(View);
+Note.hasMany(Event);
 
 Notebook.belongsTo(User,{as:'Owner'});
 Notebook.hasMany(Note);

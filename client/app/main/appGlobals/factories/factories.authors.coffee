@@ -1,36 +1,24 @@
 angular.module 'landerApp'
 .factory 'authorsFactory', ['indexModel',(indexModel)->
 
-  factory = this
-  factory.authors = []
-  factory.selected= factory.authors[0]
-  factory.user;
-  factory.selectAuthor = (index)->
-    factory.selected = factory.authors[index]
-    return factory.authors[index]
+	factory = this
 
-  factory.indexAuthors = ()->
-    indexModel('/api/things/authors').then(#get authors returns a promise
-      (res)->
-        factory.authors = res
-        console.log res,#on promise resolved
-      (err)-> console.log err #on promise rejected
-    )
-    factory.authors.push({subject:'blank'})
+	factory.authors = []
+	factory.selected= factory.authors[0]
+	factory.user;
 
-  # factory.submit = (community)-> factory.authors.splice -1,0,submitcommunity(community)
+	factory.selectAuthor = (name)->
+		factory.selected = $.grep(factory.authors, (e)-> return e.name == name)[0]
+		return factory.selected
 
-  # factory.loadList = (subject)->
-  #   getauthorsBySubject(subject).then(
-  #     (res)->
-  #       if(res.list)
-  #         factory.authors = res.list
-  #       else
-  #         factory.authors = res
-  #       factory.authors.push({subject:'blank'})
-  #       console.log(factory.authors)
-  #     ,
-  #     (err)-> console.log err
-  #   )
-  return factory
+	factory.indexAuthors = ()->
+		indexModel('/api/things/authors').then(#get authors returns a promise
+			(res)->
+				factory.authors = res
+				console.log res,#on promise resolved
+			(err)-> console.log err #on promise rejected
+		)
+		factory.authors.push({subject:'blank'})
+
+	return factory
 ]

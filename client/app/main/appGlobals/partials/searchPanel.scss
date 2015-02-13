@@ -9,6 +9,7 @@
     transition-property:width,opacity;
     transition-duration:0.5s;
     background-color: #fff;
+//    background-color: #f2f1eb;
 }
 
 #search-options-view{
@@ -43,14 +44,75 @@
     div:nth-child(2){
         float:right;
         opacity:0.7;
+        position:relative;
+        height: 30px;
         
         input{
             border:2px solid $my-light-text;
+            height: 100%;
+            outline:0px;
 //            height: 30px;
         }
+        input~#input-bar{
+            position:absolute;
+            right:28px;
+            top:0px;
+            height: 100%;
+            width: 5px;
+            background-color:$my-dark-orange;
+            transition-property: right,width,background-color,opacity;
+            transition-duration: 0.3s;
+        }
         
-        i{
-            float:left;
+        @keyframes blink{
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        input:focus~#input-bar{
+            right:Calc(100% - 3px);
+//            background-color: #3eb8dd;
+            animation: blink 0.7s infinite alternate;
+            
+            width:2px;
+        }
+        input~span{
+            display: block;
+            position:absolute;
+//            top:50%;
+            width: 30px;
+            height: 100%;
+            top:0px;
+            line-height: 30px;
+            right:0px;
+            text-align: center;
+            background-color: $my-dark-orange;
+            transition-property: background-color;
+            transition-duration: 0.3s;
+//            padding: 5px;
+            font-size: 20px;
+//            box-sizing: border-box;
+            font-weight: 700;
+            i{
+                line-height: 30px;
+            }
+        input:focus~span{
+            background-color: #7bbbdd;
+            }
+            
+        }
+        
+        input~span:before{
+            position:absolute;
+            top:50%;
+            left:-10px;
+            transform:translate(0px,-50%);
+            content:"";
+            height:0px;
+            width:0px;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid $my-dark-orange;
         }
     }
 }
@@ -73,6 +135,9 @@
             display: inline-block;
             padding: 5px;
         }
+        .search-sorting-option:hover{
+            cursor: pointer;
+        }
     }
 }
 
@@ -80,6 +145,93 @@
     position: relative;
     height: Calc(100% - 150px);
     width: 100%;
+}
+
+
+#menu-settings[show="false"]{
+    opacity: 0;
+    transition-property:height,border-top,border-bottom,opacity;
+    transition-duration:0.6s;
+    transition-timing:ease-out;
+    height:0px;
+//    display: none;
+}
+#menu-settings[show="true"]{
+  display:flex;
+  opacity:1;
+  flex-direction: column;
+  position:absolute;
+  top:0px;
+  left:0px;
+  height:300px;
+  width:100%;
+  background-color: #ffffff;
+  transition-property:height,border-top,border-bottom,opacity;
+  transition-duration:0.6s;
+  transition-timing:ease-out;
+  border-bottom:0;
+  border-top:0;
+  padding-top:10px;
+  // border-bottom:5px solid #5eb793;
+  font-family:"Oswald";
+  // font-weight:300;
+  color: #2D3138;
+  z-index: 7;
+}
+.settings-category{
+  display: flex;
+    height: 50px;
+  span{
+    width:30%;
+    opacity:1;
+    transition-property:opacity;
+    transition-duration:0.3s;
+
+  }
+  input{
+    display: block;
+    opacity:1;
+    transition-property:opacity;
+    transition-duration:0.3s;
+    width:60%;
+  }
+}
+
+
+#menu-settings-title{
+  height:30px;
+  // top:0px;
+  width:100%;
+  background-color:#fefefe;
+  text-align:center;
+  color: #534f4f;
+}
+
+#menu-settings-close{
+  height:30px;
+  position:relative;
+//  bottom:0px;
+  // margin-bottom:10px;
+  width:100%;
+  background-color:#fefefe;
+  text-align:center;
+  color: #534f4f;
+  span{
+    position:absolute;
+    top:50%;
+    left:0px;
+    transform:translate(0,-50%);
+    line-height:30px;
+  }
+}
+
+#menu-settings-close:hover{
+  cursor: pointer;
+}
+.settings-close-icon{
+  width:100%;
+  height:100%;
+  text-align:center;
 }
 
 #toggle-search-panel{

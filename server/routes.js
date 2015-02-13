@@ -12,7 +12,21 @@ var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
 var Models = require('./api/models/lander-models');
 var User = Models.userModel;
-
+var emptyUser = {
+    authenticated: false,
+    user: {
+        age: null,
+        id: null,
+        name: null,
+        password: null,
+        email: null,
+        rank: null,
+        reputation: null,
+        createdAt: null,
+        updatedAt: null,
+        CommunityName: null
+    }
+};
 // var express = require('express');
 module.exports = function(app) {
 
@@ -28,27 +42,41 @@ module.exports = function(app) {
     saveUninitialized:false
   }));
 
-
+  // app.use(function(req,res){
+  //   console.log(req.body);
+  // })
   app.use(passport.initialize());
   app.use(passport.session());
 
   passport.use(new passportLocal.Strategy(function(username,password,done){
     User.find({where:{name:username} }).then(function(user){
-      if (password == user.password){
-        done(null,user);
+      if(user){
+        if (password == user.password){
+          done(null,user);
+        }
+        else{
+            console.log('wrong pass');
+            return done(null,false,{message:"asdasd"});
+        }
       }
       else{
-          done(null,{});
+        done(null,false,{});
       }
     });
   }));
 
   passport.serializeUser(function(user,done){
-    done(null, user.id);
+    if(user.password !=null){
+      done(null, user.id);
+    }
+    else{
+      done(null,false,{});
+    }
   });
 
   passport.deserializeUser(function(id,done){
     User.find({where:{id:id}}).then(function(user){
+
       done(null, user);
     });
   });
@@ -58,7 +86,8 @@ module.exports = function(app) {
   app.post('/login',passport.authenticate('local'),function(req,res){
     // return jso object of user data on is authenticated in req
     // res.redirect('/login');
-    console.log({authenticated : req.isAuthenticated(), user:req.user});
+    // console.log('yryrd')
+    // console.log({authenticated : req.isAuthenticated(), user:req.user});
     // return('login');
     return res.json({authenticated : req.isAuthenticated(), user:req.user});
   });

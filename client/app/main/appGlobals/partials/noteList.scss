@@ -8,7 +8,9 @@
 }
 
 #notes-list-container:hover{
+
 }
+
 #note-list-container ul {
     width:100%;
     overflow: scroll;
@@ -22,7 +24,7 @@
 
 #note-list-container ul li{
     position: relative;
-    height: 100px;
+    height: 125px;
     width: 100%;
     margin: 4px auto;
     top:0px;
@@ -30,6 +32,8 @@
     box-shadow: -1px 1px 2px 0px rgba(50, 50, 90, 0.2);
     transition-property: top,left,box-shadow;
     transition-duration: 0.1s;
+//    background: linear-gradient(45deg, rgba(0,0,0,.4) 50%, transparent 0) 100% 0 / 25px 25px no-repeat,
+//        linear-gradient(-135deg, transparent 18px, rgba(255, 255, 255, 0.78) 0) 0 / auto; /* ceil(25/sqrt(2)) = 18 */
     background: linear-gradient(45deg, rgba(0,0,0,.4) 50%, transparent 0) 100% 0 / 25px 25px no-repeat,
         linear-gradient(-135deg, transparent 18px, rgba(240, 240, 228, 0.78) 0) 0 / auto; /* ceil(25/sqrt(2)) = 18 */
 //    background: linear-gradient(45deg, rgba(0,0,0,.4) 50%, transparent 0) 100% 0 / 25px 25px no-repeat,
@@ -52,7 +56,7 @@
     width: 100%;
     display: flex;
     padding: 0px;
-    
+
 }
 
 .list-item-stats-holder{
@@ -63,7 +67,7 @@
     align-items: center;
     justify-content: space-around;
     border-right: 1px solid;
-    
+
 }
 
 .list-item-stat{
@@ -99,7 +103,7 @@
     color:$my-light-text;
 }
 
-
+// Math related colors
 .Mathematics{
     .list-item-body{
         .list-item-stats-holder{
@@ -107,7 +111,24 @@
         }
     }
 }
+//Computer science uses indigo
+.Computing{
+    .list-item-body{
+        .list-item-stats-holder{
+            background-color: #1A237E;
+        }
+    }
+}
 
+// .Computing{
+//     .list-item-body{
+//         .list-item-stats-holder{
+//             background-color: #1A237E;
+//         }
+//     }
+// }
+
+// Engineering related colors
 .Engineering{
     .list-item-body{
         .list-item-stats-holder{
@@ -122,4 +143,16 @@
             background-color: #67b9b7;
         }
     }
+}
+
+.English{
+    .list-item-body{
+        .list-item-stats-holder{
+            background-color: #67b9b7;
+        }
+    }
+}
+
+.blank{
+    opacity:0;
 }

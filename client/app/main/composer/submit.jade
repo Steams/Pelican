@@ -13,7 +13,7 @@
             input(type="text" ng-model="submitSubject" placeholder="Subject")
           .sub-option
             //- p Tags
-            input(type="text" placeholder="Tags (not implemented atm)")
+            input(type="text" ng-model="submitTags" placeholder="Tags (comma deliminated,no hastags)")
           .sub-option
             #editButton Write
             #submitButton(ng-click="submitNote()") Send

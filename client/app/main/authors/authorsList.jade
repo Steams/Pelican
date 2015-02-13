@@ -1,6 +1,6 @@
 #note-list-container
   ul
-      li(ng-repeat="author in authors() | filter:$parent.filter"  class="{{author.subject}}" ng-click="openAuthor($index)" onclick="if($('.content-panel').attr('show') == 'false'){$('.content-panel').attr('show','true');}else{$('.content-panel').attr('show','false');}")
+      li(ng-repeat="author in authors() | filter:$parent.filter"  class="{{author.subject}}" ng-click="openAuthor(author.name)" onclick="if($('.content-panel').attr('show') == 'false'){$('.content-panel').attr('show','true');}else{$('.content-panel').attr('show','false');}")
         .list-item-body
             .list-item-stats-holder
                 .list-item-stat
