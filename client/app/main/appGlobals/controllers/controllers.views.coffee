@@ -11,6 +11,7 @@ angular.module 'landerApp'
 	$scope.loadNotes = (query)-> return notesFactory.loadNotes(query)
 	$scope.init = ()->
 		console.log('Logging Params')
+		document.getElementsByTagName('body')[0].style.overflow = 'hidden'
 		mainFactory.setSearchHeading(mainFactory.getLocation())
 		# console.log($location.search())
 		searchObj = $location.search()

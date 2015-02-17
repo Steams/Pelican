@@ -6,7 +6,7 @@ angular.module 'landerApp'
         .state('landing',{
         url: '/'
         templateUrl: 'app/main/landing/landing.html'
-        controller: 'globalCtrl'}
+        controller: 'landingCtrl'}
         )
         .state('home',{
         url: '/home'

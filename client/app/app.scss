@@ -14,22 +14,18 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     color: #000;
     padding: 0.2em 0;
 }
-body,html{
-//  box-sizing: border-box;
+html{
+	overflow:hidden;
+}
+body{
+
   position:absolute;
   height:100%;
   width:100%;
-//  padding-left:30px;
-//  padding-right: 30px;
-
- overflow: hidden;
+	// overflow-y:scroll;
+ // overflow: hidden;
+ background-color: #fff;
 }
-
-body{
-//  background-color:#E8EBF0;
-  background-color: #fff;
-}
-
 
 // Component styles are injected through grunt
 // injector

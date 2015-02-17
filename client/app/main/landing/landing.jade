@@ -1,16 +1,52 @@
 #landing-holder
-    #landing-top
-        #landing-nav
-            #landing-logo P I X - E
+    article#landing-header
+        nav#landing-nav
+            #landing-logo Pelican
             #landing-options
-                #launch LAUNCH
-                #landing-signIn SIGN IN
-        #landing-header
-            #landing-header-content
-                #landing-content-left
-                #landing-content-center
-                    #landing-icon
-                    #landing-title Pelican
-                    #landing-greeting Today we Excell. Tommorow we Exceed
-                #landing-content-right
-                    #landing-registration
+                button.landing-option(ui-sref="notes") LAUNCH
+                button.landing-option LOG IN
+        #landing-hero
+            #landing-hero-content
+                #landing-hero-content-left
+                    ul#landing-subjectBox
+                        //                        li.Mathematics 
+                        //                        li.Language 
+                        //                        li.Engineering
+                        //                        li.Psycology
+                        //                        li.Computing
+                        //                        li.Biology
+                        //                        li.Law
+                        //                        li.Chemistry
+                        //                        li.Physics
+
+                    #landing-hero-content-greeting
+                        p 
+                            span Pelican 
+                        p 
+                            span Together we Excell
+                        p 
+                            span Tommorow we Exceed
+                        p Write and save your notes in the cloud. Read and rate notes from your peers. Earn ranking, reputation, badges and achievments as you help advance the community
+                        button More About
+                #landing-hero-content-right
+                   #signUp-holder
+                        .signUp-box
+                            .signUp-box-top
+                               p Join our small Community
+                            .signUp-box-bottom
+                                input( placeholder="Username" ng-model="username")
+                                input( placeholder="Password" ng-model="password")
+                                input( placeholder="Confirm password" ng-model="confirm")
+                                input( placeholder="Email Address" ng-model="email")
+                                div( ng-click="signUp()") SIGN UP
+                                p Or Log in with
+                                ul
+                                    li.twitter
+                                    li.facebook
+                                    li SKIP IT
+                                    
+
+    article
+
+                        
+                    

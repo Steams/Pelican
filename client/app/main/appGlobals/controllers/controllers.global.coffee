@@ -1,8 +1,12 @@
 'use strict'
 
 angular.module 'landerApp'
-.controller 'globalCtrl',['$scope','$resource','$sce','mainFactory','$location','notesFactory',($scope,$resource,$sce,mainFactory,$location,notesFactory) ->
+.controller 'globalCtrl',['$scope','$resource','$sce','mainFactory','$location','notesFactory','authorsFactory',
+($scope,$resource,$sce,mainFactory,$location,notesFactory,authorsFactory) ->
 
+	$scope.loadAuthors = ()-> authorsFactory.indexAuthors()
+	$scope.authors = ()-> return authorsFactory.authors
+	$scope.notes = ()-> return notesFactory.notes
 	$scope.getLocation = ()->
 		console.log 'globalCtrl: Getting Location...'
 		return mainFactory.getLocation()
@@ -17,6 +21,7 @@ angular.module 'landerApp'
 	$scope.user = ()-> return mainFactory.user
 	$scope.init = ()->
 		console.log 'globalCtrl: initializing'
+		$scope.loadAuthors()
 		$scope.checkLogin()
 
 	$scope.refreshPage = ()->
