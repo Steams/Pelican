@@ -25,9 +25,27 @@
                 datalist(ng-controller="authorsCtrl" id="Authors")
                     option(ng-repeat="author in $scope.authors()") {{author.name}}
             note-list
-        .content-panel(ng-controller='viewCtrl' show="false")
-            i#expand-panel-icon(class="fa fa-arrows-alt")
-            i#like-icon(class="fa fa-heart" ng-click="likeNote()")
-            i#close-icon(class="fa fa-close")
-            i#shrink-submit(class="fa fa-expand")
-            div.viewer(id="viewPanel" data-expanding-panel show="false" on="false")
+        .content-panel(ng-controller='viewCtrl' show="false" class="{{selected().subject}}" notes='')
+            #content-panel-info-holder
+                #content-panel-info
+                    #content-panel-left
+                        p {{selected().title}}
+                        p {{myMoment(selected().createdAt).format('MMMM Do YYYY')}}
+                        p {{selected().AuthorName}}
+                    #content-panel-right
+                        #notebookButton(data-modal-button) Add to notebook
+                            modal(ng-controller='viewCtrl' ng-init="notebook = ''")
+                                #modal-notebook
+                                    p Select a notebook to add to
+                                    input(id="notebook" ng-model="notebook" list="notebooksList"  placeholder="note")
+                                    datalist(id="notebooksList")
+                                        option(ng-repeat="notebook in notebooks()" value="{{notebook.name}}")
+                                    #addToNotebook(ng-click="addToNotebook(selected().id,notebook)") Add
+
+            div.viewer(id="viewPanel" data-expanding-panel show="false" on="false" focus="false")
+                #content-panel-icon-holder
+                    i#expand-panel-icon(class="fa fa-arrows-alt")
+                    i#like-icon(class="fa fa-heart" ng-click="likeNote()")
+                    i#close-icon(class="fa fa-close")
+                    i#shrink-submit(class="fa fa-expand")
+                #viewInner

@@ -7,18 +7,47 @@
 # turn username into user object by querying users api
 
 angular.module 'landerApp'
-.factory 'mainFactory', ['indexModel','whereAmI','signUp','signIn','$location',(indexModel,whereAmI,signUp,signIn,$location)->
+.factory 'mainFactory', ['indexModel','whereAmI','signUp','signIn','$location','checkLogin','addToNotebook',
+(indexModel,whereAmI,signUp,signIn,$location,checkLogin,addToNotebook)->
 
 	factory = this
-	factory.user =''
+	factory.user ={}
 	factory.searchHeading =''
 	factory.showNav=true
+	factory.notebooks = []
+	factory.pauseNotebooks = false
+	factory.ready = false
+
+	factory.addToNotebook = (id,notebook) ->
+		addToNotebook({'noteId':id,'notebookName':notebook}).then(
+			(res)->
+				$.grep(factory.notebooks, (e)-> return e.name == res.name)[0] = res
+				return
+			,
+			(err)->
+				return
+		)
+	factory.checkLogin = ()->
+		# alert 'df'
+		console.log 'CheckLogin'
+		checkLogin().then(
+			(res)->
+				console.log res
+				if res.data.user.name
+					factory.setUser(res.data.user)
+				return res
+			,
+			(err)->
+				console.log err
+		)
 
 	factory.getLocation = ()->
 		return whereAmI()
 
 	factory.setUser = (user)->
 		factory.user = user
+		factory.notebooks = user.Notebooks
+		factory.ready=true
 		return factory.user
 
 	factory.setSearchHeading = (heading)->
@@ -45,7 +74,7 @@ angular.module 'landerApp'
 		)
 
 	factory.signUp = (user)->
-		return signUp(user).then(
+		signUp(user).then(
 			(res)->
 				console.log 'signUp res'
 				console.log res

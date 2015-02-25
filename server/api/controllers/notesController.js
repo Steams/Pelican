@@ -171,6 +171,7 @@ exports.deleteViews = function(req,res){
 
 exports.viewNote = function(req,res){
 	console.log('adding view to note');
+	console.log(req.body.userName);
 	User.find({where:{name:req.body.userName} }).then(function(user){
 		Note.find({where:{id:req.body.noteId} }).then(function(note){
 			var view = View.build({UserName:user.name,NoteId:note.id});

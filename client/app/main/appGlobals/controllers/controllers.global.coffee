@@ -4,8 +4,10 @@ angular.module 'landerApp'
 .controller 'globalCtrl',['$scope','$resource','$sce','mainFactory','$location','notesFactory','authorsFactory',
 ($scope,$resource,$sce,mainFactory,$location,notesFactory,authorsFactory) ->
 
-	$scope.loadAuthors = ()-> authorsFactory.indexAuthors()
-	$scope.authors = ()-> return authorsFactory.authors
+	$scope.alert = ()-> alert('swpie')
+	$scope.notebooks = ()-> mainFactory.user.Notebooks
+	# $scope.loadAuthors = ()-> authorsFactory.indexAuthors()
+	# $scope.authors = ()-> return authorsFactory.authors
 	$scope.notes = ()-> return notesFactory.notes
 	$scope.getLocation = ()->
 		console.log 'globalCtrl: Getting Location...'
@@ -21,8 +23,8 @@ angular.module 'landerApp'
 	$scope.user = ()-> return mainFactory.user
 	$scope.init = ()->
 		console.log 'globalCtrl: initializing'
-		$scope.loadAuthors()
 		$scope.checkLogin()
+		# $scope.loadAuthors()
 
 	$scope.refreshPage = ()->
 		console.log('globalCtrl: Refreshing Page...')
@@ -37,6 +39,10 @@ angular.module 'landerApp'
 				query +='author='+url[2].split('?')[0]+'&'#strip out any queryies after the route name
 			if(url[1]=='subjects')
 				query +='subject='+url[2].split('?')[0]+'&'
+		if(searchObj.notebook)
+			console.log 'NOTES NOW'
+			console.log($scope.notes())
+			return
 		if(searchObj.author)
 			query +='author='+searchObj.author+'&'
 		if(searchObj.subject)
@@ -50,29 +56,16 @@ angular.module 'landerApp'
 		# console.log(query)
 		notesFactory.loadNotes(query)
 
-	Login = $resource('/login')
-	CheckLogin = $resource('/loginInfo')
-
-	$scope.login = ->
+	$scope.login = ()->
 		console.log 'globalCtrl: Loging in....'
-		login = new Login()
+		login ={}
 		login.username = $scope.username
 		login.password = $scope.password
-		# console.log(login)
+		mainFactory.signIn(login)
 
-		login.$save (result)->
-			# console.log result
-			if result.user.name
-				$scope.setUser(result.user)
-			else
-				alert('user does not exist')
-
-
-	$scope.checkLogin = ->
-		CheckLogin.get({},(data)->
-			console.log 'getting login'
-			# console.log data
-			$scope.setUser(data.user))
+	$scope.checkLogin = ()->
+		# alert 'sad'
+		return mainFactory.checkLogin()
 
 	$scope.init()
 ]

@@ -1,5 +1,9 @@
 .view-wrapper(ng-init="setHeading('My Notebooks');$scope.show='true'")
-    .content-container
-        search-panel
-            notebooks-list
-        .content-panel
+		.content-container
+			#notebooks
+				.notebooks-searchPanel
+					.notebooks-searchBar
+						span Filter
+						input
+				.notebooks-list
+					notebooks-list

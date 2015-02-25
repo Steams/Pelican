@@ -10,9 +10,16 @@ angular.module 'lander.directives.navigator', []
 			navOps = $('.navigator-option')
 			navOpsHolder = $('#navigator-options-holder')
 
+			$('#navigator').mouseenter ()->
+				# alert('asd')
+				$('#navigator').attr('hover','true')
+			$('#navigator').mouseleave ()->
+				# alert('asd')
+				$('#navigator').attr('hover','false')
 			navOps.each (index)->
 				$(this).click (index)->
-					# alert('yigyg')
+					# turn off hover
+					$('#navigator').attr('hover','false')
 					navOpsHolder.attr('show','false')
 					navOps.each (index2)->
 						$(this).attr('active','false')
@@ -22,5 +29,18 @@ angular.module 'lander.directives.navigator', []
 				if(navOpsHolder.attr('show') == 'false')
 					navOpsHolder.attr('show','true')
 				else
+					navOpsHolder.attr('show','false')
+
+			body = document.getElementsByTagName('body')[0]
+			bodyEvents = new Hammer(body);
+
+			bodyEvents.on 'swiperight', (ev)->
+				if(navOpsHolder.attr('show') == 'false')
+					navOpsHolder.attr('show','true')
+				else
+					navOpsHolder.attr('show','false')
+
+			bodyEvents.on 'tap',(ev)->
+				if ev.target.id != 'navigator-options-holder'
 					navOpsHolder.attr('show','false')
 	}

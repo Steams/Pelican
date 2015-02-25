@@ -17,7 +17,7 @@ router.get('/notes',notesController.showNotesByQuery);
 // router.get('/notes',notesController.indexNotes);
 // router.delete('/notes',notesController.destroy);
 router.delete('/notes',notesController.deleteNote);
-
+router.delete('/notes/all',notesController.destroy);
 
 router.post('/authors',authorsController.createUser);
 router.get('/authors',authorsController.indexUsers);

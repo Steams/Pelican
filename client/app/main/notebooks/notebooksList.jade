@@ -1,18 +1,10 @@
-#note-list-container
-  ul
-      li(ng-repeat="notebook in notebooks()"  class="{{notebook.subject}}" ng-click="opennotebook($index)" onclick="if($('.content-panel').attr('show') == 'false'){$('.content-panel').attr('show','true');}else{$('.content-panel').attr('show','false');}")
-        .list-item-body
-            .list-item-stats-holder
-                .list-item-stat
-                    i(class="fa fa-eye")
-                    span
-                .list-item-stat
-                    i(class="fa fa-heart-o")
-                    span
-            .list-item-details
+ul#notebooks-list-container
+  li.notebook(ng-repeat="notebook in notebooks()"  class="{{notebook.subject}}" ng-click="openNotebook(notebook.name)" onclick="if($('.content-panel').attr('show') == 'false'){$('.content-panel').attr('show','true');}else{$('.content-panel').attr('show','false');}")
+        .notebook-body
+            .notebook-body-details
                 .list-item-details-top
                     .list-item-title {{notebook.name}}
-                    .list-item-tags
+                    .list-item-tags Notes {{notebook.Notes.length}}
                     .list-item-time
                 .list-item-details-bottom
                     .list-item-description Owner : {{notebook.OwnerName}}

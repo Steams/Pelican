@@ -6,6 +6,7 @@ angular.module 'landerApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
+  'ngAnimate',
   'lander.directives.login'
   # 'lander.directives.header',
   # 'lander.directives.menu',
@@ -22,6 +23,9 @@ angular.module 'landerApp', [
   'lander.directives.sortSwitch',
   'lander.directives.notebooksList',
   'lander.directives.searchPanel',
+  'lander.directives.note',
+  'lander.directives.modal',
+  'lander.directives.modalButton',
   'textAngular'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider) ->

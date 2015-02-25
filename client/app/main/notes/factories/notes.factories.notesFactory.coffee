@@ -6,6 +6,10 @@ angular.module 'landerApp'
 
   factory.notes = []
   factory.selected= factory.notes[0]
+  factory.ready = false
+
+  factory.selectNoteByTitle = (name)->
+    factory.selected = $.grep(factory.notes,(e)-> return e.title == name)[0]
 
   factory.selectNote = (id)->
     factory.selected = $.grep(factory.notes,(e)-> return e.id ==id)[0]
@@ -36,6 +40,7 @@ angular.module 'landerApp'
   factory.submit = (note)-> factory.notes.splice(-1,0,submitNote(note))
 
   factory.loadNotes = (query)->
+    factory.ready = false
     factory.notes = []
     indexModel('/api/things/notes'+query).then(
       (res)->
@@ -43,10 +48,12 @@ angular.module 'landerApp'
         factory.notes.forEach( (note)->
             note.likeCount = note.Likes.length
             note.viewCount = note.Views.length
+            note.time = moment(note.createdAt).startOf('minute').fromNow()
             note.tagsFormatted = ()->
               tags = note.tags.split(',')
               return tags
           )
+        factory.ready = true
         console.log res
       (err)-> console.log err #on promise rejected
     )

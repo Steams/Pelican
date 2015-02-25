@@ -10,6 +10,8 @@ angular.module 'landerApp'
 			return 'All Notes'
 		if url[1]=='subjects'
 			return ""+url[2].split('?')[0]+" Notes"
+		if searchObj.notebook
+			return ""+searchObj.notebook
 		if searchObj.author
 			return ""+searchObj.author+"\'s Notes"
 		else

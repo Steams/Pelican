@@ -13,6 +13,9 @@ angular.module 'landerApp'
     indexModel('/api/things/events').then(#get events returns a promise
       (res)->
         factory.events = res
+        factory.events.forEach( (event)->
+            event.time = moment(event.time).startOf('hour').fromNow()
+          )
         console.log res,#on promise resolved
       (err)-> console.log err #on promise rejected
     )

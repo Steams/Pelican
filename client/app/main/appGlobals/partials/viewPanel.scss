@@ -5,10 +5,15 @@
     width: 93%;
     left:30px;
     // overflow: scroll;
+    background-color: #fbfbfb;
     height:90%;
     z-index:1;
     transition-property: top,left,width,height;
     transition-duration: 0.5s;
     // @include box-shadow(0px,0px,10px,0px);
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.55);
+    
+    ol,ul{
+        padding: 40px;
+    }
 }

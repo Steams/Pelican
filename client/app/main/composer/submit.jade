@@ -10,7 +10,10 @@
             input(type="text" ng-model='submitDesc' placeholder="Description")
           .sub-option
             //- p Subject
-            input(type="text" ng-model="submitSubject" placeholder="Subject")
+            input(list="subjects" ng-model="submitSubject" placeholder="Subject")
+            datalist(id="subjects")
+                option(ng-repeat="subject in subjects" value="{{subject}}")
+
           .sub-option
             //- p Tags
             input(type="text" ng-model="submitTags" placeholder="Tags (comma deliminated,no hastags)")
@@ -20,7 +23,6 @@
                   //- span(class="glyphicon glyphicon-send")
       .content-panel(show="false")
           i#expand-icon(class="fa fa-arrows-alt")
-          i#like-icon(class="fa fa-heart" ng-click="likeNote()")
           i#close-icon(class="fa fa-send")
           i#shrink-submit(class="fa fa-expand")
           #editor-toolbar-holder

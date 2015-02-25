@@ -1,4 +1,4 @@
-ul#navigator(on="false")
+ul#navigator(on="false" hover='false')
     #navigator-header
         #navigator-header-logo Pelican
     #navigator-welcome
@@ -7,7 +7,7 @@ ul#navigator(on="false")
             img#navigator-icon(src='assets/images/radcliffe.jpg')
             #user-name
                 h4 {{user().name}}
-    #navigator-menu-button(class="fa fa-bars")
+    //- #navigator-menu-button(class="fa fa-bars")
     #navigator-options-holder(show="false")
         a.navigator-option(ui-sref="home" name="home")
             div

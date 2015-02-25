@@ -12,6 +12,8 @@ var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
 var Models = require('./api/models/lander-models');
 var User = Models.userModel;
+var Notebook = Models.notebookModel;
+var Note = Models.noteModel;
 var emptyUser = {
     authenticated: false,
     user: {
@@ -49,7 +51,8 @@ module.exports = function(app) {
   app.use(passport.session());
 
   passport.use(new passportLocal.Strategy(function(username,password,done){
-    User.find({where:{name:username} }).then(function(user){
+    User.find({where:{name:username},include:{model:Notebook,include:[Note]} }).then(function(user){
+      console.log(user.Notebooks);
       if(user){
         if (password == user.password){
           done(null,user);
@@ -66,17 +69,17 @@ module.exports = function(app) {
   }));
 
   passport.serializeUser(function(user,done){
-    if(user.password !=null){
-      done(null, user.id);
+    if(user.name !=null){
+      done(null, user.name);
     }
     else{
       done(null,false,{});
     }
   });
 
-  passport.deserializeUser(function(id,done){
-    User.find({where:{id:id}}).then(function(user){
-
+  passport.deserializeUser(function(username,done){
+    User.find({where:{name:username},include:{model:Notebook,include:[Note]} }).then(function(user){
+      console.log(user.Notebook)
       done(null, user);
     });
   });

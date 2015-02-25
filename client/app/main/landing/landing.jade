@@ -35,9 +35,9 @@
                                p Join our small Community
                             .signUp-box-bottom
                                 input( placeholder="Username" ng-model="username")
-                                input( placeholder="Password" ng-model="password")
+                                input(type="password" placeholder="Password" ng-model="password")
                                 input( placeholder="Confirm password" ng-model="confirm")
-                                input( placeholder="Email Address" ng-model="email")
+                                input( type=email autocapitalize=off autocorrect=off placeholder="Email Address" ng-model="email")
                                 div( ng-click="signUp()") SIGN UP
                                 p Or Log in with
                                 ul

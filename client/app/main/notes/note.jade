@@ -1,0 +1,21 @@
+li.note
+	.note-stats-holder
+		.note-stat
+			i(class="fa fa-eye")
+			span {{note.viewCount}}
+
+		.note-stat
+			i(class="fa fa-heart-o")
+			span {{note.likeCount}}
+	.note-details-holder(active="false")
+		p.note-header {{note.time}}
+		p.note-title {{note.title}}
+		p.note-description Description : {{note.desc}}
+		p.list-item-descript Tags:
+			a.tag(onclick="$('.content-panel').attr('show','pause')" ng-repeat="tag in note.tags.split(',')" ng-click="openTag(tag)" ) {{'#'+tag+' '}}
+		.note-footer
+			p.note-commmunity In : {{note.CommunityName}}
+			p.list-item-author
+				a(onclick="$('.content-panel').attr('show','pause')" ng-click="openAuthor(note.AuthorName)") Author : {{note.AuthorName}}
+//        p.list-item-descript Tags:
+//            a.tag(onclick="$('.content-panel').attr('show','pause')" ng-repeat="tag in note.tags.split(',')" ng-click="openTag(tag)" ) {{'#'+tag+' '}}

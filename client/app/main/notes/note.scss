@@ -1,3 +1,337 @@
+#note-list-container{
+    position: relative;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto';
+    overflow-y: scroll;
+    overflow-x: hidden;
+    list-style:none;
+    margin:0;
+    margin-top: 20px;
+    padding:0;
+    padding-bottom: 40px;
+}
+
+li.note{
+    position: relative;
+    min-height: 165px;
+    height: auto;
+    width: 100%;
+//    box-shadow: -1px 1px 2px 0px rgba(50, 50, 90, 0.2);
+    transition-property: top,left,box-shadow;
+    transition-duration: 0.2s;
+//    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+li.note:before{
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    content: "";
+    left:50px;
+    background-color:#eee;
+    background-position: absolute;  
+}
+
+
+.note{
+}
+.note.ng-enter-stagger {
+    -webkit-transition-delay:0.3s !important;
+    transition-delay:0.3s;
+    -webkit-transition-duration:0 !important;
+    transition-duration:0s;
+}
+
+.note.ng-enter{
+	transition-duration: 0.5s;
+	transition-property:all;
+    top:30px;
+    opacity: 0;
+}
+
+
+.note.ng-enter.ng-enter-active{
+    opacity: 1;
+    top:0px;
+}
+.note.ng-leave{
+    opacity: 1;
+}
+.note.ng-leave.ng-leave-active{
+    opacity: 0;
+}
+
+.note-stats-holder{
+    position: relative;
+    float: left;
+    display: flex;
+    height: 100%;
+    min-height: 165px;
+    width: 45px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color:#777;
+}
+
+.note-stat{
+    i{
+        padding: 10px;
+    }
+}
+
+.note-details-holder{
+    position: relative;
+    box-sizing: border-box;
+    float: left;
+    left:0px;
+    top:0px;
+    height: 100%;
+    min-height: 165px;
+    margin-left: 20px;
+    width: Calc(100% - 80px);
+    padding: 10px;
+    padding-bottom: 40px;
+//    color:$my-light-text;
+    color:#919191;
+//    background-color: #f5ecda;
+    background-color: #fbfbfb;
+    box-shadow: 0px 1px 3px rgba(16, 16, 39, 0.2);
+    border: 0px;
+    transition-property: top,left,box-shadow,border;
+    transition-duration: 0.2s;
+    z-index: 1;
+
+    p{
+	max-width:300px;
+    }
+}
+
+.note-details-holder[active="true"]{
+    border: 1px solid #aadba8;
+}
+.note-details-holder:hover,.note-details-holder[active="true"]{
+    cursor: pointer;
+    top:-2px;
+    left:2px;
+    box-shadow: -1px 2px 6px rgba(16, 16, 39, 0.2);
+ 
+    .note-header:before{
+        box-shadow: 0px 2px 5px 0px rgba(16, 16, 39, 0.39);
+    }
+    .note-header:after{
+        border-right-width: 20px;
+    }
+    
+    .note-header{
+        left:-10px;
+        top:-3px;
+    }
+    
+    .note-footer{
+        left:20px;
+        bottom:-3px;
+        box-shadow: -1px 1px 6px 0px rgba(16, 16, 39, 0.39);
+    }
+    
+    .note-footer:after{
+        border-left-width:19px;
+//        right:0px;
+    }
+    
+}
+
+.note-header:before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 150px;
+    top:50%;
+    transform: translate(0,-50%);
+    left:-20px;
+//    background-color: rgb(54, 175, 239);
+    box-shadow: 0px 2px 3px 0px rgba(16, 16, 39, 0.39);
+    z-index: -1;
+    transition-property: left,box-shadow;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.note-header:after{
+    position: absolute;
+    content: "";
+    bottom:0px;
+    left:-30px;
+    transform: translate(0,50%);
+    height: 0px;
+    width: 0px;
+//    border: 10px solid transparent;
+    border-right: 10px solid ;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    z-index: -2;
+    filter: brightness(0.7);
+    transition-property: left,border;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.note-header{
+    position: relative;
+    z-index: 1;
+    height: 25px;
+    line-height: 25px;
+    color: #5e5f6a;
+    left: 0px;
+    top: 0px;
+    transition-property: top,left;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+//    background-color:rgb(54, 175, 239) ;
+}
+
+.note-title{
+    font-size: 30px;
+    font-family: 'Raleway';
+    font-weight: 200;
+    width:340px;
+    color:#333;
+}
+
+.note-footer:before{
+    position: absolute;
+    content:"";
+    height: 100%;
+    width: 100%;
+//    background-color: rgb(54, 175, 239);
+    z-index: -1;
+}
+
+.note-footer{
+    position: absolute;
+    bottom: 2px;
+    left: 10px;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #5e5f6a;
+    box-shadow: -1px 1px 3px 0px rgba(16, 16, 39, 0.39);
+    z-index: 1;
+    transition-property: left,bottom,box-shadow;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    color:#5e5f6a;
+    font-weight:700;
+    
+	p:nth-child(1){
+		float:left;
+		text-align:left;
+		padding-left:20px;
+	}
+
+	p:nth-child(2){
+		float:right;
+		text-align:right;
+		padding-right:20px;
+		
+		a{
+            color:#5e5f6a;
+            font-weight:700;
+		}
+		a:hover{
+			
+		}
+	}
+}
+
+.note-footer:after{
+    position: absolute;
+    content:"";
+    top:0px;
+    right: -10px;
+    transform: translate(0,-50%);
+    height: 0px;
+    width: 0px;
+    border:10px solid;
+//    border-left-color: rgb(54, 175, 239);
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    filter: brightness(0.7);
+    transition-property: border,right;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    z-index: -2;
+}
+
+//// Math related colors
+.Mathematics{
+    .note-header:after,{
+        border-right-color: #9575CD;
+    }
+    .note-footer:after{
+        border-left-color: #9575CD;
+    }
+    
+    .note-header:before,.note-footer:before{
+        background-color:#9575CD;
+    }
+}
+////Computer science uses indigo
+//.Computing{
+//    .list-item-body{
+//        .list-item-stats-holder{
+////            background-color: #1A237E;
+////        }
+//    }
+//}
+//
+//// .Computing{
+////     .list-item-body{
+////         .list-item-stats-holder{
+////             background-color: #1A237E;
+////         }
+////     }
+//// }
+//
+//// Engineering related colors
+.Engineering{
+    .note-header:after,{
+        border-right-color:#E57373;
+    }
+    .note-footer:after{
+        border-left-color:#E57373;
+    }
+
+    .note-header:before,.note-footer:before{
+        background-color:#E57373;
+    }
+}
+//
+.English{
+    .note-header:after,{
+        border-right-color:#64B5F6;
+    }
+    .note-footer:after{
+        border-left-color:#64B5F6;
+    }
+
+    .note-header:before,.note-footer:before{
+        background-color:#64B5F6;
+    }
+}
+//
+
+.blank{
+    opacity:0;
+}
+
 .tag{
 	color:#a2bbff;
 }

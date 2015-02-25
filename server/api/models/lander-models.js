@@ -15,7 +15,7 @@ User.hasMany(Event);
 User.hasMany(Like);
 User.hasMany(View);
 User.hasMany(Notebook);
-// User.belongsToMany(Community);
+User.hasMany(Community);
 // could add a through subscription to relationship
 Like.belongsTo(User);
 Like.belongsTo(Note);
@@ -33,7 +33,7 @@ Note.hasMany(Event);
 Notebook.belongsTo(User,{as:'Owner'});
 Notebook.hasMany(Note);
 
-Community.hasMany(User,{as:'Members'});
+Community.belongsToMany(User,{as:'Members'});
 Community.hasMany(Note);
 Community.hasMany(Event);
 Community.hasMany(Community,{as:'ChildCommunities'});
@@ -45,7 +45,7 @@ Event.belongsTo(Community);
 
 db.sync({force:false}).then(function(){
 	// console.log('db created');
-	// Community.create({name:'global'});
+	Community.create({name:'global'});
 	// User.bulkCreate([
 	// 	{name:'Radcliffe',password:'passforRadcliffe'},
 	// 	{name:'Kathrin',password:'passforKathrin'},

@@ -3,11 +3,15 @@
 angular.module 'landerApp'
 .controller 'composerCtrl',['$scope','$resource','$sce','notesFactory','mainFactory',($scope,$resource,$sce,notesFactory,mainFactory) ->
 
+  $scope.subjects = [
+    'Mathematics','Engineering','Biology',
+    'English','Chemistry'
+  ]
   $scope.user = ()-> return mainFactory.user
 
   $scope.submitNote = ->
     console.log 'composerCtrl: Submiting note...'
-    note = new Notes()
+    note ={}
     note.title = $scope.submitTitle
     $scope.submitTitle = ''
     note.desc = $scope.submitDesc

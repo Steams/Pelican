@@ -3,12 +3,6 @@
     li(ng-repeat="event in events() | filter:$parent.filter"  class="{{event.subject}}" ng-click="openauthor($index)")
         .list-item-body
             .list-item-stats-holder
-                .list-item-stat
-                    i(class="fa fa-eye")
-                    span
-                .list-item-stat
-                    i(class="fa fa-heart-o")
-                    span
             .list-item-details
                 .list-item-details-top
                     .list-item-title {{event.name}}
@@ -16,6 +10,6 @@
                     .list-item-time
                 .list-item-details-bottom
                     .list-item-description Description : {{event.desc}}
-                    .list-item-author Time :{{event.createdAt}}
+                    .list-item-author Time :{{event.time}}
                     //- time should actually be the event.time, and converted to readablee string
                     //- find a library to that for you

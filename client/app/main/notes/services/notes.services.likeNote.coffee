@@ -2,7 +2,7 @@ angular.module 'landerApp'
 .service 'likeNote', ['$http','api',($http,api)->
     return (like)->
       # console.log 'making submit http request to: '+api
-      $http.post '/api/things/Likes', like
+      $http.post '/api/things/likes', like
       .success (data,status,headers,config) ->
         console.log(data)
         return data

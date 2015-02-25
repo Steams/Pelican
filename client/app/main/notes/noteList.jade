@@ -1,38 +1,7 @@
-//#list-container
-#note-list-container
-	ul
-		li(ng-repeat="note in notes() | filter:$parent.filter | orderBy: $scope.order" class="{{note.subject}} listItem" ng-click="openNote(note.id)" onclick="if($('.content-panel').attr('show') == 'false'){$('.content-panel').attr('show','true');}else{$('.content-panel').attr('show','false');}")
-			.list-item-body
-				.list-item-stats-holder
-					.list-item-stat
-						i(class="fa fa-eye")
-						span {{note.viewCount}}
-
-					.list-item-stat
-						i(class="fa fa-heart-o")
-						span {{note.likeCount}}
-				.list-item-details
-					.list-item-details-top
-						.list-item-title {{note.title}}
-						.list-item-tags
-						.list-item-time
-					.list-item-details-bottom
-						.list-item-description Description : {{note.desc}}
-						.list-item-author Author : {{note.Author.name}}
-						.list-item-description Tags:
-							a.tag(onclick="$('.content-panel').attr('show','pause')" ng-repeat="tag in note.tags.split(',')" ng-click="openTag(tag)" ) {{'#'+tag+' '}}
-							//- span.tag {{note.tagsFormatted()}}
-
-//      .list-item-content
-//        .list-item-top
-//          h4 {{note.title}}
-//          br
-//          p {{note.desc}}
-//        .list-item-bottom
-//         h4 Author : {{note.Author.name}}
-//         h6(class="likes") Likes : {{note.likeCount}}
-//         h6(class="views") Views : {{note.viewCount}}
-
+ul#note-list-container
+		note(ng-repeat="note in notes() | filter:$parent.filter | orderBy: $scope.order"
+			ng-click="openNote(note.id)"
+			class="{{note.subject}} listItem")
 
 
 

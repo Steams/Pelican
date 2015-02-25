@@ -9,17 +9,14 @@ angular.module 'landerApp'
     # $location.search('author',name)
   $scope.authors = ()-> return authorsFactory.authors #keep authors up to date by always checking factory when referecing it
   $scope.selected = ()-> return authorsFactory.selected
-  $scope.selectAuthor = (index)-> return authorsFactory.selectAuthor(index)
+  $scope.selectAuthor = (name)-> return authorsFactory.selectAuthor(name)
   $scope.init = ()->
     authorsFactory.indexAuthors()
-    $scope.checkLogin()
-    
+    # $scope.checkLogin()
 
   $scope.holder = {}
 #  editor =  document.getElementById('editor')
   authors = $resource('/api/things/authors/:id',{id:'@id'})
-  Login = $resource('/login')
-  CheckLogin = $resource('/loginInfo')
   Subjectauthors = $resource('/api/things/authors/subjects/:id')
   menu = document.querySelector '#menu'
 
@@ -30,14 +27,14 @@ angular.module 'landerApp'
 #      editor.innerHTML= content
 #    )
 
-  $scope.openAuthor =(index)->
+  $scope.openAuthor =(name)->
     # $location.search('foo','asd')
-    $scope.selectAuthor(index)
+    $scope.selectAuthor(name)
   #   console.log('index : '+index)
     console.log('selected now : '+$scope.selected())
     console.log(authorsFactory.selected)
-  #   editor =  document.getElementById('editor')
-  #   editor.innerHTML = $scope.selected().content
+    # editor =  document.getElementById('editor')
+    # editor.innerHTML = $scope.selected().content
   #   view = {}
   #   view.noteId = $scope.selected().id
   #   view.userName = $scope.name

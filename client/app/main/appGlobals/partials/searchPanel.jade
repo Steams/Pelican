@@ -15,6 +15,6 @@
 			//- i(class="fa fa-eye")
 			i#reloadButton(class="fa fa-refresh" ng-click="refreshPage()")
 			#search-options-sort(data-sort-switch="")
-				.search-sorting-option(ng-click="$scope.order='-viewCount'") Rating
+				.search-sorting-option(ng-click="$scope.order='-viewCount+likeCount'") Rating
 				.search-sorting-option(ng-click="$scope.order='-createdAt'") Recent
 	#search-panel-bottom(data-menu ng-transclude)
