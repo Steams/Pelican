@@ -519,3 +519,9 @@ button{
    position: relative;
 }
 
+@media screen and (max-width:$break-large){
+    #landing-holder{
+        overflow-x: scroll;
+        height:100vh;
+    }
+}

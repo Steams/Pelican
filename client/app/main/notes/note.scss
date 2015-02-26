@@ -34,7 +34,7 @@ li.note:before{
     content: "";
     left:50px;
     background-color:#eee;
-    background-position: absolute;  
+    background-position: absolute;
 }
 
 
@@ -120,30 +120,30 @@ li.note:before{
     top:-2px;
     left:2px;
     box-shadow: -1px 2px 6px rgba(16, 16, 39, 0.2);
- 
+
     .note-header:before{
         box-shadow: 0px 2px 5px 0px rgba(16, 16, 39, 0.39);
     }
     .note-header:after{
         border-right-width: 20px;
     }
-    
+
     .note-header{
         left:-10px;
         top:-3px;
     }
-    
+
     .note-footer{
         left:20px;
         bottom:-3px;
         box-shadow: -1px 1px 6px 0px rgba(16, 16, 39, 0.39);
     }
-    
+
     .note-footer:after{
         border-left-width:19px;
 //        right:0px;
     }
-    
+
 }
 
 .note-header:before{
@@ -228,7 +228,7 @@ li.note:before{
     transition-timing-function: ease-out;
     color:#5e5f6a;
     font-weight:700;
-    
+
 	p:nth-child(1){
 		float:left;
 		text-align:left;
@@ -239,13 +239,13 @@ li.note:before{
 		float:right;
 		text-align:right;
 		padding-right:20px;
-		
+
 		a{
             color:#5e5f6a;
             font-weight:700;
 		}
 		a:hover{
-			
+
 		}
 	}
 }
@@ -278,7 +278,7 @@ li.note:before{
     .note-footer:after{
         border-left-color: #9575CD;
     }
-    
+
     .note-header:before,.note-footer:before{
         background-color:#9575CD;
     }
@@ -339,4 +339,3 @@ li.note:before{
 .tag:hover{
     color:#7997e8;
 }
-

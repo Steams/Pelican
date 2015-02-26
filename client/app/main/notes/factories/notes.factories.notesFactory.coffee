@@ -8,6 +8,11 @@ angular.module 'landerApp'
   factory.selected= factory.notes[0]
   factory.ready = false
 
+  factory.setNotes = (notes)->
+    factory.notes = notes
+    factory.ready = true
+    return
+
   factory.selectNoteByTitle = (name)->
     factory.selected = $.grep(factory.notes,(e)-> return e.title == name)[0]
 

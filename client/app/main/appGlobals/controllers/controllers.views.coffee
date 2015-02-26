@@ -33,28 +33,28 @@ angular.module 'landerApp'
 			backOff = ()->
 				# console.log('backof')
 				if $scope.authorReady()
-					notesFactory.notes = $.grep($scope.notebooks(),(e)-> return e.name == decodeURIComponent(searchObj.notebook))[0].Notes
+					notesFactory.setNotes($.grep($scope.notebooks(),(e)-> return e.name == decodeURIComponent(searchObj.notebook))[0].Notes)
 				else
 					timer += 200
 					console.log(timer)
 					clearTimeout()
 					setTimeout(backOff,timer)
 			backOff()
-			return
-		if(searchObj.author)
-			query +='author='+searchObj.author+'&'
-		if(searchObj.subject)
-			query+='subject='+searchObj.subject+'&'
-		if(searchObj.title)
-			query +='title='+searchObj.title+'&'
-		if(searchObj.community)
-			query +='community='+searchObj.community+'&'
-		if(searchObj.tags)
-			query +='tags='+searchObj.tags+'&'
-		if(searchObj.notebook)
-			query +='notebook='+searchObj.notebook+'&'
-		console.log(query)
-		notesFactory.loadNotes(query)
+		else
+			if(searchObj.author)
+				query +='author='+searchObj.author+'&'
+			if(searchObj.subject)
+				query+='subject='+searchObj.subject+'&'
+			if(searchObj.title)
+				query +='title='+searchObj.title+'&'
+			if(searchObj.community)
+				query +='community='+searchObj.community+'&'
+			if(searchObj.tags)
+				query +='tags='+searchObj.tags+'&'
+			if(searchObj.notebook)
+				query +='notebook='+searchObj.notebook+'&'
+			console.log(query)
+			notesFactory.loadNotes(query)
 		if(searchObj.o)
 			timer = 0
 			backOff = ()->

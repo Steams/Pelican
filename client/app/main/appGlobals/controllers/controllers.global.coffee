@@ -1,7 +1,8 @@
 'use strict'
 
 angular.module 'landerApp'
-.controller 'globalCtrl',['$scope','$resource','$sce','mainFactory','$location','notesFactory','authorsFactory',
+.controller 'globalCtrl',['$scope','$resource','$sce','mainFactory','$location',
+'notesFactory','authorsFactory',
 ($scope,$resource,$sce,mainFactory,$location,notesFactory,authorsFactory) ->
 
 	$scope.alert = ()-> alert('swpie')
