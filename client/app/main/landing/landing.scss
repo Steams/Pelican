@@ -7,8 +7,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
     margin: 0;
@@ -43,13 +43,13 @@ button{
 #landing-holder{
 	position:relative;
 	width: 100%;
-    z-index: 10;
-    
+  z-index:3;
+
     article:nth-child(1){
         width: 100%;
-        display: block;    
+        display: block;
     }
-    
+
     article:nth-child(2){
         display: block;
         width: 100%;
@@ -63,7 +63,7 @@ button{
     position: relative;
     width: 100%;
     background-color: #F1F2F2;
-    overflow:hidden; 
+    overflow:hidden;
 }
 
 #landing-nav{
@@ -76,9 +76,9 @@ button{
 //    color:rgba(230, 221, 195, 0.88);
     color: #fff;
     background-color: #fff;
- 
+
     >div{
-        height: 100%;     
+        height: 100%;
     }
 }
 
@@ -101,7 +101,7 @@ button{
     align-items: center;
     font-family: "Open Sans";
     font-weight: 700;
-    
+
     .landing-option{
         font-size: 12px;
         border:1px solid rgba(169, 172, 183, 0.27);
@@ -129,8 +129,8 @@ button{
     .landing-option:nth-child(2):hover{
         background-color: #3e404d;
     }
-    
-   
+
+
 }
 
 #landing-hero:before{
@@ -183,16 +183,16 @@ button{
     font-family: "Raleway";
     color: #fff;
     z-index: 11;
-    
+
     >div{
         width: 95%;
         max-width: 495px;
     }
-    
+
 }
 
 #landing-hero-content-left{
-    
+
     display:flex;
     flex-direction: column;
     align-items: left;
@@ -219,25 +219,25 @@ button{
         align-items: center;
         justify-content: center;
 //        opacity: 0.9;
-        
+
     }
-    
+
     li:hover{
         cursor: pointer;
     }
-    
+
     li:nth-child(odd){
 //        background-color: #78b6d1;
     }
-    
+
     li:nth-child(even){
 //        background-color: #d19a78;
     }
-    
+
     .Mathematics{
         background-color: #9575CD;
     }
-    
+
     .Computing{
         background-color: #7986CB;
     }
@@ -288,13 +288,13 @@ button{
     margin-bottom:50px;
     font-family: "Open Sans";
     padding: 10px;
-    
+
     p{
         font-size: 16px;
         padding-top: 30px;
         padding: 5px;
         font-weight: 500;
-//        padding-right: 
+//        padding-right:
     }
     p:nth-child(1){
         font-family: "Raleway";
@@ -312,7 +312,7 @@ button{
             background-color: #fff;
         }
     }
-    
+
     p:nth-child(2){
         font-family: "Raleway";
         font-size: 35px;
@@ -322,7 +322,7 @@ button{
         @media screen and (max-width:'430px'){
             font-size: 7vw;
         }
- 
+
         span{
             padding: 10px;
 //            padding-left: 10px;
@@ -330,7 +330,7 @@ button{
             background-color: #e6d12e;
         }
     }
-    
+
     p:nth-child(3){
         font-family: "Raleway";
         font-size: 35px;
@@ -340,7 +340,7 @@ button{
         @media screen and (max-width:'430px'){
             font-size: 7vw;
         }
-    
+
         span{
             padding: 10px;
 //            padding-left: 10px;
@@ -348,7 +348,7 @@ button{
             background-color: #e6d12e;
         }
     }
-    
+
     button{
         border:0px;
         margin-left: 5px;
@@ -360,7 +360,7 @@ button{
         width: 120px;
         text-align: center;
     }
-    
+
     button:hover{
         background-color: #ddd;
     }
@@ -381,7 +381,7 @@ button{
     display: flex;
     flex-direction: column;
     z-index: 11;
-    
+
     .signUp-box-top{
         padding: 10px;
         height:50px;
@@ -396,7 +396,7 @@ button{
             font-size: 20px;
             font-family: "Roboto";
         }
-        
+
     }
     .signUp-box-bottom{
         color:#3f4757;
@@ -408,7 +408,7 @@ button{
         flex-direction: column;
         align-items: center;
         font-family: "Open Sans";
-        
+
         input{
             height: 55px;
             width: 100%;
@@ -418,7 +418,7 @@ button{
 //            background-color: #fbfbfb;
             border:1px solid rgba(161, 168, 170, 0.41);
         }
-        
+
         div{
             margin-top: 20px;
             height: 34px;
@@ -435,17 +435,17 @@ button{
             font-family: "Raleway";
             font-weight: 500;
         }
-        
+
         div:hover{
             cursor: pointer;
             background-color: #d16639;
         }
-        
+
         p{
             padding: 5px;
             margin-top: 10px;
         }
-        
+
         ul{
             width: 100%;
             height: 60px;
@@ -466,26 +466,26 @@ button{
                 transition-duration: 0.3s;
                 text-align: center;
             }
-            
+
             li:nth-child(3):hover{
                 background-color:  #3578c7;
             }
-            
+
             li{
                 width: 80px;
 //                background-color: #eb6e1e;
             }
-            
+
             li:hover{
                 cursor: pointer;
             }
-            
+
             .twitter{
                 background-image: url(/assets/images/twitter-square.png);
                 background-size: contain;
                 background-repeat: no-repeat;
             }
-            
+
             .facebook{
                 background-image: url(/assets/images/facebook-square.png);
                 background-size: contain;
@@ -521,7 +521,6 @@ button{
 
 @media screen and (max-width:$break-large){
     #landing-holder{
-        overflow-x: scroll;
-        height:100vh;
+        // overflow-y: scroll;
     }
 }

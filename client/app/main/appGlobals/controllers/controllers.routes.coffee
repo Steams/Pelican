@@ -15,7 +15,7 @@ angular.module 'landerApp'
         )
         .state('compose',{
         url: '/compose'
-        templateUrl: 'app/main/submit.html'
+        templateUrl: 'app/main/composer/composer.html'
         controller: 'globalCtrl'}
         )
         .state('login',{
@@ -74,4 +74,3 @@ angular.module 'landerApp'
         url:'/apiDocs'
         templateUrl:'app/main/apiDocs/apiDocs.html'}
         )
-

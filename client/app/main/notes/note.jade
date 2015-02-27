@@ -14,7 +14,7 @@ li.note
 		p.list-item-descript Tags:
 			a.tag(onclick="$('.content-panel').attr('show','pause')" ng-repeat="tag in note.tags.split(',')" ng-click="openTag(tag)" ) {{'#'+tag+' '}}
 		.note-footer
-			p.note-commmunity In : {{note.CommunityName}}
+			p.note-commmunity {{note.subject}}
 			p.list-item-author
 				a(onclick="$('.content-panel').attr('show','pause')" ng-click="openAuthor(note.AuthorName)") Author : {{note.AuthorName}}
 //        p.list-item-descript Tags:

@@ -28,13 +28,13 @@
         .content-panel(ng-controller='viewCtrl' show="false" class="{{selected().subject}}" notes='')
             #content-panel-info-holder
                 #content-panel-info
-                    #content-panel-left
+                    #content-panel-info-left
                         p {{selected().title}}
                         p {{myMoment(selected().createdAt).format('MMMM Do YYYY')}}
                         p {{selected().AuthorName}}
-                    #content-panel-right
-                        #notebookButton(data-modal-button) Add to notebook
-                            modal(ng-controller='viewCtrl' ng-init="notebook = ''")
+                    #content-panel-info-right
+                        #notebookButton.button(data-modal-button) SAVE
+                            modal#modal(ng-controller='viewCtrl' active="false" ng-init="notebook = ''")
                                 #modal-notebook
                                     p Select a notebook to add to
                                     input(id="notebook" ng-model="notebook" list="notebooksList"  placeholder="note")
@@ -42,7 +42,7 @@
                                         option(ng-repeat="notebook in notebooks()" value="{{notebook.name}}")
                                     #addToNotebook(ng-click="addToNotebook(selected().id,notebook)") Add
 
-            div.viewer(id="viewPanel" data-expanding-panel show="false" on="false" focus="false")
+            div.viewer(class="viewPanel" data-expanding-panel show="false" on="false" focus="false")
                 #content-panel-icon-holder
                     i#expand-panel-icon(class="fa fa-arrows-alt")
                     i#like-icon(class="fa fa-heart" ng-click="likeNote()")

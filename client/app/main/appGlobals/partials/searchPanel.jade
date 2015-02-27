@@ -2,13 +2,14 @@
 	//- i#toggle-search-panel(class='fa fa-arrows-h')
 	#search-options-view
 	#search-panel-top
-		#search-box
-			div {{heading()}}
-			#search-bar(ng-show="$scope.show")
-				input(type="text" ng-model="filter")
-				span
-					i(class="fa fa-search")
-				#input-bar
+		#search-panel-heading-box
+			.heading-box
+				div.heading {{heading()}}
+				.search-bar(ng-show="$scope.show")
+					input(type="text" ng-model="filter" placeholder="Filter...")
+					span
+						i(class="fa fa-search")
+					#input-bar
 		#search-options(ng-show="$scope.show")
 			i(class="fa fa-gears" id="menu-settings-button" )
 			//- i(class="fa fa-sort-numeric-desc")

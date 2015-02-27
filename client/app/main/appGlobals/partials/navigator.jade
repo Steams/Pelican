@@ -1,12 +1,21 @@
 ul#navigator(on="false" hover='false')
     #navigator-header
         #navigator-header-logo Pelican
-    #navigator-welcome
-        h6 Welcome Back
-        #navigator-icon-holder
+    #navigator-welcome()
+        h6(ng-show="user().name") Welcome Back
+        #login(ng-hide="user().name") 
+          a(data-modal-button) Log In
+            modal#modal()
+              #modal-login
+                input(type="text" placeholder="username" ng-model="username")
+                input(type="password" placeholder="password" ng-model="password")
+                #loginButton(ng-click="login(username,password)") Login
+
+        #navigator-icon-holder(ng-show="user().name")
             img#navigator-icon(src='assets/images/radcliffe.jpg')
             #user-name
-                h4 {{user().name}}
+                h4
+                  a(us-sref="personal") {{user().name}}
     //- #navigator-menu-button(class="fa fa-bars")
     #navigator-options-holder(show="false")
         a.navigator-option(ui-sref="home" name="home")

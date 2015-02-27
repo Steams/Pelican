@@ -17,24 +17,9 @@
     width:70%;
   }
 }
-
-#submitButton{
-    height: 30px;
-    width:100px;
-    float:right;
-    border-radius: 2px 2px 2px 2px;
-    line-height: 30px;
-    background-color:#36bcc7;
-    transition-property:background-color !important;
-    transition-duration:0.3s;
-
-    span{
-        line-height:40px;
-        font-weight:700;
-        color:#528845;
-        font-size:30px;
-    }
-
+#composer-submitButton{
+  float:right;
+  background-color:#36BCC7;
 }
 
 #editButton{
@@ -56,12 +41,10 @@
 
 }
 
-#submitButton:hover{
-  cursor: pointer;
+#composer-submitButton:hover{
   background-color: #4BAE4F;
 }
-#submitButton:active{
-  cursor: pointer;
+#composer-submitButton:active{
   background-color: #3a8436;
 }
 
@@ -196,7 +179,7 @@
     @media screen and (max-width: $break-medium) {
         position: absolute;
         height: 100%;
-    
+
     }
 }
 #toolbar{
@@ -212,7 +195,7 @@
   background-image: url('/assets/images/autumn-leaves.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
-    
+
   @media screen and (max-width: $break-medium) {
     position:relative;
     padding: 0px;
@@ -225,12 +208,12 @@
     background-color:$my-dark-orange;
     margin:0px;
     z-index: 5;
-    background-image:url(); 
+    background-image:url();
   }
 
   .btn-group{
     height: 30px;
-  
+
 //      width: 100%;
       display: flex;
 //      justify-content: space
@@ -246,9 +229,9 @@
           width: 200px;
           button{
           }
-  
+
       }
-      
+
     button{
       flex-shrink: 1;
       height: 100%;
@@ -294,7 +277,7 @@
         position: relative;
         left:0px !important;
         top:100px;
-        
+
     }
 }
 

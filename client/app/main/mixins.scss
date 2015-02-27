@@ -17,3 +17,107 @@
 //    padding:3px;
     @include border-radius(30px,30px,30px,30px,2px,$my-dark-orange);
 }
+
+.heading{
+    font-family: 'Raleway';
+    font-weight: 200;
+    font-size: 30px;
+    @media screen and (max-width:$break-large){
+      font-size: 4vw;
+    }
+}
+
+.button{
+    height: 30px;
+    width:100px;
+    text-align:center;
+    font-size:12px;
+    font-family: "Open Sans";
+    font-weight: bold;
+    border-radius: 2px 2px 2px 2px;
+    line-height: 30px;
+    transition-property:background-color !important;
+    transition-duration:0.3s;
+
+}
+
+.button:hover{
+  cursor: pointer;
+}
+
+
+.heading-box{
+    height: 70%;
+    width: 100%;
+}
+
+.search-bar{
+  float:right;
+  opacity:0.7;
+  position:relative;
+  height: 30px;
+
+  input{
+      border:2px solid $my-light-text;
+      height: 100%;
+      outline:0px;
+  }
+
+  input~#input-bar{
+      position:absolute;
+      right:28px;
+      top:0px;
+      height: 100%;
+      width: 5px;
+      background-color:$my-dark-orange;
+      transition-property: right,width,background-color,opacity;
+      transition-duration: 0.3s;
+  }
+
+  @keyframes blink{
+      from {opacity: 0;}
+      to {opacity: 1;}
+  }
+
+  input:focus~#input-bar{
+      right:Calc(100% - 3px);
+      animation: blink 0.7s infinite alternate;
+
+      width:2px;
+  }
+  input~span{
+      display: block;
+      position:absolute;
+      width: 30px;
+      height: 100%;
+      top:0px;
+      line-height: 30px;
+      right:0px;
+      text-align: center;
+      background-color: $my-dark-orange;
+      transition-property: background-color;
+      transition-duration: 0.3s;
+      font-size: 20px;
+      font-weight: 700;
+      i{
+          line-height: 30px;
+      }
+  input:focus~span{
+      background-color: #7bbbdd;
+      }
+
+  }
+
+  input~span:before{
+      position:absolute;
+      top:50%;
+      left:-10px;
+      transform:translate(0px,-50%);
+      content:"";
+      height:0px;
+      width:0px;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid $my-dark-orange;
+  }
+}

@@ -6,7 +6,6 @@ angular.module 'lander.directives.pulsingButton',[]
     link:(scope,element,attr)->
       button = element[0]
       style = button.style
-
 #     Show button on mouse scroll down 30 unit/pings, hide when mouse moves up
       trackMouseY = 0 #tracks how often the mouse has moved down
       currentMouseY = 0

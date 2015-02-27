@@ -84,7 +84,7 @@ module.exports = function(app) {
     });
   });
 
-  app.use('/api/things', require('./api/thing'));
+  app.use('/api/things', require('./api/router'));
 
   app.post('/login',passport.authenticate('local'),function(req,res){
     // return jso object of user data on is authenticated in req

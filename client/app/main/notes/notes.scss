@@ -1,4 +1,23 @@
-
+.viewer{
+    overflow: hidden;
+    overflow-y: scroll;
+    background-color: #fff;
+    font-family: "Alegreya";
+    font-size: 20px;
+    line-height: 33px;
+    color:#5F5F5F;
+    display: block !important;
+    padding: 20px;
+    width:90%;
+    *{
+        max-width: 700px;
+        margin:0 auto;
+    }
+    margin: 0 auto;
+    h1{
+        display: block;
+    }
+}
 .content-panel[notes]:before{
     position: absolute;
     top:0px;
@@ -9,7 +28,6 @@
     height: 45%;
     width: 100%;
 }
-
 
 #content-panel-info-holder{
     position: absolute;
@@ -26,26 +44,21 @@
     font-weight: 500;
 }
 
-#content-panel-left{
+#content-panel-info-left{
     float: left;
 }
 
-#content-panel-right{
+#content-panel-info-right{
     float:right;
 }
 #content-panel-info{
     position: relative;
     top:10px;
-//    left:50%;
-//    transform: translate(-50%, 0)
     margin:0 auto;
     height: 200px;
     width:90%;
     max-width: 600px;
     color: #f0f0f0;
-//    background-color: #fff;
-//    padding: 
-    
     p:nth-child(1){
         font-size: 25px;
         font-family: 'Roboto';
@@ -54,48 +67,22 @@
 }
 
 #notebookButton{
-    height: 40px;
-    width:100px;
-//    border-radius: 2px 2px 2px 2px;
-//    line-height: 30px;
+    position: relative;
     box-shadow: -1px 1px 3px 0px rgba(69, 71, 78, 0.46);
-    text-align: center;
     background-color:#a8a3a1;
-    transition-property:background-color !important;
-    transition-duration:0.3s;
-
-    span{
-        line-height:40px;
-        font-weight:700;
-        color:#528845;
-        font-size:30px;
-    }
-}
-
-#notebookButton:hover{
-    cursor: pointer;
-    background-color: #5c5c5c;
-}
-#notebookButton:active{
-    cursor: pointer;
-    background-color: #2d2f2d;
-}
+  }
 
 #addToNotebook{
     height: 40px;
     width:100px;
     color:#fff;
     line-height: 40px;
-    //    border-radius: 2px 2px 2px 2px;
-    //    line-height: 30px;
-
     box-shadow: -1px 1px 3px 0px rgba(69, 71, 78, 0.46);
     text-align: center;
     background-color:#a8a3a1;
     transition-property:background-color !important;
     transition-duration:0.3s;
 }
-
 
 #addToNotebookButton:hover{
     cursor: pointer;

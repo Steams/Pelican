@@ -1,4 +1,4 @@
-#modal{
+.modal{
     position: fixed;
     top:0px;
     left:0px;
@@ -8,7 +8,7 @@
     opacity: 0;
     justify-content: center;
     align-items: center;
-    z-index: 12;
+    z-index: 2;
     background-color: rgba(0, 0, 0, 0.4);
     height: 100%;
     width: 100%;
@@ -17,11 +17,11 @@
 }
 
 
-#modal[active="true"]{
+.modal[active="true"]{
     opacity: 1;
 }
 
-#modal-closeButton{
+.modal-closeButton{
     position: absolute;
     height: 20px;
     width: 20px;
@@ -30,7 +30,7 @@
     background-color: red;
 }
 
-#modal-content{
+.modal-content{
     position: relative;
     height: auto;
     min-height: 300px;
@@ -41,4 +41,5 @@
     box-shadow:0px 0px 50px 0px #000;
     border-radius: 5px;
     color: #919191;
+    z-index: 3;
 }

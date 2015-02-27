@@ -18,8 +18,8 @@
             //- p Tags
             input(type="text" ng-model="submitTags" placeholder="Tags (comma deliminated,no hastags)")
           .sub-option
-            #editButton Write
-            #submitButton(ng-click="submitNote()") Send
+            #editButton.button Write
+            #composer-submitButton.button(ng-click="submitNote()") Send
                   //- span(class="glyphicon glyphicon-send")
       .content-panel(show="false")
           i#expand-icon(class="fa fa-arrows-alt")

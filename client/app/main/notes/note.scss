@@ -5,13 +5,15 @@
     width: 100%;
     height: 100%;
     font-family: 'Roboto';
-    overflow-y: scroll;
-    overflow-x: hidden;
     list-style:none;
     margin:0;
     margin-top: 20px;
     padding:0;
     padding-bottom: 40px;
+    @media screen and (min-width:$break-large){
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
 }
 
 li.note{
@@ -228,6 +230,9 @@ li.note:before{
     transition-timing-function: ease-out;
     color:#5e5f6a;
     font-weight:700;
+    @media screen and(max-width:400px){
+      font-size: 4vw;
+    }
 
 	p:nth-child(1){
 		float:left;
@@ -259,7 +264,6 @@ li.note:before{
     height: 0px;
     width: 0px;
     border:10px solid;
-//    border-left-color: rgb(54, 175, 239);
     border-top-color: transparent;
     border-bottom-color: transparent;
     border-right-color: transparent;
