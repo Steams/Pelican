@@ -5,8 +5,13 @@
 					.heading-box
 						div.heading notebooks
 						#notebooks-options
-							div(class="fa fa-plus")
-							div(class="fa fa-times")		
+							button#addNotebook(data-modal-button class="fa fa-plus")
+								modal#modal()
+									#modal-Notebooks
+										p Name your notebook
+										input(type="text" placeholder="" ng-model="notebookName")
+										#createNotebook( ng-controller="notebooksCtrl" ng-click="createNotebook(notebookName)" ) create
+							button#removeNotebook(class="fa fa-times")
 						.search-bar(ng-show="$scope.show")
 								input(type="text" ng-model="filter" placeholder="filter")
 								span

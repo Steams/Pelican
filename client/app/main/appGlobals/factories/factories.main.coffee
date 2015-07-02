@@ -24,8 +24,10 @@ angular.module 'landerApp'
     checkLogin().then(
       (res)->
         console.log res
-        if res.data.user.name
-          factory.setUser(res.data.user)
+        # if res.data.user.name
+        if res.data.name
+          # factory.setUser(res.data.user)
+          factory.setUser(res.data)
         return res
       ,
       (err)->
@@ -54,8 +56,10 @@ angular.module 'landerApp'
       (res)->
         # console.log 'sign in res'
         # console.log res
-        if res.data.user.name
-          factory.setUser(res.data.user)
+        # if res.data.user.name <!<! CHANGED login to return just a suer object, use code below
+        if res.data.name
+          # factory.setUser(res.data.user)
+          factory.setUser(res.data)
           $location.url('/home')
         else
           alert('user does not exist')

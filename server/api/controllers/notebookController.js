@@ -38,3 +38,9 @@ exports.addNote = function(req,res){
 		});
 	});
 }
+
+exports.destroy = function(req,res){
+	Notebook.destroy({truncate:true}).then(function(){
+		res.send(200);
+	})
+}

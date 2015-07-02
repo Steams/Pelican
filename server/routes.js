@@ -92,7 +92,9 @@ module.exports = function(app) {
     // console.log('yryrd')
     // console.log({authenticated : req.isAuthenticated(), user:req.user});
     // return('login');
-    return res.json({authenticated : req.isAuthenticated(), user:req.user});
+    // return res.json({authenticated : req.isAuthenticated(), user:req.user});
+
+    return res.json(req.user);
   });
 
   app.get('/loginInfo',function(req,res){
@@ -103,7 +105,8 @@ module.exports = function(app) {
     //    name:'radcliffe'
     //    });
 
-  return res.json({authenticated : req.isAuthenticated(), user:req.user});
+  // return res.json({authenticated : req.isAuthenticated(), user:req.user});
+  return res.json(req.user);
   });
 
   app.get('/logout',function(req,res){

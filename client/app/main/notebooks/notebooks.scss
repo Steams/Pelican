@@ -9,6 +9,7 @@
     height: 60px;
     width: 100%;
     background-color: #fff;
+    // padding:5px;
 }
 
 .notebooks-list{
@@ -28,8 +29,41 @@
   display: flex;
   justify-content:center;
   align-items:center;
+  padding: 5px;
   .heading-box{
     display: flex;
     justify-content:space-between;
   }
+}
+
+
+#notebooks-options{
+  display:flex;
+  justify-content:space-between;
+  width: 60px;
+    
+  button{
+    font-size: 20px;
+    color:$my-dark-orange;
+  }
+    
+  button:hover{
+      cursor: pointer;
+      font-size: 24px;
+  }
+}
+
+#modal-Notebooks{
+  font-size: 20px;
+  color:#949191;
+}
+
+#modal-Notebooks:hover{
+  font-size: 20px; 
+}
+
+#createNotebook{
+  color:#fff;
+  @extend .button;
+  background-color:#949191;
 }

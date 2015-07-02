@@ -43,5 +43,5 @@ router.delete('/views',notesController.deleteViews);
 router.post('/notebooks',notebookController.createNotebook);
 router.get('/notebooks',notebookController.indexNotebooks);
 router.put('/notebooks',notebookController.addNote);
-
+router.delete('/notebooks',notebookController.destroy);
 module.exports = router;

@@ -25,7 +25,7 @@ View.belongsTo(Note);
 
 Note.belongsTo(User,{as:'Author'});
 Note.belongsTo(Community);
-Note.belongsTo(Notebook);
+Note.hasMany(Notebook);
 Note.hasMany(Like);
 Note.hasMany(View);
 Note.hasMany(Event);
@@ -36,7 +36,7 @@ Notebook.hasMany(Note);
 Community.belongsToMany(User,{as:'Members'});
 Community.hasMany(Note);
 Community.hasMany(Event);
-Community.hasMany(Community,{as:'ChildCommunities'});
+Community.belongsToMany(Community,{as:'ChildCommunities'});
 Community.belongsTo(Community,{as:'ParentCommunity'});
 
 Event.belongsTo(User,{as:'Creator'});

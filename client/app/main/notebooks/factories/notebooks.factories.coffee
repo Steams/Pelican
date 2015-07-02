@@ -1,5 +1,5 @@
 angular.module 'landerApp'
-.factory 'notebooksFactory', ['indexModel',(indexModel)->
+.factory 'notebooksFactory', ['indexModel','createNotebook',(indexModel,createNotebook)->
 
   factory = this
   factory.notebooks = []
@@ -16,8 +16,17 @@ angular.module 'landerApp'
         console.log res,
       (err)-> console.log err
     )
-    factory.notebooks.push({subject:'blank'})
 
+  factory.createNotebook = (name,username)->
+    createNotebook({'name':name,'author':username}).then(
+      (res)->
+        console.log res
+        console.log factory
+        factory.notebooks.push res
+        # console.log factory.notebooks
+        return res
+      (err)->
 
+    )
   return factory
 ]

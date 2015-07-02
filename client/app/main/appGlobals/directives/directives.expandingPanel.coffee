@@ -30,13 +30,13 @@ angular.module 'lander.directives.expandingPanel', []
               expandviewPanel()
 
         toggleviewPanelExpandPause= ()->
-          if el.attr('on')== 'true-paused'
-            el.attr('on','true')
+          if el.attr('on')== 'true'
+            el.attr('on','false')
             compressviewPanel()
           else
             if el.attr('on')== 'false'
               expandviewPanel()
-              el.attr('on','true-paused')
+              el.attr('on','true')
 
         pauseCompress = ()->
           if el.attr('on') != 'true-paused'
@@ -47,7 +47,7 @@ angular.module 'lander.directives.expandingPanel', []
           if el.attr('on') != 'true-paused'
             el.attr('on','false')
 
-        $('#expand-panel-icon').click(toggleviewPanelExpandPause)
+        el.click(toggleviewPanelExpandPause)
         el.mouseenter(expandviewPanel)
         el.mouseleave(compressviewPanel)
   #      mq = window.matchMedia("(max-width: 649px)")

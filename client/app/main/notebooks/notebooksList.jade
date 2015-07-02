@@ -1,5 +1,5 @@
 ul#notebooks-list-container
-  li.notebook(ng-repeat="notebook in notebooks()"  class="{{notebook.subject}}" ng-click="openNotebook(notebook.name)" onclick="if($('.content-panel').attr('show') == 'false'){$('.content-panel').attr('show','true');}else{$('.content-panel').attr('show','false');}")
+  li.notebook(ng-repeat="notebook in notebooks"  class="{{notebook.subject}}" ng-click="openNotebook(notebook.name)" onclick="if($('.content-panel').attr('show') == 'false'){$('.content-panel').attr('show','true');}else{$('.content-panel').attr('show','false');}")
         .notebook-body
             .notebook-body-details
                 .list-item-details-top

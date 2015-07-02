@@ -61,7 +61,7 @@ exports.showNotesByQuery = function(req,res){
 		query.tags = {like:'%'+req.param('tags')+'%'};
 	}
 
-	Note.findAll({where:query,include: [Like,View,Event]}).then(function(notes){
+	Note.findAll({where:query,include: [Like,View]}).then(function(notes){
 		res.json(notes);
 	});
 };
