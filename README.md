@@ -13,13 +13,13 @@ Screenshots:
 
 ![alt tag](http://i.imgur.com/5ja2NP2.png?1)
 
-![alt tag](http://i.imgur.com/YbILUe5.png?1)
-
 ![alt tag](http://i.imgur.com/CoPdXfz.png?1)
 
 ![alt tag](http://i.imgur.com/6tbv73f.png?1)
 
 ![alt tag](http://i.imgur.com/199hD3C.png?1)
+
+![alt tag](http://i.imgur.com/YbILUe5.png?1)
 
 ![alt tag]()
 
